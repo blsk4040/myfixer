@@ -1,5 +1,5 @@
 /* ============================================
-   script.js - FULLY UPDATED & CLEANED
+   script.js - FULLY UPDATED FOR NETLIFY FORM SUBMISSION & CENTURION
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Booking form submission
+    // Booking form submission with AJAX for Netlify
     const bookingForm = document.getElementById('booking-form');
     if (bookingForm) {
         bookingForm.addEventListener('submit', function(e) {
@@ -58,15 +58,32 @@ document.addEventListener('DOMContentLoaded', function() {
             });
 
             if (isValid) {
-                alert('Message sent! We\'ll contact you soon to confirm.');
-                bookingForm.reset();
-                if (typeof fbq !== 'undefined') fbq('track', 'Schedule');
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'booking_submitted', {
-                        'event_category': 'Booking',
-                        'event_label': 'Appointment'
-                    });
-                }
+                const formData = new FormData(bookingForm);
+                
+                fetch('/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams(formData).toString()
+                })
+                .then(response => {
+                    if (response.ok) {
+                        alert('Thank you! Your request has been submitted. We\'ll contact you soon to confirm.');
+                        bookingForm.reset();
+                        if (typeof fbq !== 'undefined') fbq('track', 'Schedule');
+                        if (typeof gtag !== 'undefined') {
+                            gtag('event', 'booking_submitted', {
+                                'event_category': 'Booking',
+                                'event_label': 'Appointment'
+                            });
+                        }
+                    } else {
+                        alert('Error submitting your form. Please try again or contact us at +27642903654.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Form submission error:', error);
+                    alert('Error submitting your form. Please try again or contact us at +27642903654.');
+                });
             } else {
                 alert(errorMessage);
             }
@@ -108,17 +125,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Google Maps initialization
+    // Google Maps initialization for Centurion
     if (document.getElementById('map')) {
         window.initMap = function() {
             const map = new google.maps.Map(document.getElementById('map'), {
-                center: { lat: 40.7128, lng: -74.0060 },
-                zoom: 10,
+                center: { lat: -25.8603, lng: 28.1891 },
+                zoom: 14,
             });
             new google.maps.Marker({
-                position: { lat: 40.7128, lng: -74.0060 },
+                position: { lat: -25.8603, lng: 28.1891 },
                 map: map,
-                title: 'Your City',
+                title: 'MyFixer - Centurion',
             });
         };
     }
@@ -127,13 +144,11 @@ document.addEventListener('DOMContentLoaded', function() {
        Fade-in / Slide-in Scroll Animation
     ============================================ */
     const fadeElements = document.querySelectorAll('.fade-in');
-
     if (fadeElements.length > 0) {
         const observerOptions = {
             threshold: 0.15,
             rootMargin: "0px 0px -50px 0px"
         };
-
         const fadeInOnScroll = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -142,7 +157,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         }, observerOptions);
-
         fadeElements.forEach(el => fadeInOnScroll.observe(el));
     }
 
@@ -165,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (typeof fbq !== 'undefined') {
                 fbq('track', 'Lead', {
-                    content_name: serviceType.replace('-', ' ').toUpperCase()
+                    content_name: serviceType.replace(/[-_]/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
                 });
             }
             
@@ -186,15 +200,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 setTimeout(() => {
                     const applianceSelect = document.getElementById('appliance');
-                    if (applianceSelect && this.getAttribute('data-service')) {
-                        const serviceValue = this.getAttribute('data-service').replace('-', '_');
-                        const options = applianceSelect.querySelectorAll('option');
-                        options.forEach(option => {
-                            if (option.value === serviceValue || option.value.includes(serviceValue)) {
-                                option.selected = true;
-                                applianceSelect.dispatchEvent(new Event('change'));
-                            }
-                        });
+                    if (applianceSelect && serviceType) {
+                        const serviceValue = serviceType.replace('-', '_');
+                        applianceSelect.value = serviceValue;
+                        applianceSelect.dispatchEvent(new Event('change'));
                     }
                 }, 500);
             }
@@ -223,7 +232,6 @@ document.addEventListener('DOMContentLoaded', function() {
        ============================================ */
     const counters = document.querySelectorAll('.counter');
     if (!counters.length) return;
-
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
@@ -232,29 +240,24 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }, { threshold: 0.5 });
-
     counters.forEach(counter => observer.observe(counter));
 
     function startCounter(counter) {
         const target = parseInt(counter.getAttribute('data-target'));
         const duration = 2200;
         const startTime = performance.now();
-
         const update = (currentTime) => {
             const elapsed = currentTime - startTime;
             const progress = Math.min(elapsed / duration, 1);
             const easeProgress = 1 - Math.pow(1 - progress, 3);
             const current = Math.floor(easeProgress * target);
-
             counter.textContent = current.toLocaleString();
-
             if (progress < 1) {
                 requestAnimationFrame(update);
             } else {
                 counter.textContent = target.toLocaleString();
             }
         };
-
         requestAnimationFrame(update);
     }
 });
