@@ -1744,3 +1744,113 @@ body {
         font-size: 0.9rem;
     }
 }
+
+
+/* ============================================
+   FULL GALLERY PAGE
+   ============================================ */
+.gallery-hero {
+    padding: 160px 0 80px;
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('img/gallery-hero.jpg') center/cover no-repeat;
+    color: white;
+    position: relative;
+}
+
+.gallery-hero h1 {
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    font-weight: 900;
+    margin-bottom: 1rem;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.6);
+}
+
+.gallery-hero p {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.95;
+}
+
+.gallery-full {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.gallery-grid a {
+    display: block;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.4s ease;
+}
+
+.gallery-grid a:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.18);
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.gallery-grid a:hover img {
+    transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .gallery-hero { padding: 120px 0 60px; }
+    .gallery-grid { grid-template-columns: 1fr; }
+}
+
+
+/* ============================================
+   GALLERY CTA BUTTON - PERFECTLY CENTERED
+   ============================================ */
+.gallery-cta {
+    text-align: center;
+    margin: 3rem auto 0;
+    padding: 0 20px;
+}
+
+.gallery-cta .btn-primary {
+    display: inline-block;
+    min-width: 280px;
+    padding: 16px 40px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    box-shadow: 0 10px 30px rgba(231, 76, 60, 0.3);
+    transition: all 0.4s ease;
+}
+
+.gallery-cta .btn-primary:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 40px rgba(231, 76, 60, 0.4);
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    .gallery-cta {
+        margin: 2.5rem auto 0;
+    }
+    .gallery-cta .btn-primary {
+        width: 100%;
+        max-width: 320px;
+        padding: 18px 30px;
+        font-size: 1.15rem;
+    }
+}
