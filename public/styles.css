@@ -900,6 +900,7 @@ body {
 
 .testimonial-card {
     background: rgba(255, 255, 255, 0.95);
+    -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     border-radius: 25px;
     padding: 45px 40px;
@@ -1053,6 +1054,7 @@ body {
     background: rgba(255, 255, 255, 0.1);
     padding: 12px 20px;
     border-radius: 25px;
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     transition: all 0.3s ease;
@@ -1262,6 +1264,7 @@ body {
     padding: 3.5rem;
     border-radius: 25px;
     box-shadow: 0 25px 70px rgba(0,0,0,0.12);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255,255,255,0.2);
 }
@@ -1853,4 +1856,9 @@ body {
         padding: 18px 30px;
         font-size: 1.15rem;
     }
+}
+
+/* Hide honeypot field for spam protection */
+.hidden {
+    display: none !important;
 }

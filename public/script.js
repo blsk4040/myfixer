@@ -13,6 +13,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // AUTO-FIX: Add rel="noopener noreferrer" to all target="_blank" links
+    document.querySelectorAll('a[target="_blank"]').forEach(link => {
+        const rel = link.getAttribute('rel') || '';
+        if (!rel.includes('noopener')) {
+            link.setAttribute('rel', rel + ' noopener');
+        }
+        if (!rel.includes('noreferrer')) {
+            link.setAttribute('rel', (rel ? rel + ' ' : '') + 'noreferrer');
+        }
+    });
+
     // Smooth scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
