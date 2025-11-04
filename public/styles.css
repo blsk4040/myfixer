@@ -1471,6 +1471,18 @@ body {
     color: #e74c3c;
 }
 
+/* FIX: Ensure footer link is ALWAYS visible */
+.footer-bottom p,
+.footer-bottom p a {
+    color: white !important;
+    text-decoration: none;
+}
+
+.footer-bottom p a:hover {
+    color: #e74c3c !important;
+    text-decoration: underline;
+}
+
 /* ============================================
    PROCESS FLOW
    ============================================ */
