@@ -1874,3 +1874,42 @@ body {
 .hidden {
     display: none !important;
 }
+
+
+/* ============== RESPONSIVE LOGO ============== */
+.logo-img {
+    height: 50px;           /* Base height for desktop */
+    width: auto;
+    max-width: 180px;       /* Prevents it from getting too wide */
+    transition: height 0.3s ease;
+}
+
+/* Tablet & Mobile Adjustments */
+@media (max-width: 992px) {
+    .logo-img {
+        height: 45px;
+        max-width: 160px;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo-img {
+        height: 40px;
+        max-width: 140px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-img {
+        height: 36px;
+        max-width: 120px;
+    }
+}
+
+/* Ensure logo doesn't break layout on very small screens */
+@media (max-width: 360px) {
+    .logo-img {
+        height: 32px;
+        max-width: 110px;
+    }
+}
