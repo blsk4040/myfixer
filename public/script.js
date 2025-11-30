@@ -45,8 +45,15 @@ document.addEventListener('DOMContentLoaded', function() {
         bookingForm.addEventListener('submit', async function(e) {
             e.preventDefault();
 
+            
+    if (!window.turnstile || !window.turnstile.getResponse) {
+        alert('Turnstile is still loading. Please wait a moment and try again.');
+        return;
+    }
+
             // Honeypot check
-            const honeypotField = bookingForm.querySelector('input[name="website"]'); // Change 'website' if your hidden field has a different name
+            const honeypotField = bookingForm.querySelector('input[name="bot-field"]'); 
+
             if (honeypotField && honeypotField.value) {
                 console.warn('Honeypot triggered, likely bot submission.');
                 return; // Block submission
@@ -75,8 +82,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
 
-            // Check Turnstile response
-            const turnstileToken = window.turnstile && window.turnstile.getResponse ? window.turnstile.getResponse() : '';
+            // Check Turnstile response (fixed for async loading)
+             let turnstileToken = '';
+const widgetIds = window.turnstile?.renderedWidgets || [];
+if (widgetIds.length > 0) {
+    turnstileToken = window.turnstile.getResponse(widgetIds[0]);
+} else {
+    alert('Turnstile is still loading. Please wait a moment and try again.');
+    return;
+}
+
+            }
+
             if (!turnstileToken) {
                 isValid = false;
                 errorMessage += '- Please complete the Turnstile verification\n';
@@ -122,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     bookingForm.reset();
 
                     // Reset Turnstile widget
-                    if (window.turnstile && window.turnstile.reset) window.turnstile.reset();
+                    if (window.turnstile && typeof window.turnstile.reset === 'function') window.turnstile.reset();
 
                     // Analytics tracking
                     if (typeof fbq !== 'undefined') fbq('track', 'Schedule');
