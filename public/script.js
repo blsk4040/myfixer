@@ -45,11 +45,10 @@ document.addEventListener('DOMContentLoaded', function() {
         bookingForm.addEventListener('submit', async function(e) {
             e.preventDefault();
 
-            
-    if (!window.turnstile || !window.turnstile.getResponse) {
-        alert('Turnstile is still loading. Please wait a moment and try again.');
-        return;
-    }
+            if (!window.turnstile || !window.turnstile.getResponse) {
+                alert('Turnstile is still loading. Please wait a moment and try again.');
+                return;
+            }
 
             // Honeypot check
             const honeypotField = bookingForm.querySelector('input[name="bot-field"]'); 
@@ -82,16 +81,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
 
-            // Check Turnstile response (fixed for async loading)
-             let turnstileToken = '';
-const widgetIds = window.turnstile?.renderedWidgets || [];
-if (widgetIds.length > 0) {
-    turnstileToken = window.turnstile.getResponse(widgetIds[0]);
-} else {
-    alert('Turnstile is still loading. Please wait a moment and try again.');
-    return;
-}
-
+            // Check Turnstile response (corrected block)
+            let turnstileToken = '';
+            const widgetIds = window.turnstile?.renderedWidgets || [];
+            
+            if (widgetIds.length > 0) {
+                turnstileToken = window.turnstile.getResponse(widgetIds[0]);
+            } else {
+                alert('Turnstile is still loading. Please wait a moment and try again.');
+                return;
             }
 
             if (!turnstileToken) {
@@ -181,7 +179,7 @@ if (widgetIds.length > 0) {
                 prevEl: '.swiper-button-prev',
             },
             autoplay: {
-                delay: 5000,
+                delay: 5005,
             },
             breakpoints: {
                 768: {

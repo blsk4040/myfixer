@@ -68,23 +68,47 @@
     </script>
 
     <!-- Service Catalog Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "serviceType": "Appliance Repair",
-      "provider": {"@type": "LocalBusiness", "name": "MyFixer"},
-      "areaServed": ["Centurion", "Pretoria", "Johannesburg"],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "MyFixer Repair Services",
-        "itemListElement": [
-          {"@type": "Offer","itemOffered":{"@type":"Service","name":"Coffee Machine Repair Centurion"}},
-          {"@type": "Offer","itemOffered":{"@type":"Service","name":"HVAC Repair & Installation Pretoria"}},
-          {"@type": "Offer","itemOffered":{"@type":"Service","name":"Refrigerator Repair Johannesburg"}}
-        ]
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Appliance Repair",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "MyFixer Appliance Repair",
+    "url": "https://myfixer.co.za"
+  },
+  "areaServed": ["Centurion", "Pretoria", "Johannesburg"],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "MyFixer Repair Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Coffee Machine Repair Centurion"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "HVAC Repair & Installation Pretoria"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Refrigerator Repair Johannesburg"
+        }
       }
-    }
+    ]
+  }
+}
+</script>
+
     </script>
 
     <!-- Google Tag Manager -->
@@ -104,6 +128,9 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+     <!-- Cloudflare Turnstile -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
 
@@ -625,7 +652,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="form-group"><label for="message">Problem Description</label><textarea id="message" name="message" placeholder="Describe the issue in detail&#10;e.g., 'Fridge not cooling, making strange noise, LG model XYZ'" rows="4"></textarea></div>
 
                     <!-- Cloudflare Turnstile -->
-                    <div class="cf-turnstile" data-sitekey="0x4AAAAAACDxyOBfz7nDkjnq"></div>
+<div class="cf-turnstile"
+     data-sitekey="0x4AAAAAACDxyOBfz7nDkjnq"
+     data-theme="light">
+</div>
+
+
 
                     <button type="submit" class="btn-primary full-width">Get Free Quote Now</button>
                 </form>
