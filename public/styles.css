@@ -1987,3 +1987,9 @@ body {
         font-size: 1.3rem;
     }
 }
+
+/* Cloudflare Turnstile  */
+.turnstile-container {
+    margin: 20px 0;
+    text-align: center;
+}

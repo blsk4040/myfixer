@@ -651,13 +651,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                     <div class="form-group"><label for="message">Problem Description</label><textarea id="message" name="message" placeholder="Describe the issue in detail&#10;e.g., 'Fridge not cooling, making strange noise, LG model XYZ'" rows="4"></textarea></div>
 
-                    <!-- Cloudflare Turnstile -->
-<div class="cf-turnstile"
-     data-sitekey="0x4AAAAAACDxyOBfz7nDkjnq"
-     data-theme="light">
-</div>
-
-
+                    <!-- EXPLICIT TURNSTILE WIDGET -->
+                    <div id="turnstile-widget" class="turnstile-container"></div>
 
                     <button type="submit" class="btn-primary full-width">Get Free Quote Now</button>
                 </form>
@@ -665,11 +660,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </div>
 </section>
-
-<!-- Cloudflare Turnstile Script -->
-
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-
 <!-- ==================== FOOTER ==================== -->
 
 <footer class="footer">
@@ -742,6 +732,5 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ==================== SCRIPTS ==================== -->
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script src="script.js"></script>
-
 </body>
 </html>
