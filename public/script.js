@@ -1,11 +1,12 @@
 /* ============================================
-   script.js - FULLY UPDATED FOR NETLIFY + EXPLICIT TURNSTILE RENDERING
+   script.js - Updated for AUTOMATIC Cloudflare Turnstile + Netlify
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', function () {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
 
+    // Mobile menu toggle
     if (hamburger) {
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
@@ -13,14 +14,14 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // AUTO-FIX: Add rel="noopener noreferrer" to all target="_blank" links
+    // Add rel="noopener noreferrer" to external links
     document.querySelectorAll('a[target="_blank"]').forEach(link => {
         const rel = link.getAttribute('rel') || '';
         if (!rel.includes('noopener')) link.setAttribute('rel', rel + ' noopener');
         if (!rel.includes('noreferrer')) link.setAttribute('rel', (rel ? rel + ' ' : '') + 'noreferrer');
     });
 
-    // Smooth scrolling
+    // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -33,65 +34,20 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // ================== TURNSTILE EXPLICIT RENDERING ==================
-    let turnstileWidgetId = null;
-
-    function renderTurnstile() {
-        if (!window.turnstile) {
-            console.warn('Turnstile script not loaded yet');
-            return;
-        }
-
-        const container = document.getElementById('turnstile-widget');
-        if (!container) return;
-
-        // Remove any existing widget
-        if (turnstileWidgetId !== null) {
-            window.turnstile.remove(turnstileWidgetId);
-        }
-
-        turnstileWidgetId = window.turnstile.render('#turnstile-widget', {
-            sitekey: '0x4AAAAAACDxyOBfz7nDkjnq',
-            theme: 'light',
-            size: 'normal',
-            retry: 'auto',
-            'retry-delay': 8000,
-            callback: function (token) {
-                console.log('Turnstile solved:', token);
-            },
-            'error-callback': function () {
-                console.error('Turnstile error');
-            },
-            'expired-callback': function () {
-                console.log('Turnstile token expired');
-            }
-        });
-    }
-
-    // Render as soon as script is ready
-    if (window.turnstile) {
-        renderTurnstile();
-    } else {
-        // Fallback: wait for onload
-        window.onloadTurnstileCallback = function () {
-            renderTurnstile();
-        };
-    }
-
-    // ================== Booking form submission ==================
+    // ================== BOOKING FORM SUBMISSION (AUTOMATIC TURNSTILE) ==================
     const bookingForm = document.getElementById('booking-form');
     if (bookingForm) {
         bookingForm.addEventListener('submit', async function (e) {
             e.preventDefault();
 
             // Honeypot check
-            const honeypotField = bookingForm.querySelector('input[name="bot-field"]');
-            if (honeypotField && honeypotField.value) {
-                console.warn('Bot detected via honeypot');
+            const honeypot = bookingForm.querySelector('input[name="bot-field"]');
+            if (honeypot && honeypot.value) {
+                console.warn('Bot detected');
                 return;
             }
 
-            // Basic field validation
+            // Required fields validation
             const requiredFields = [
                 { id: 'name', name: 'Name' },
                 { id: 'phone', name: 'Phone Number' },
@@ -102,54 +58,47 @@ document.addEventListener('DOMContentLoaded', function () {
             ];
 
             let isValid = true;
-            let errorMessage = 'Please fill out the following required fields:\n';
+            let errorMsg = 'Please fill out the following required fields:\n';
 
             requiredFields.forEach(field => {
-                const input = document.getElementById(field.id);
-                if (!input.value.trim()) {
+                const el = document.getElementById(field.id);
+                if (!el?.value.trim()) {
                     isValid = false;
-                    errorMessage += `- ${field.name}\n`;
-                    input.classList.add('error');
+                    errorMsg += `– ${field.name}\n`;
+                    el?.classList.add('error');
                 } else {
-                    input.classList.remove('error');
+                    el?.classList.remove('error');
                 }
             });
 
-            // Get Turnstile token
-            let turnstileToken = '';
-            if (window.turnstile && turnstileWidgetId !== null) {
-                turnstileToken = window.turnstile.getResponse(turnstileWidgetId);
-            }
-
-            if (!turnstileToken) {
+            // Get Turnstile token (automatic mode – Cloudflare adds hidden input automatically)
+            const turnstileResponse = document.querySelector('input[name="cf-turnstile-response"]')?.value || '';
+            if (!turnstileResponse) {
                 isValid = false;
-                errorMessage += '- Please complete the "I’m not a robot" verification\n';
+                errorMsg += '– Please complete the "I’m not a robot" verification\n';
             }
 
             if (!isValid) {
-                alert(errorMessage);
+                alert(errorMsg);
                 return;
             }
 
-            // Step 1: Verify Turnstile via Netlify Function
+            // Step 1: Verify Turnstile token via Netlify Function
             try {
-                const verifyResponse = await fetch('/.netlify/functions/verify-turnstile', {
+                const verifyRes = await fetch('/.netlify/functions/verify-turnstile', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                    body: new URLSearchParams({ 'cf-turnstile-response': turnstileToken }).toString()
+                    body: new URLSearchParams({ 'cf-turnstile-response': turnstileResponse })
                 });
 
-                const verifyResult = await verifyResponse.json();
-
-                if (!verifyResponse.ok || verifyResult.message !== 'Verified') {
-                    alert('Security check failed. Please try again.');
-                    window.turnstile.reset(turnstileWidgetId);
+                const verifyData = await verifyRes.json();
+                if (!verifyRes.ok || verifyData.message !== 'Verified') {
+                    alert('Security verification failed. Please try again.');
                     return;
                 }
-            } catch (error) {
-                console.error('Turnstile verification error:', error);
+            } catch (err) {
+                console.error('Turnstile verification error:', err);
                 alert('Verification error. Please try again.');
-                window.turnstile.reset(turnstileWidgetId);
                 return;
             }
 
@@ -157,50 +106,46 @@ document.addEventListener('DOMContentLoaded', function () {
             const formData = new FormData(bookingForm);
 
             try {
-                const netlifyResponse = await fetch('/', {
+                const response = await fetch('/', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                     body: new URLSearchParams(formData).toString()
                 });
 
-                if (netlifyResponse.ok) {
+                if (response.ok) {
                     alert('Thank you! Your request has been submitted. We\'ll contact you shortly.');
                     bookingForm.reset();
-                    if (turnstileWidgetId !== null) window.turnstile.reset(turnstileWidgetId);
-
-                    // Analytics
+                    // Turnstile auto-resets in automatic mode
                     if (typeof fbq !== 'undefined') fbq('track', 'Schedule');
                     if (typeof gtag !== 'undefined') {
-                        gtag('event', 'booking_submitted', {
-                            event_category: 'Booking',
-                            event_label: 'Appointment'
-                        });
+                        gtag('event', 'booking_submitted', { event_category: 'Booking', event_label: 'Appointment' });
                     }
                 } else {
                     alert('Submission failed. Please call us at +27 64 290 3654');
                 }
-            } catch (error) {
-                console.error('Netlify submission error:', error);
-                alert('Submission error. Please try again or call us directly.');
+            } catch (err) {
+                console.error('Submission error:', err);
+                alert('Something went wrong. Please try again or call us directly.');
             }
         });
     }
 
-    // Facebook Pixel events
-    document.querySelectorAll('.service-btn, .btn-primary').forEach(button => {
-        button.addEventListener('click', () => {
+    // Facebook Pixel – Lead on button clicks
+    document.querySelectorAll('.service-btn, .btn-primary').forEach(btn => {
+        btn.addEventListener('click', () => {
             if (typeof fbq !== 'undefined') fbq('track', 'Lead');
         });
     });
 
-    // Swiper testimonial slider
+    // Swiper – Testimonial slider
     if (document.querySelector('.swiper-container')) {
         new Swiper('.swiper-container', {
             slidesPerView: 1,
             spaceBetween: 20,
+            loop: true,
             pagination: { el: '.swiper-pagination', clickable: true },
             navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-            autoplay: { delay: 5005 },
+            autoplay: { delay: 5000, disableOnInteraction: false },
             breakpoints: {
                 768: { slidesPerView: 2 },
                 1024: { slidesPerView: 3 }
@@ -216,10 +161,10 @@ document.addEventListener('DOMContentLoaded', function () {
         effect: 'fade',
         fadeEffect: { crossFade: true },
         pagination: { el: '.swiper-pagination', clickable: true },
-        grabCursor: true,
+        grabCursor: true
     });
 
-    // AOS init
+    // AOS animations
     if (typeof AOS !== 'undefined') {
         AOS.init({ duration: 800, once: true, offset: 100 });
     }
@@ -227,7 +172,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Stats counter
     const counters = document.querySelectorAll('.counter');
     if (counters.length) {
-        const observer = new IntersectionObserver((entries) => {
+        const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
                     entry.target.classList.add('counted');
@@ -239,28 +184,31 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function startCounter(el) {
-        const target = parseInt(el.getAttribute('data-target'));
+        const target = +el.getAttribute('data-target');
         const duration = 2200;
-        const start = performance.now();
-        const update = now => {
-            const elapsed = now - start;
+        const startTime = performance.now();
+
+        function update(now) {
+            const elapsed = now - startTime;
             const progress = Math.min(elapsed / duration, 1);
             const eased = 1 - Math.pow(1 - progress, 3);
             const current = Math.floor(eased * target);
             el.textContent = current.toLocaleString();
             if (progress < 1) requestAnimationFrame(update);
             else el.textContent = target.toLocaleString();
-        };
+        }
         requestAnimationFrame(update);
     }
 
-    // Service card tracking
+    // Service card click → scroll to form + prefill appliance
     document.querySelectorAll('.service-card').forEach(card => {
         card.addEventListener('click', function (e) {
             e.preventDefault();
             const service = this.getAttribute('data-service');
             if (typeof fbq !== 'undefined') {
-                fbq('track', 'Lead', { content_name: service.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()) });
+                fbq('track', 'Lead', {
+                    content_name: service.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
+                });
             }
             document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
             setTimeout(() => {
