@@ -624,6 +624,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                     <div class="form-group"><label for="message">Problem Description</label><textarea id="message" name="message" placeholder="Describe the issue in detail&#10;e.g., 'Fridge not cooling, making strange noise, LG model XYZ'" rows="4"></textarea></div>
 
+                    <!-- Cloudflare Turnstile -->
+                    <div class="cf-turnstile" data-sitekey="0x4AAAAAACDxyOBfz7nDkjnq"></div>
+
                     <button type="submit" class="btn-primary full-width">Get Free Quote Now</button>
                 </form>
             </div>
@@ -631,7 +634,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 </section>
 
+<!-- Cloudflare Turnstile Script -->
+
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
 <!-- ==================== FOOTER ==================== -->
+
 <footer class="footer">
     <div class="container">
         <div class="footer-grid">

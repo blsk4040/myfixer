@@ -1,5 +1,5 @@
 /* ============================================
-   script.js - FULLY UPDATED FOR NETLIFY FORM SUBMISSION & CENTURION
+   script.js - FULLY UPDATED FOR NETLIFY FORM SUBMISSION, CENTURION & TURNSTILE + HONEYPOT
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -39,12 +39,19 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Booking form submission with AJAX for Netlify
+    // ================== Booking form submission with AJAX (Netlify + Turnstile + Honeypot) ==================
     const bookingForm = document.getElementById('booking-form');
     if (bookingForm) {
-        bookingForm.addEventListener('submit', function(e) {
+        bookingForm.addEventListener('submit', async function(e) {
             e.preventDefault();
-            
+
+            // Honeypot check
+            const honeypotField = bookingForm.querySelector('input[name="website"]'); // Change 'website' if your hidden field has a different name
+            if (honeypotField && honeypotField.value) {
+                console.warn('Honeypot triggered, likely bot submission.');
+                return; // Block submission
+            }
+
             const requiredFields = [
                 { id: 'name', name: 'Name' },
                 { id: 'phone', name: 'Phone Number' },
@@ -53,10 +60,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 { id: 'service-type', name: 'Service Type' },
                 { id: 'appointment', name: 'Preferred Appointment Time' }
             ];
-            
+
             let isValid = true;
             let errorMessage = 'Please fill out the following required fields:\n';
-            
+
             requiredFields.forEach(field => {
                 const input = document.getElementById(field.id);
                 if (!input.value.trim()) {
@@ -68,35 +75,69 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
 
-            if (isValid) {
-                const formData = new FormData(bookingForm);
-                
-                fetch('/', {
+            // Check Turnstile response
+            const turnstileToken = window.turnstile && window.turnstile.getResponse ? window.turnstile.getResponse() : '';
+            if (!turnstileToken) {
+                isValid = false;
+                errorMessage += '- Please complete the Turnstile verification\n';
+            }
+
+            if (!isValid) {
+                alert(errorMessage);
+                return;
+            }
+
+            // Step 1: Verify Turnstile via Netlify Function
+            try {
+                const verifyResponse = await fetch('/.netlify/functions/verify-turnstile', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams({ 'cf-turnstile-response': turnstileToken }).toString()
+                });
+
+                const verifyResult = await verifyResponse.json();
+
+                if (!verifyResponse.ok || verifyResult.message !== 'Verified') {
+                    alert('Turnstile verification failed. Please try again.');
+                    return;
+                }
+            } catch (error) {
+                console.error('Turnstile verification error:', error);
+                alert('Error verifying Turnstile. Please try again.');
+                return;
+            }
+
+            // Step 2: Submit the form to Netlify
+            const formData = new FormData(bookingForm);
+
+            try {
+                const netlifyResponse = await fetch('/', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                     body: new URLSearchParams(formData).toString()
-                })
-                .then(response => {
-                    if (response.ok) {
-                        alert('Thank you! Your request has been submitted. We\'ll contact you soon to confirm.');
-                        bookingForm.reset();
-                        if (typeof fbq !== 'undefined') fbq('track', 'Schedule');
-                        if (typeof gtag !== 'undefined') {
-                            gtag('event', 'booking_submitted', {
-                                'event_category': 'Booking',
-                                'event_label': 'Appointment'
-                            });
-                        }
-                    } else {
-                        alert('Error submitting your form. Please try again or contact us at +27642903654.');
-                    }
-                })
-                .catch(error => {
-                    console.error('Form submission error:', error);
-                    alert('Error submitting your form. Please try again or contact us at +27642903654.');
                 });
-            } else {
-                alert(errorMessage);
+
+                if (netlifyResponse.ok) {
+                    alert('Thank you! Your request has been submitted. We\'ll contact you soon to confirm.');
+                    bookingForm.reset();
+
+                    // Reset Turnstile widget
+                    if (window.turnstile && window.turnstile.reset) window.turnstile.reset();
+
+                    // Analytics tracking
+                    if (typeof fbq !== 'undefined') fbq('track', 'Schedule');
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'booking_submitted', {
+                            'event_category': 'Booking',
+                            'event_label': 'Appointment'
+                        });
+                    }
+                } else {
+                    alert('Error submitting your form to Netlify. Please try again or contact us at +27642903654.');
+                }
+            } catch (error) {
+                console.error('Netlify form submission error:', error);
+                alert('Error submitting your form. Please try again or contact us at +27642903654.');
             }
         });
     }
