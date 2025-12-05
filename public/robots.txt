@@ -1,11 +1,11 @@
-# Cloudflare content signals — MUST be at the very top
-Content-signal: search=yes,ai-train=no
+# Cloudflare Content Signals
+Content-Signal: search=yes, ai-train=no
 
-# Allow everyone by default (needed for the Content-signal to work properly)
+# Default allow for all legitimate crawlers
 User-agent: *
 Allow: /
 
-# Explicitly allow major legitimate search engines (optional but nice)
+# --- Major Search Engines ---
 User-agent: Googlebot
 User-agent: Googlebot-Image
 User-agent: Googlebot-Mobile
@@ -15,7 +15,7 @@ User-agent: Yandex
 User-agent: Baiduspider
 Allow: /
 
-# Social media preview bots
+# --- Social Media Preview Bots ---
 User-agent: facebookexternalhit
 User-agent: Facebot
 User-agent: Twitterbot
@@ -24,21 +24,26 @@ User-agent: Pinterestbot
 User-agent: WhatsApp
 Allow: /
 
-# Block AI training / scraping bots
-User-agent: Anthropic-ai
-User-agent: Applebot-Extended
-User-agent: Amazonbot
-User-agent: Bytespider
-User-agent: CCBot
-User-agent: ChatGPT-User
-User-agent: Claude-Web
-User-agent: ClaudeBot
-User-agent: FacebookBot
-User-agent: Google-Extended
-User-agent: GPTBot
-User-agent: Meta-ExternalAgent
-User-agent: OAI-SearchBot
-User-agent: PerplexityBot
+# --- Block AI Training Bots ---
+User-agent: GPTBot*
+User-agent: OAI-SearchBot*
+User-agent: Google-Extended*
+User-agent: Applebot-Extended*
+User-agent: Anthropic-AI*
+User-agent: Claude-Web*
+User-agent: ClaudeBot*
+User-agent: PerplexityBot*
+User-agent: CCBot*
+User-agent: Meta-ExternalAgent*
+User-agent: Bytespider*
+User-agent: Amazonbot*
+User-agent: Diffbot*
+User-agent: Img2Dataset*
+User-agent: OmKaiBot*
+User-agent: OmGyanBot*
+User-agent: Togglebot*
+User-agent: *ai*
+User-agent: *AI*
 Disallow: /
 
 # Sitemap
