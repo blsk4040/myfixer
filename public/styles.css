@@ -128,16 +128,23 @@ body {
 }
 
 .hero-content h1 {
-    font-size: 4rem;
+    font-size: clamp(2.2rem, 4vw, 4rem);
     font-weight: 900;
     margin-bottom: 1.2rem;
     text-shadow: 0 4px 15px rgba(0,0,0,0.6);
     letter-spacing: 1px;
     animation: fadeInUp 1s ease-out;
+
+    text-align: center;        /* FORCE center */
+    max-width: 900px;          /* better line balance */
+    margin-left: auto;
+    margin-right: auto;
 }
 
+
+
 .hero-content p {
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 2vw, 1.5rem);
     font-weight: 500;
     margin-bottom: 2.5rem;
     max-width: 650px;
@@ -145,6 +152,7 @@ body {
     text-shadow: 0 2px 10px rgba(0,0,0,0.5);
     animation: fadeInUp 1.2s ease-out 0.2s;
     animation-fill-mode: both;
+    text-align: center;
 }
 
 @keyframes fadeInUp {
@@ -1523,43 +1531,6 @@ body {
     margin-bottom: 2rem;
 }
 
-.step-number {
-    width: 40px;
-    height: 40px;
-    background: #e74c3c;
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 1.1rem;
-    flex-shrink: 0;
-    box-shadow: 0 4px 15px rgba(231,76,60,0.3);
-}
-
-.step-content h4 {
-    font-size: 1.2rem;
-    color: #222;
-    margin-bottom: 0.3rem;
-    font-weight: 600;
-}
-
-.step-content p {
-    color: #666;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin: 0;
-}
-
-.process-flow .btn-primary {
-    display: block;
-    width: fit-content;
-    margin: 1.5rem auto 0;
-    padding: 14px 32px;
-    font-weight: 600;
-}
-
 .step-icon {
     width: 50px;
     height: 50px;
@@ -1606,6 +1577,28 @@ body {
     box-shadow: 0 10px 30px rgba(231,76,60,0.45);
 }
 
+.step-content h4 {
+    font-size: 1.2rem;
+    color: #222;
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+}
+
+.step-content p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.process-flow .btn-primary {
+    display: block;
+    width: fit-content;
+    margin: 1.5rem auto 0;
+    padding: 14px 32px;
+    font-weight: 600;
+}
+
 /* ============================================
    RESPONSIVE DESIGN
    ============================================ */
@@ -1648,7 +1641,7 @@ body {
     .footer-grid { grid-template-columns: 1fr; text-align: center; }
     .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
     .step { flex-direction: column; text-align: center; }
-    .step-number, .step-icon { margin: 0 auto 0.5rem; }
+    .step-icon { margin: 0 auto 0.5rem; }
     .process-flow { padding: 1.5rem; }
     .stat-number { font-size: 2.8rem; }
     .stat-icon { width: 70px; height: 70px; font-size: 1.8rem; }
@@ -1668,20 +1661,16 @@ body {
     .form-row { grid-template-columns: 1fr; }
 }
 
-
-
 /* ============================================
    NAVIGATION (Updated for Mobile Responsiveness)
    ============================================ */
-
-/* Ensure hamburger menu is styled */
 .hamburger {
-    display: none; /* Hidden by default on desktop */
+    display: none;
     cursor: pointer;
     width: 30px;
     height: 20px;
     position: relative;
-    z-index: 1001; /* Above nav-menu */
+    z-index: 1001;
 }
 
 .hamburger span {
@@ -1705,35 +1694,34 @@ body {
     transform: rotate(-45deg) translate(7px, -7px);
 }
 
-/* Responsive Design Updates */
 @media (max-width: 768px) {
     .navbar {
-        padding: 0.8rem 15px; /* Reduced padding for mobile */
+        padding: 0.8rem 15px;
     }
 
     .nav-container {
-        flex-direction: row; /* Keep logo, hamburger, and phone-btn on one line */
-        justify-content: space-between; /* Space out elements */
+        flex-direction: row;
+        justify-content: space-between;
         align-items: center;
     }
 
     .logo {
-        flex: 0 0 auto; /* Prevent logo from shrinking */
+        flex: 0 0 auto;
     }
 
     .hamburger {
-        display: block; /* Show hamburger on mobile */
+        display: block;
     }
 
     .nav-menu {
-        display: none; /* Hide menu by default */
+        display: none;
         position: absolute;
-        top: 100%; /* Position below navbar */
+        top: 100%;
         left: 0;
         right: 0;
         background: #fff;
         flex-direction: column;
-        gap: 0.5rem; /* Reduced gap for compactness */
+        gap: 0.5rem;
         padding: 1rem;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         z-index: 1000;
@@ -1741,25 +1729,24 @@ body {
     }
 
     .nav-menu.active {
-        display: flex; /* Show menu when hamburger is clicked */
+        display: flex;
     }
 
     .nav-menu li {
-        padding: 0.5rem 0; /* Add padding to menu items */
+        padding: 0.5rem 0;
     }
 
     .nav-menu a {
-        font-size: 1rem; /* Slightly smaller font for mobile */
+        font-size: 1rem;
         display: block;
         padding: 0.5rem;
     }
 
     .phone-btn {
-        padding: 8px 15px; /* Smaller button on mobile */
+        padding: 8px 15px;
         font-size: 0.9rem;
     }
 }
-
 
 /* ============================================
    FULL GALLERY PAGE
@@ -1823,12 +1810,10 @@ body {
     transform: scale(1.05);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .gallery-hero { padding: 120px 0 60px; }
     .gallery-grid { grid-template-columns: 1fr; }
 }
-
 
 /* ============================================
    GALLERY CTA BUTTON - PERFECTLY CENTERED
@@ -1857,7 +1842,6 @@ body {
     box-shadow: 0 15px 40px rgba(231, 76, 60, 0.4);
 }
 
-/* Mobile Optimization */
 @media (max-width: 768px) {
     .gallery-cta {
         margin: 2.5rem auto 0;
@@ -1875,12 +1859,11 @@ body {
     display: none !important;
 }
 
-
 /* ============== LOGO IMAGE – RESPONSIVE & HOVER ============== */
 .logo-img {
-    height: 50px;          /* Desktop size – change this if your logo looks too big/small */
+    height: 50px;
     width: auto;
-    max-width: 200px;      /* Safety limit */
+    max-width: 200px;
     display: block;
     transition: all 0.3s ease;
 }
@@ -1890,14 +1873,12 @@ body {
     transform: scale(1.03);
 }
 
-/* Tablet */
 @media (max-width: 992px) {
     .logo-img {
         height: 45px;
     }
 }
 
-/* Mobile */
 @media (max-width: 768px) {
     .logo-img {
         height: 40px;
@@ -1915,7 +1896,6 @@ body {
         height: 32px;
     }
 }
-
 
 /* ============================================
    SOCIAL + GUMTREE BADGE ROW (SAME LINE)
@@ -1956,7 +1936,6 @@ body {
     border: 0;
 }
 
-/* RESPONSIVE: Stack on mobile */
 @media (max-width: 768px) {
     .footer-social-row {
         flex-direction: column;
@@ -1993,3 +1972,104 @@ body {
     margin: 20px 0;
     text-align: center;
 }
+
+/* ==================== IMPROVED MOBILE TWEAKS ==================== */
+
+/* Better hero text scaling on tiny screens */
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: clamp(2.5rem, 10vw, 3.5rem);
+    }
+    .hero-content p {
+        font-size: clamp(1.1rem, 4vw, 1.4rem);
+    }
+}
+
+/* Flexible service cards – no fixed heights */
+@media (max-width: 768px) {
+    .service-card {
+        height: auto !important;
+        min-height: 340px;
+    }
+    .service-image {
+        height: 180px !important;
+    }
+    .service-content {
+        height: auto !important;
+        min-height: 160px;
+        padding: 20px 15px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-card {
+        min-height: unset;
+    }
+    .service-image {
+        height: 200px !important;
+    }
+}
+
+/* Cleaner navbar on mobile */
+@media (max-width: 768px) {
+    .nav-container {
+        justify-content: space-between;
+        padding: 0 10px;
+    }
+
+    .call-to-action {
+        margin-left: 15px;
+    }
+
+    .phone-btn {
+        padding: 8px 14px;
+        font-size: 0.85rem;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .phone-btn {
+        padding: 7px 12px;
+        font-size: 0.8rem;
+    }
+    
+    .phone-btn i {
+        display: none;
+    }
+}
+
+/* Ensure form rows stack cleanly on small screens */
+@media (max-width: 480px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Fix long heading truncation on mobile */
+@media (max-width: 768px) {
+    .services .section-header h2 {
+        white-space: normal;        /* Allow wrapping */
+        overflow: visible;          /* No hidden overflow */
+        text-overflow: clip;        /* No ellipsis */
+        line-height: 1.3;           /* Better readability when wrapped */
+        padding: 0 10px;            /* Optional: small side padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .services .section-header h2 {
+        font-size: clamp(2rem, 7vw, 2.8rem); /* Slightly smaller on tiny screens */
+    }
+}
+
+/* Allow wrapping on small screens */
+@media (max-width: 700px) {
+    .hero-content h1 {
+        white-space: normal;
+        font-size: 2rem;
+        text-align: center;
+    }
+}
+
+
