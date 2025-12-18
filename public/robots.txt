@@ -39,10 +39,6 @@ User-agent: OmGyanBot
 User-agent: Img2Dataset
 Disallow: /
 
-# Catch-all wildcard for anything containing "ai" (case-insensitive)
-User-agent: *ai*
-User-agent: *AI*
-Disallow: /
 
 # Sitemap
 Sitemap: https://myfixer.co.za/sitemap.xml
