@@ -1,16 +1,37 @@
 /* ============================================
-   script.js - Updated for AUTOMATIC Cloudflare Turnstile + Netlify
+   script.js - Final Version for MyFixer.co.za
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', function () {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
+    const navControls = document.querySelector('.nav-controls'); // For closing on outside click
 
     // Mobile menu toggle
-    if (hamburger) {
+    if (hamburger && navMenu) {
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking outside (on overlay or logo area)
+        document.addEventListener('click', (e) => {
+            if (
+                navMenu.classList.contains('active') &&
+                !navMenu.contains(e.target) &&
+                !navControls.contains(e.target)
+            ) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+
+        // Close menu on link click (better UX on mobile)
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
         });
     }
 
@@ -24,12 +45,19 @@ document.addEventListener('DOMContentLoaded', function () {
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const href = this.getAttribute('href');
+            if (href === '#') return;
+
+            const target = document.querySelector(href);
             if (target) {
+                e.preventDefault();
                 target.scrollIntoView({ behavior: 'smooth' });
-            } else {
-                window.location.href = this.getAttribute('href');
+                
+                // Close mobile menu if open
+                if (navMenu?.classList.contains('active')) {
+                    hamburger?.classList.remove('active');
+                    navMenu.classList.remove('active');
+                }
             }
         });
     });
@@ -71,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
 
-            // Get Turnstile token (automatic mode – Cloudflare adds hidden input automatically)
+            // Get Turnstile token
             const turnstileResponse = document.querySelector('input[name="cf-turnstile-response"]')?.value || '';
             if (!turnstileResponse) {
                 isValid = false;
@@ -115,7 +143,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (response.ok) {
                     alert('Thank you! Your request has been submitted. We\'ll contact you shortly.');
                     bookingForm.reset();
-                    // Turnstile auto-resets in automatic mode
                     if (typeof fbq !== 'undefined') fbq('track', 'Schedule');
                     if (typeof gtag !== 'undefined') {
                         gtag('event', 'booking_submitted', { event_category: 'Booking', event_label: 'Appointment' });
@@ -138,8 +165,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Swiper – Testimonial slider
-    if (document.querySelector('.swiper-container')) {
-        new Swiper('.swiper-container', {
+    if (document.querySelector('.testimonial-slider')) {
+        new Swiper('.testimonial-slider', {
             slidesPerView: 1,
             spaceBetween: 20,
             loop: true,
@@ -154,50 +181,21 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Hero carousel
-    new Swiper('.hero-swiper', {
-        loop: true,
-        autoplay: { delay: 5000, disableOnInteraction: false },
-        speed: 800,
-        effect: 'fade',
-        fadeEffect: { crossFade: true },
-        pagination: { el: '.swiper-pagination', clickable: true },
-        grabCursor: true
-    });
+    if (document.querySelector('.hero-swiper')) {
+        new Swiper('.hero-swiper', {
+            loop: true,
+            autoplay: { delay: 5000, disableOnInteraction: false },
+            speed: 800,
+            effect: 'fade',
+            fadeEffect: { crossFade: true },
+            pagination: { el: '.swiper-pagination', clickable: true },
+            grabCursor: true
+        });
+    }
 
     // AOS animations
     if (typeof AOS !== 'undefined') {
         AOS.init({ duration: 800, once: true, offset: 100 });
-    }
-
-    // Stats counter
-    const counters = document.querySelectorAll('.counter');
-    if (counters.length) {
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
-                    entry.target.classList.add('counted');
-                    startCounter(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-        counters.forEach(c => observer.observe(c));
-    }
-
-    function startCounter(el) {
-        const target = +el.getAttribute('data-target');
-        const duration = 2200;
-        const startTime = performance.now();
-
-        function update(now) {
-            const elapsed = now - startTime;
-            const progress = Math.min(elapsed / duration, 1);
-            const eased = 1 - Math.pow(1 - progress, 3);
-            const current = Math.floor(eased * target);
-            el.textContent = current.toLocaleString();
-            if (progress < 1) requestAnimationFrame(update);
-            else el.textContent = target.toLocaleString();
-        }
-        requestAnimationFrame(update);
     }
 
     // Service card click → scroll to form + prefill appliance
