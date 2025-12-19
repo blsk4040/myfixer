@@ -1,24 +1,11 @@
 # myfixer.co.za – robots.txt (December 2025)
-# We allow normal search engines but prohibit AI training / generative use
-# Express reservation of rights under Article 4 of EU Directive 2019/790
+# SEO-friendly, AI-bot blocking, future-proof
 
+# Allow all standard search engines full access
 User-agent: *
 Allow: /
 
-# Explicitly allow major search engines & social preview bots
-User-agent: Googlebot
-User-agent: Googlebot-Image
-User-agent: Bingbot
-User-agent: DuckDuckBot
-User-agent: Yandex
-User-agent: Baiduspider
-User-agent: facebookexternalhit
-User-agent: Twitterbot
-User-agent: LinkedInBot
-User-agent: Pinterestbot
-Allow: /
-
-# BLOCK ALL KNOWN AI TRAINING / GENERATIVE BOTS (2025)
+# BLOCK AI / GENERATIVE BOTS (scraping for LLM training)
 User-agent: GPTBot
 User-agent: ChatGPT-User
 User-agent: Google-Extended
@@ -37,8 +24,8 @@ User-agent: GrokBot
 User-agent: xAI
 User-agent: OmGyanBot
 User-agent: Img2Dataset
+User-agent: YouBot
 Disallow: /
-
 
 # Sitemap
 Sitemap: https://myfixer.co.za/sitemap.xml
