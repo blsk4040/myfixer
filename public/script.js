@@ -216,3 +216,28 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+// Smooth scroll without changing URL (prevents anchor indexing)
+document.querySelectorAll('.scroll-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault(); // Stop the default # jump and URL change
+
+        const targetId = this.getAttribute('href'); // e.g., "#about"
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+
+            // Optional: Close mobile menu if open (common on hamburger menus)
+            const navMenu = document.querySelector('.nav-menu');
+            const hamburger = document.querySelector('.hamburger');
+            if (navMenu && hamburger) {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+            }
+        }
+    });
+});
