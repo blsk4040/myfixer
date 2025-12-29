@@ -82,4 +82,15 @@
     <priority>0.9</priority>
   </url>
 
+
+<!-- Blog page -->
+<url>
+  <loc>https://myfixer.co.za/blog.html</loc>
+  <lastmod>2025-12-29</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.8</priority>
+</url>
+
+
+
 </urlset>
