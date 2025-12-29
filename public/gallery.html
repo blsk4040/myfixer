@@ -30,8 +30,10 @@
                     <li><a href="index.html#home">Home</a></li>
                     <li><a href="index.html#about">About</a></li>
                     <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html">Gallery</a></li>
+                    <li><a href="blog.html">Blog</a></li>
                     <li><a href="index.html#contact">Contact</a></li>
-                    <li><a href="gallery.html" class="active">Gallery</a></li>
+                    
                 </ul>
                 <div class="hamburger">
                     <span></span><span></span><span></span>
@@ -46,12 +48,13 @@
     </header>
 
     <!-- Gallery Hero -->
-    <section class="gallery-hero">
-        <div class="container">
-            <h1 data-aos="fade-up">Our Gallery</h1>
-            <p data-aos="fade-up" data-aos-delay="100"></p>
-        </div>
-    </section>
+    <section class="gallery-hero kente-bg">
+  <div class="container">
+      <h1>Our Gallery</h1>
+      <p>View our completed repairs & transformations!</p>
+  </div>
+</section>
+
 
     <!-- Gallery Grid -->
     <section class="gallery-full">
@@ -126,8 +129,8 @@
             <div class="footer-grid">
                 <!-- FIRST COLUMN: Socials + Gumtree Badge on same row -->
                 <div class="footer-column">
-    <h3>MyFixer Appliance Repair</h3>
-    <p>Expert repair services for fridges, washing machines, TVs, blenders, and more since 2021.</p>
+    <h3>myfixer Appliance Repair & Installation</h3>
+                <p>Fast, honest appliance repair & installation across Gauteng. Genuine parts • Same-day service • 100% satisfaction guarantee.</p>
     
     <div class="footer-social-row">
         <div class="social-links">
@@ -179,16 +182,18 @@
             <!-- FOOTER BOTTOM (clean, no badge here) -->
            <div class="footer-bottom">
     <p>
-        &copy; 2025 MyFixer Appliance Repair. All rights reserved. | 
+        &copy; 2025 myfixer Appliance Repair. All rights reserved. | 
         Designed by 
         <a href="https://nhx.co.za" target="_blank" rel="noopener noreferrer">www.nhx.co.za</a>
     </p>
     <ul class="footer-nav">
         <li><a href="index.html#home">Home</a></li>
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#services">Services</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html">Gallery</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    
     </ul>
 </div>
             </div>
@@ -204,5 +209,25 @@
         AOS.init({ duration: 800, once: true });
         Fancybox.bind("[data-fancybox]", {});
     </script>
+
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+    const currentPath = window.location.pathname.split('/').pop(); // e.g., "index.html" or "gallery.html"
+    const currentHash = window.location.hash;                        // e.g., "#about"
+    const navLinks = document.querySelectorAll('.nav-menu a');
+
+    navLinks.forEach(link => {
+        const linkHref = link.getAttribute('href');
+
+        // Highlight Gallery link on gallery.html
+        if ((currentPath === 'gallery.html' && linkHref === 'index.html') ||
+            linkHref === currentPath ||
+            linkHref === currentPath + currentHash ||
+            linkHref === currentHash) {
+            link.classList.add('active');
+        }
+    });
+});
+</script>
 </body>
 </html>

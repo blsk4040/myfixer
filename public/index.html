@@ -1,31 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-ZA">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
 
-    <!-- Favicon Placeholder -->
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="/favicon.png">
-    <link rel="apple-touch-icon" href="/favicon.png">
     <link rel="shortcut icon" href="/favicon.png">
 
-    <!--Canonical tag (homepage)-->
-    <link rel="canonical" href="https://www.myfixer.co.za/" />
+    <!-- Canonical -->
+    <link rel="canonical" href="https://www.myfixer.co.za">
 
-    <!-- SEO Optimized Title -->
+    <!-- SEO Title & Meta -->
     <title>Same-Day Appliance Repair & Installation in Centurion, Pretoria, JHB | MyFixer</title>
+    <meta name="description" content="Same-day appliance repair in Centurion, Pretoria & Johannesburg. Expert fixes for fridges, coffee machines, HVAC, washing machines & more. Certified techs. Call +27 64 290 3654 now!">
+    <meta name="keywords" content="appliance repair Centurion, fridge repair Pretoria, coffee machine repair Johannesburg, HVAC installation Gauteng, washing machine fix, TV repair near me, dishwasher repair Centurion">
 
-    <!-- Meta Description -->
-    <meta name="description"
-          content="Same-day appliance repair in Centurion, Pretoria & Johannesburg. Expert fixes for fridges, coffee machines, HVAC, washing machines & more. Certified techs. Call +27 64 290 3654 now!">
-    <meta name="keywords"
-          content="appliance repair Centurion, fridge repair Pretoria, coffee machine repair Johannesburg, HVAC installation Gauteng, washing machine fix, TV repair near me, dishwasher repair Centurion">
+    <!-- PWA Manifest & Theme -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#008037">
+
+    <!-- Apple Icons -->
+    <link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192.png">
+    <link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512.png">
 
     <!-- Open Graph -->
     <meta property="og:title" content="myfixer - Same-Day Appliance Repair in Centurion, Pretoria & JHB">
-    <meta property="og:description"
-          content="Trusted repairs for coffee machines, HVAC, fridges & more. Certified techs, genuine parts, 1hr response. Book now!">
+    <meta property="og:description" content="Trusted repairs for coffee machines, HVAC, fridges & more. Certified techs, genuine parts, 1hr response. Book now!">
     <meta property="og:image" content="https://myfixer.co.za/images/og-image.jpg">
     <meta property="og:url" content="https://myfixer.co.za">
     <meta property="og:type" content="website">
@@ -152,9 +154,13 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" media="print" onload="this.media='all'">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://unpkg.com">
 
     <!-- Cloudflare Turnstile -->
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
@@ -162,21 +168,27 @@
 <body>
 
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P5HC6KVP"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P5HC6KVP" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- ==================== HEADER ==================== -->
 <header>
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
-                <img src="img/myfixer_logo.png" alt="myfixer Logo" class="logo-img" loading="lazy" decoding="async">
+                <img src="img/myfixer_logo.png" 
+                     alt="myfixer Logo" 
+                     class="logo-img" 
+                     width="158" 
+                     height="63" 
+                     loading="lazy" 
+                     decoding="async">
             </div>
             <ul class="nav-menu">
                 <li><a href="#home" class="scroll-link">Home</a></li>
                 <li><a href="#about" class="scroll-link">About</a></li>
                 <li><a href="#services" class="scroll-link">Services</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="blog.html">Blog</a></li>
                 <li><a href="#contact" class="scroll-link">Contact</a></li>
             </ul>
             <div class="hamburger"><span></span><span></span><span></span></div>
@@ -193,7 +205,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="swiper-wrapper">
             <!-- Slide 1 -->
             <div class="swiper-slide">
-                <img src="img/background.webp" alt="Technician fixing fridge" class="hero-slide-img" loading="lazy" decoding="async">
+                <img src="img/background.webp" 
+                     alt="Technician fixing fridge" 
+                     class="hero-slide-img" 
+                     width="1920" 
+                     height="1080" 
+                     loading="eager" 
+                     decoding="async">
                 <div class="hero-overlay">
                     <div class="hero-content">
                         <h1>Fast & Reliable Appliance Repair & Installation</h1>
@@ -207,19 +225,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
             <!-- Slide 2 -->
             <div class="swiper-slide">
-    <img src="img/AC_02.jpg" alt="Washing machine repair" class="hero-slide-img" loading="lazy" decoding="async">
-    <div class="hero-overlay">
-        <div class="hero-content">
-            <h1>Reliable Experts You Can Count On</h1>
-            <p>Our certified technicians bring decades of combined experience in appliance repair and installation</p>
-            <div class="hero-buttons">
-                <a href="#contact" class="btn-primary scroll-link">Book Appointment</a>
-            </div>
-            <div class="hero-stats">
-                <div class="stat"><h3>98%</h3><p>Satisfaction</p></div>
-                <div class="stat"><h3>1-Hour</h3><p>Response</p></div>
-                <div class="stat"><h3>100%</h3><p>Guaranteed</p></div>
-                </div>
+                <img src="img/AC_02.jpg" 
+                     alt="Washing machine repair" 
+                     class="hero-slide-img" 
+                     width="1920" 
+                     height="1280" 
+                     loading="lazy" 
+                     decoding="async">
+                <div class="hero-overlay">
+                    <div class="hero-content">
+                        <h1>Reliable Experts You Can Count On</h1>
+                        <p>Our certified technicians bring decades of combined experience in appliance repair and installation</p>
+                        <div class="hero-buttons">
+                            <a href="#contact" class="btn-primary scroll-link">Book Appointment</a>
+                        </div>
+                        <div class="hero-stats">
+                            <div class="stat"><h3>98%</h3><p>Satisfaction</p></div>
+                            <div class="stat"><h3>1-Hour</h3><p>Response</p></div>
+                            <div class="stat"><h3>100%</h3><p>Guaranteed</p></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -254,7 +278,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
             <div class="about-image">
                 <div class="about-image-wrapper">
-                    <img src="img/home2-banner.png" alt="Technician repairing appliance" loading="lazy" decoding="async">
+                    <img src="img/home2-banner.png" 
+                         alt="Technician repairing appliance" 
+                         width="800" 
+                         height="600" 
+                         loading="lazy" 
+                         decoding="async">
                 </div>
             </div>
         </div>
@@ -465,7 +494,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="swiper-slide">
                     <div class="testimonial-card">
                         <div class="testimonial-header">
-                            <div class="testimonial-meta"><h4>Thabo Mokoena</h4><span class="location"><i class="fas fa-map-marker-alt"></i> Centurion</span></div>
+                            <div class="testimonial-meta">
+                                <div class="name">Thabo Mokoena</div>
+                                <span class="location"><i class="fas fa-map-marker-alt"></i> Centurion</span>
+                            </div>
                             <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                         </div>
                         <p>"Fixed my Samsung fridge in Centurion within 2 hours! Professional, fast, and affordable. Highly recommend myfixer for anyone in Gauteng!"</p>
@@ -476,7 +508,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="swiper-slide">
                     <div class="testimonial-card">
                         <div class="testimonial-header">
-                            <div class="testimonial-meta"><h4>Lindiwe Nkosi</h4><span class="location"><i class="fas fa-map-marker-alt"></i> Pretoria East</span></div>
+                            <div class="testimonial-meta">
+                                <div class="name">Lindiwe Nkosi</div>
+                                <span class="location"><i class="fas fa-map-marker-alt"></i> Pretoria East</span>
+                            </div>
                             <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                         </div>
                         <p>"My LG washing machine stopped spinning. Technician from Centurion came to Pretoria East same day and fixed it perfectly. 5 stars service!"</p>
@@ -487,7 +522,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="swiper-slide">
                     <div class="testimonial-card">
                         <div class="testimonial-header">
-                            <div class="testimonial-meta"><h4>Pieter van der Merwe</h4><span class="location"><i class="fas fa-map-marker-alt"></i> Sandton, Johannesburg</span></div>
+                            <div class="testimonial-meta">
+                                <div class="name">Pieter van der Merwe</div>
+                                <span class="location"><i class="fas fa-map-marker-alt"></i> Sandton, Johannesburg</span>
+                            </div>
                             <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                         </div>
                         <p>"Excellent TV repair! My 55\" Samsung was completely dead, now working perfectly. Fast service from Centurion to Sandton. Will use again!"</p>
@@ -498,7 +536,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="swiper-slide">
                     <div class="testimonial-card">
                         <div class="testimonial-header">
-                            <div class="testimonial-meta"><h4>Sarah Botha</h4><span class="location"><i class="fas fa-map-marker-alt"></i> Lyttelton, Centurion</span></div>
+                            <div class="testimonial-meta">
+                                <div class="name">Sarah Botha</div>
+                                <span class="location"><i class="fas fa-map-marker-alt"></i> Lyttelton, Centurion</span>
+                            </div>
                             <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                         </div>
                         <p>"Blender and microwave both fixed same day in Lyttelton! Centurion local service with genuine parts. myfixer is my go-to repair service!"</p>
@@ -509,7 +550,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="swiper-slide">
                     <div class="testimonial-card">
                         <div class="testimonial-header">
-                            <div class="testimonial-meta"><h4>Johan Pretorius</h4><span class="location"><i class="fas fa-map-marker-alt"></i> Pretoria North</span></div>
+                            <div class="testimonial-meta">
+                                <div class="name">Johan Pretorius</div>
+                                <span class="location"><i class="fas fa-map-marker-alt"></i> Pretoria North</span>
+                            </div>
                             <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                         </div>
                         <p>"Oven repair was perfect! From Centurion to Pretoria North, arrived on time and fixed my Bosch oven. Professional and reliable service!"</p>
@@ -520,7 +564,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="swiper-slide">
                     <div class="testimonial-card">
                         <div class="testimonial-header">
-                            <div class="testimonial-meta"><h4>Nomsa Dlamini</h4><span class="location"><i class="fas fa-map-marker-alt"></i> Fourways, Johannesburg</span></div>
+                            <div class="testimonial-meta">
+                                <div class="name">Nomsa Dlamini</div>
+                                <span class="location"><i class="fas fa-map-marker-alt"></i> Fourways, Johannesburg</span>
+                            </div>
                             <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                         </div>
                         <p>"Dryer wasn't heating properly. myfixer team came from Centurion to Fourways and sorted it out quickly. Great value for money!"</p>
@@ -531,7 +578,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="swiper-slide">
                     <div class="testimonial-card">
                         <div class="testimonial-header">
-                            <div class="testimonial-meta"><h4>Refilwe M.</h4><span class="location"><i class="fas fa-map-marker-alt"></i> Wierda Park, Centurion</span></div>
+                            <div class="testimonial-meta">
+                                <div class="name">Refilwe M.</div>
+                                <span class="location"><i class="fas fa-map-marker-alt"></i> Wierda Park, Centurion</span>
+                            </div>
                             <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                         </div>
                         <p>"My Nespresso machine stopped heating. myfixer came same day to Wierda Park, descaled it, fixed the pump — working like new! Best coffee machine repair in Centurion!"</p>
@@ -542,7 +592,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="swiper-slide">
                     <div class="testimonial-card">
                         <div class="testimonial-header">
-                            <div class="testimonial-meta"><h4>Kobus van Zyl</h4><span class="location"><i class="fas fa-map-marker-alt"></i> Moreleta Park, Pretoria</span></div>
+                            <div class="testimonial-meta">
+                                <div class="name">Kobus van Zyl</div>
+                                <span class="location"><i class="fas fa-map-marker-alt"></i> Moreleta Park, Pretoria</span>
+                            </div>
                             <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                         </div>
                         <p>"Installed a new Samsung AC unit in my home office. Professional HVAC installation in Pretoria — clean, fast, and explained everything. Highly recommend myfixer!"</p>
@@ -568,40 +621,68 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- ==================== CONTACT ==================== -->
-
 <section id="contact" class="contact">
     <img src="img/about-img3.jpg" alt="Contact background - Technician in Centurion" class="section-bg" loading="lazy" decoding="async">
     <div class="contact-overlay"></div>
     <div class="container">
         <div class="contact-grid">
+
+            <!-- CONTACT INFO -->
             <div class="contact-info">
                 <div class="contact-image-container">
                     <img src="img/about-img3.jpg" alt="myfixer technician ready to help in Centurion" class="contact-image" loading="lazy" decoding="async">
                 </div>
                 <h2>Get In Touch</h2>
                 <p>We're based in <strong>Centurion</strong> and serve <strong>Johannesburg & Pretoria</strong> areas</p>
+
                 <ul>
-                    <li><i class="fas fa-phone"></i> <a href="tel:+27642903654"><strong>+27 64 290 3654</strong></a></li>
-                    <li><i class="fas fa-whatsapp"></i> <a href="https://wa.me/27642903654" target="_blank" rel="noopener noreferrer">WhatsApp Us</a></li>
-                    <li><i class="fas fa-envelope"></i> <a href="mailto:info@myfixer.co.za">info@myfixer.co.za</a></li>
-                    <li><i class="fas fa-map-marker-alt"></i> 1 Sullivan Street, Die Hoewes, Centurion, 0157</li>
+                    <li><i class="fas fa-phone"></i> 
+                        <a href="tel:+27642903654"><strong>+27 64 290 3654</strong></a>
+                    </li>
+                    <li><i class="fas fa-whatsapp"></i> 
+                        <a href="https://wa.me/27642903654?text=Hello%20MyFixer%2C%20I%20need%20help%20with%20an%20appliance%20repair" 
+                           target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
+                    </li>
+                    <li><i class="fas fa-envelope"></i> 
+                        <a href="mailto:info@myfixer.co.za">info@myfixer.co.za</a>
+                    </li>
+                    <li><i class="fas fa-map-marker-alt"></i> 
+                        <a href="https://maps.google.com/?q=1+Sullivan+Street,+Die+Hoewes,+Centurion,+0157" 
+                           target="_blank" rel="noopener noreferrer">
+                        1 Sullivan Street, Die Hoewes, Centurion, 0157
+                        </a>
+                    </li>
                 </ul>
-                <div class="contact-cta"><a href="tel:+27642903654" class="emergency-btn">Emergency Call Now</a></div>
+
+                <div class="contact-cta">
+                    <a href="tel:+27642903654" class="emergency-btn">Emergency Call Now</a>
+                </div>
             </div>
 
-                <div class="booking-form-container">
+            <!-- BOOKING FORM -->
+            <div class="booking-form-container">
                 <h2>Book Your Appointment</h2>
                 <p>Fast response • Same-day service available in Centurion, Pretoria & Johannesburg</p>
-                <form id="booking-form" class="booking-form" name="schedule-repair" data-netlify="true" netlify-honeypot="bot-field">
+
+                <form id="booking-form" class="booking-form" name="schedule-repair" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
                     <input type="hidden" name="form-name" value="schedule-repair">
                     <p class="hidden"><label>Don't fill this out if you're human: <input name="bot-field"></label></p>
 
                     <div class="form-row">
-                        <div class="form-group"><label for="name">Your Name *</label><input type="text" id="name" name="name" placeholder="Enter your full name" required></div>
-                        <div class="form-group"><label for="phone">Phone Number *</label><input type="tel" id="phone" name="phone" placeholder="+27 82 123 4567" required></div>
+                        <div class="form-group">
+                            <label for="name">Your Name *</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+27 82 123 4567" required>
+                        </div>
                     </div>
 
-                    <div class="form-group"><label for="email">Email Address</label><input type="email" id="email" name="email" placeholder="your@email.com"></div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="your@email.com">
+                    </div>
 
                     <div class="form-row">
                         <div class="form-group">
@@ -620,6 +701,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 <option value="other">Other</option>
                             </select>
                         </div>
+
                         <div class="form-group">
                             <label for="service-type">Service Type *</label>
                             <select id="service-type" name="service-type" required>
@@ -632,11 +714,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </div>
                     </div>
 
-                    <div class="form-group"><label for="address">Service Address *</label><textarea id="address" name="address" placeholder="Enter your full address&#10;e.g., 123 Main St, Lyttelton, Centurion, 0157" rows="3" required></textarea></div>
+                    <div class="form-group">
+                        <label for="address">Service Address *</label>
+                        <textarea id="address" name="address" placeholder="Enter your full address&#10;e.g., 123 Main St, Lyttelton, Centurion, 0157" rows="3" required></textarea>
+                    </div>
 
                     <div class="form-row">
-                        <div class="form-group"><label for="appointment">Preferred Time *</label><input type="datetime-local" id="appointment" name="appointment" required></div>
-                        <div class="form-group"><label for="urgency">Urgency Level</label>
+                        <div class="form-group">
+                            <label for="appointment">Preferred Date & Time *</label>
+                            <input type="datetime-local" id="appointment" name="appointment" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="urgency">Urgency Level</label>
                             <select id="urgency" name="urgency">
                                 <option value="normal">Normal (Next available)</option>
                                 <option value="urgent">Urgent (Same Day)</option>
@@ -645,11 +735,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </div>
                     </div>
 
-                    <div class="form-group"><label for="message">Problem Description or Installation Details</label><textarea id="message" name="message" placeholder="Describe the issue or what you need installed&#10;e.g., 'Fridge not cooling' or 'Install new Samsung double-door fridge'" rows="4"></textarea></div>
+                    <div class="form-group">
+                        <label for="message">Problem Description or Installation Details</label>
+                        <textarea id="message" name="message" placeholder="Describe the issue or what you need installed&#10;e.g., 'Fridge not cooling' or 'Install new Samsung double-door fridge'" rows="4"></textarea>
+                    </div>
 
+                    <!-- Turnstile Verification -->
                     <div class="cf-turnstile turnstile-container" data-sitekey="0x4AAAAAACDxyOBfz7nDkjnq" data-theme="light"></div>
+                    <input type="hidden" name="cf-turnstile-response" id="cf-turnstile-response">
 
                     <button type="submit" class="btn-primary full-width">Book Appointment</button>
+
+                    <p class="small-text">
+                     We respond within 10–30 minutes during working hours • Your details are safe with us
+                    </p>
+
                 </form>
             </div>
         </div>
@@ -706,6 +806,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <li><a href="#about" class="scroll-link">About</a></li>
                 <li><a href="#services" class="scroll-link">Services</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="blog.html">Blog</a></li>
                 <li><a href="#contact" class="scroll-link">Contact</a></li>
             </ul>
         </div>
@@ -716,17 +817,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
 <script src="script.js" defer></script>
 
-<!-- ==================== HIDDEN SEO LINKS ==================== -->
-<div class="seo-hidden-links">
-    <a href="fridge-repair-centurion.html" rel="nofollow">Fridge & Refrigerator Repair in Centurion</a>
-    <a href="washing-machine-repair-centurion.html" rel="nofollow">Washing Machine Repair in Centurion</a>
-    <a href="tv-repair-centurion.html" rel="nofollow">TV Repair in Centurion</a>
-    <a href="hvac-installation-servicing-centurion.html" rel="nofollow">HVAC & Aircon Repair & Installation in Centurion</a>
-    <a href="dishwasher-repair-centurion.html" rel="nofollow">Dishwasher Repair in Centurion</a>
-    <a href="oven-stove-repair-centurion.html" rel="nofollow">Oven & Stove Repair in Centurion</a>
-    <a href="microwave-repair-centurion.html" rel="nofollow">Microwave Repair in Centurion</a>
-    <a href="coffee-machine-repair-centurion.html" rel="nofollow">Coffee Machine Repair in Centurion</a>
-    <a href="aircon-installation-centurion.html" rel="nofollow">Aircon Installation in Centurion</a>
-</div>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    // ---- Active nav link ----
+    const currentPath = window.location.pathname.split('/').pop(); // e.g., "index.html"
+    const currentHash = window.location.hash;                        // e.g., "#about"
+    const navLinks = document.querySelectorAll('.nav-menu a');
+
+    navLinks.forEach(link => {
+        const linkHref = link.getAttribute('href');
+
+        // Match either the page name or the page + anchor
+        if (linkHref === currentPath || linkHref === currentPath + currentHash || linkHref === currentHash) {
+            link.classList.add('active');
+        }
+    });
+
+    // ---- Capture Turnstile Token ----
+    document.body.addEventListener("turnstile-token", function (event) {
+        const tokenField = document.getElementById("cf-turnstile-response");
+        if (tokenField && event.token) {
+            tokenField.value = event.token;
+        }
+    });
+});
+</script>
+
 </body>
 </html>
