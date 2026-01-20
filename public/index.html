@@ -16,6 +16,7 @@
     <title>Same-Day Appliance Repair & Installation in Centurion, Pretoria, Johannesburg | MyFixer</title>
     <meta name="description" content="Same-day appliance repair in Centurion, Pretoria & Johannesburg. Expert fixes for fridges, coffee machines, HVAC, washing machines & more. Certified techs. Call +27 64 290 3654 now!">
     <meta name="keywords" content="appliance repair Centurion, fridge repair Pretoria, coffee machine repair Johannesburg, HVAC installation Gauteng, washing machine fix, TV repair near me, dishwasher repair Centurion">
+    <meta name="msvalidate.01" content="46666A8F245FBC13E06B72424F08017E" />
 
     <!-- PWA Manifest & Theme -->
     <link rel="manifest" href="/manifest.json">
@@ -32,7 +33,7 @@
     <meta property="og:url" content="https://myfixer.co.za">
     <meta property="og:type" content="website">
 
-    <!-- ULTIMATE LOCAL BUSINESS SCHEMA + REAL REVIEWS (2025-ready) -->
+    <!-- ULTIMATE LOCAL BUSINESS SCHEMA + REAL REVIEWS (2026-ready) -->
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -82,7 +83,6 @@
     "TV Repair",
     "Coffee Machine Repair",
     "HVAC & Aircon Repair & Installation"
-    
   ]
 }
     </script>
@@ -106,6 +106,76 @@
 
     <!-- Cloudflare Turnstile -->
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+    <!-- Dropdown Styles -->
+    <style>
+        /* ==================== DROPDOWN MENU ==================== */
+        .dropdown {
+          position: relative;
+        }
+
+        .dropdown-toggle {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          cursor: pointer;
+        }
+
+        .dropdown-menu {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          background: white;
+          min-width: 240px;
+          box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+          border-radius: 8px;
+          overflow: hidden;
+          z-index: 1000;
+          margin-top: 8px;
+        }
+
+        .dropdown-menu li {
+          border-bottom: 1px solid #eee;
+        }
+
+        .dropdown-menu li:last-child {
+          border-bottom: none;
+        }
+
+        .dropdown-menu a {
+          display: block;
+          padding: 12px 20px;
+          color: #333;
+          text-decoration: none;
+          font-size: 15px;
+          transition: all 0.2s ease;
+        }
+
+        .dropdown-menu a:hover {
+          background: #f8f9fa;
+          color: #008037;
+          padding-left: 28px;
+        }
+
+        /* Show on hover (desktop) */
+        @media (min-width: 992px) {
+          .dropdown:hover .dropdown-menu {
+            display: block;
+          }
+        }
+
+        /* Mobile: click toggle */
+        @media (max-width: 991px) {
+          .dropdown-menu {
+            position: static;
+            box-shadow: none;
+            background: #f8f9fa;
+            margin: 0;
+            padding-left: 20px;
+          }
+        }
+    </style>
 </head>
 <body>
 
@@ -128,7 +198,22 @@
             <ul class="nav-menu">
                 <li><a href="#home" class="scroll-link">Home</a></li>
                 <li><a href="#about" class="scroll-link">About</a></li>
-                <li><a href="#services" class="scroll-link">Services</a></li>
+
+                <!-- Services with Dropdown (this is the only updated part) -->
+                <li class="dropdown">
+                    <span class="dropdown-toggle scroll-link">Services <i class="fas fa-chevron-down"></i></span>
+                    <ul class="dropdown-menu">
+                        <li><a href="fridge-repair-centurion.html">Refrigerator Repair</a></li>
+                        <li><a href="washingmachine-repair-centurion.html">Washing Machine Repair</a></li>
+                        <li><a href="dishwasher-repair-centurion.html">Dishwasher Repair</a></li>
+                        <li><a href="stove-oven-repair-centurion.html">Stove & Oven Repair</a></li>
+                        <li><a href="microwave-repair-centurion.html">Microwave Repair</a></li>
+                        <li><a href="tv-repair-centurion.html">TV Repair</a></li>
+                        <li><a href="coffeemachine-repair-centurion.html">Coffee Machine Repair</a></li>
+                        <li><a href="hvac-repair-centurion.html">HVAC & Air Conditioner Repair</a></li>
+                    </ul>
+                </li>
+
                 <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="#contact" class="scroll-link">Contact</a></li>
@@ -386,6 +471,7 @@
         </div>
     </div>
 </section>
+
 <!-- ==================== WHY CHOOSE US ==================== -->
 <section class="why-choose">
     <div class="container">
@@ -742,7 +828,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2025 myfixer Appliance Repair & Installation. All rights reserved. | Designed by <a href="https://nhx.co.za" target="_blank" rel="noopener noreferrer">www.nhx.co.za</a></p>
+            <p>&copy; 2026 myfixer Appliance Repair & Installation. All rights reserved. | Designed by <a href="https://nhx.co.za" target="_blank" rel="noopener noreferrer">www.nhx.co.za</a></p>
             <ul class="footer-nav">
                 <li><a href="#home" class="scroll-link">Home</a></li>
                 <li><a href="#about" class="scroll-link">About</a></li>
@@ -782,7 +868,38 @@ document.addEventListener('DOMContentLoaded', function () {
             tokenField.value = event.token;
         }
     });
+
+    // ---- Mobile dropdown toggle + auto-close after click ----
+    document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+      toggle.addEventListener('click', function(e) {
+        if (window.innerWidth <= 991) {
+          e.preventDefault(); // prevent any default action
+          const dropdownMenu = this.nextElementSibling;
+          dropdownMenu.style.display = 
+            dropdownMenu.style.display === 'block' ? 'none' : 'block';
+        }
+      });
+    });
+
+    // Close dropdown when clicking a service link (mobile)
+    document.querySelectorAll('.dropdown-menu a').forEach(link => {
+      link.addEventListener('click', function() {
+        if (window.innerWidth <= 991) {
+          const dropdownMenu = this.closest('.dropdown-menu');
+          if (dropdownMenu) dropdownMenu.style.display = 'none';
+        }
+      });
+    });
 });
+
+const dropdownToggle = document.querySelector(".dropdown-toggle");
+const menu = document.querySelector(".dropdown-menu");
+
+if (dropdownToggle) {
+  dropdownToggle.addEventListener("click", () => {
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+  });
+}
 </script>
 
 </body>
