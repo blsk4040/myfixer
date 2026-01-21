@@ -1458,10 +1458,28 @@ body {
 
 /* Desktop hover – keep this untouched */
 @media (min-width: 992px) {
+  .dropdown-menu {
+    display: none;
+  }
+
   .dropdown:hover .dropdown-menu {
     display: block;
   }
 }
+
+/* Mobile click ONLY */
+@media (max-width: 991px) {
+  .nav-menu.active {
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+
+
+  .dropdown.active .dropdown-menu {
+    display: block;
+  }
+}
+
 
 @media (max-width: 1200px) {
     .why-choose-grid { grid-template-columns: repeat(2, 1fr); }
@@ -2183,3 +2201,7 @@ body {
     padding: 20px 0;     /* spacing at top/bottom */
   }
 }
+
+
+
+
