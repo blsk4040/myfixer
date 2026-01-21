@@ -1412,9 +1412,55 @@ body {
 /* ============================================
    RESPONSIVE DESIGN
    ============================================ */
-@media (max-width: 1400px) {
-    .why-choose-grid { gap: 2rem; }
-    .why-choose-card { min-height: 450px; }
+@media (max-width: 991px) {
+    .nav-menu.active {
+        display: block !important;  /* Ensure menu stays open during dropdown interactions */
+    }
+
+    .dropdown-menu {
+        display: none;  /* Default hidden */
+        position: static;
+        box-shadow: none;
+        background: #f8f9fa;
+        margin: 10px 0;
+        padding: 10px 20px;
+        border-radius: 8px;
+    }
+
+    .dropdown-menu li {
+        border-bottom: none;  /* Clean up for mobile */
+    }
+
+    .dropdown-menu a {
+        padding: 10px 0;
+        display: block;
+    }
+
+    /* ────────────────────────────────────────────────
+       FIX: Make dropdown service links same size as main nav
+       ──────────────────────────────────────────────── */
+    .nav-menu a,
+    .dropdown-menu a,
+    .dropdown-toggle {
+        font-size: 1rem !important;
+        font-weight: 500;
+        color: #333;
+    }
+
+    .dropdown-menu a {
+        padding: 0.5rem 0;
+    }
+
+    .dropdown-toggle {
+        padding: 0.5rem;
+    }
+}
+
+/* Desktop hover – keep this untouched */
+@media (min-width: 992px) {
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -1792,9 +1838,6 @@ body {
     }
 }
 
-
-
-
 /* ============================================
    FORCE-HIDE SEO LINKS (ABSOLUTE)
    ============================================ */
@@ -1812,11 +1855,9 @@ body {
     z-index: -9999 !important;
 }
 
-
 /*=====================================
     Blog Page {Detailed Appliance Guides}
 ================================================= */
-
 
 .blog-article {
     max-width: 1000px;
@@ -1922,6 +1963,7 @@ body {
         padding: 20px;
     }
 }
+
 /* Blog Appliance image */
 
 /* Blog grid cards - match index.html services exactly */
@@ -1952,7 +1994,6 @@ body {
     padding: 20px;
 }
 
-
 /* Optional: Reduce side space in footer only */
 .footer > .container {
     padding: 0 10px; /* Less padding */
@@ -1963,7 +2004,6 @@ body {
         padding: 0; /* No side padding on wide screens */
     }
 }
-
 
 @media (max-width: 1200px) and (min-width: 768px) {
     .hero {
@@ -1989,16 +2029,12 @@ body {
     cursor: pointer;       /* shows it’s clickable */
 }
 
-
 /* Nav menu - highlight current page */
 .nav-menu a.active {
     color: #e74c3c;         /* or your accent color */
     font-weight: bold;       /* optional */
     border-bottom: 2px solid #e74c3c; /* optional underline effect */
 }
-
-
-
 
 /* ============================================
     BACKGROUND FOR GALLERY HERO
@@ -2025,11 +2061,6 @@ body {
     opacity: 0.9;
 }
 
-
-
-
-
-
 .booking-form-container p.small-text,
 .contact-info p.small-text,
 .testimonial-card p.small-text,
@@ -2042,40 +2073,113 @@ body {
 
 
 
+/* ===============================
+   UNIVERSAL NAV DROPDOWN
+   Desktop Hover + Mobile Click
+   =============================== */
 
+.dropdown {
+  position: relative;
+}
 
+/* Toggle link */
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
 
-/* ================= BLOG GRID / SERVICE CARD IMAGE FIXES ================= */
+/* Menu container */
+.dropdown-menu {
+  list-style: none;
+  margin: 0;
+  padding: 6px 0;
+  background: #ffffff;
+  min-width: 240px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: all 0.2s ease;
+  z-index: 9999;
+}
 
-/* Ensure images fit well in cards */
-.blog-grid .service-image img {
-    width: 100%;
-    height: 200px;       /* Adjust as needed */
-    object-fit: contain; /* Keeps aspect ratio */
-    border-radius: 15px;
+/* Links */
+.dropdown-menu a {
+  display: block;
+  padding: 12px 20px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+/* Hover state */
+.dropdown-menu a:hover {
+  background: #f5f7f9;
+  color: #008037;
+  padding-left: 28px;
+}
+
+/* Divider */
+.dropdown-menu li:not(:last-child) a {
+  border-bottom: 1px solid #eee;
+}
+
+/* ===== DESKTOP (hover) ===== */
+@media (min-width: 992px) {
+  .dropdown:hover > .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+}
+
+/* ===== MOBILE (click) ===== */
+@media (max-width: 991px) {
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    border-radius: 0;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    display: none;
+    background: #f8f9fa;
+    padding-left: 16px;
+  }
+
+  .dropdown-menu.show {
     display: block;
+  }
+
+  .dropdown-menu a {
+    padding: 10px 0;
+    font-size: 16px;
+  }
+
+  .dropdown-menu a:hover {
+    padding-left: 12px;
+  }
 }
 
-/* Remove underline from text inside blog-grid links */
-.blog-grid a {
-    text-decoration: none;
-    color: inherit;
-}
 
-/* Optional: Card styling & hover effect */
-.blog-grid a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 15px;
-    background: #fff;
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
 
-.blog-grid a:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+/* ===== Mobile Menu Scroll ===== */
+@media (max-width: 991px) {
+  .nav-menu {
+    height: 100vh;       /* take full screen height */
+    overflow-y: auto;    /* allow scrolling if content is taller */
+    background: #fff;    /* optional: keep menu visible */
+    padding: 20px 0;     /* spacing at top/bottom */
+  }
 }
-

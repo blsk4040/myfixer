@@ -22,75 +22,7 @@
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
 
-  <!-- Dropdown Styles -->
-    <style>
-        /* ==================== DROPDOWN MENU ==================== */
-        .dropdown {
-          position: relative;
-        }
-
-        .dropdown-toggle {
-          display: flex;
-          align-items: center;
-          gap: 6px;
-          cursor: pointer;
-        }
-
-        .dropdown-menu {
-          display: none;
-          position: absolute;
-          top: 100%;
-          left: 0;
-          background: white;
-          min-width: 240px;
-          box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-          border-radius: 8px;
-          overflow: hidden;
-          z-index: 1000;
-          margin-top: 8px;
-        }
-
-        .dropdown-menu li {
-          border-bottom: 1px solid #eee;
-        }
-
-        .dropdown-menu li:last-child {
-          border-bottom: none;
-        }
-
-        .dropdown-menu a {
-          display: block;
-          padding: 12px 20px;
-          color: #333;
-          text-decoration: none;
-          font-size: 15px;
-          transition: all 0.2s ease;
-        }
-
-        .dropdown-menu a:hover {
-          background: #f8f9fa;
-          color: #008037;
-          padding-left: 28px;
-        }
-
-        /* Show on hover (desktop) */
-        @media (min-width: 992px) {
-          .dropdown:hover .dropdown-menu {
-            display: block;
-          }
-        }
-
-        /* Mobile: click toggle */
-        @media (max-width: 991px) {
-          .dropdown-menu {
-            position: static;
-            box-shadow: none;
-            background: #f8f9fa;
-            margin: 0;
-            padding-left: 20px;
-          }
-        }
-    </style>
+  
 </head>
 <body>
 
@@ -101,14 +33,20 @@
       <div class="logo">
         <img src="img/myfixer_logo.png" alt="MyFixer Logo" width="158" height="63">
       </div>
+      <!-- Hamburger -->
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
       <ul class="nav-menu">
   <li><a href="index.html">Home</a></li>
   <li><a href="index.html#about">About</a></li>
 
   <li class="dropdown">
-    <span class="dropdown-toggle scroll-link">
+    <a class="dropdown-toggle scroll-link">
       Services <i class="fas fa-chevron-down"></i>
-    </span>
+    </a>
     <ul class="dropdown-menu">
       <li><a href="fridge-repair-centurion.html">Refrigerator Repair</a></li>
       <li><a href="washingmachine-repair-centurion.html">Washing Machine Repair</a></li>
