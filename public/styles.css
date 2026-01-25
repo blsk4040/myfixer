@@ -2219,3 +2219,13 @@ body {
     display: block !important;
   }
 }
+
+
+
+
+.dropdown-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
