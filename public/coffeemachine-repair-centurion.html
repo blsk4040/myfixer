@@ -20,6 +20,111 @@
 
   <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+  <!-- Local Business + Service Schema -->
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Coffee Machine Repair",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "MyFixer Appliance Repair & Installation",
+    "url": "https://www.myfixer.co.za",
+    "telephone": "+27642903654",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1 Sullivan Street, Die Hoewes",
+      "addressLocality": "Centurion",
+      "addressRegion": "Gauteng",
+      "postalCode": "0157",
+      "addressCountry": "ZA"
+    }
+  },
+  "areaServed": [
+    {"@type": "Place", "name": "Centurion"},
+    {"@type": "Place", "name": "Pretoria"},
+    {"@type": "Place", "name": "Johannesburg"},
+    {"@type": "Place", "name": "Roodepoort"},
+    {"@type": "Place", "name": "Randburg"},
+    {"@type": "Place", "name": "Sandton"},
+    {"@type": "Place", "name": "Midrand"},
+    {"@type": "Place", "name": "Fourways"},
+    {"@type": "Place", "name": "Gauteng"}
+  ],
+  "description": "Expert same-day coffee machine repair in Centurion, Pretoria, Johannesburg, Roodepoort, Randburg and Gauteng. Nespresso, Delonghi, Saeco, Jura & more.",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Coffee Machine Repair Services",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "No Heating / Boiler Issues"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Pump Failure & Pressure Problems"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Grinder & Bean Hopper Repair"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Water Flow & Descaling"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Milk Frother & Steam Wand Fix"}}
+    ]
+  }
+}
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does coffee machine repair cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Costs usually range from R550–R1800 depending on the fault (e.g., descaling vs pump replacement). We diagnose first and give an upfront quote."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you repair Nespresso, Delonghi, or Jura machines?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — we repair Nespresso, Delonghi, Saeco, Jura, Krups, Philips, Gaggia, and most pod/capsule or bean-to-cup machines."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is my coffee machine not heating up?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Common causes include scale buildup, faulty thermostat/heater, or pump issues. We descale, test, and repair same-day where possible."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you fix coffee machines same-day in Pretoria?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — same-day service is available in Centurion, Pretoria, Johannesburg, Randburg, Roodepoort, and most Gauteng areas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do coffee machine repairs come with a warranty?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — full workmanship warranty on every job, plus parts warranty where applicable."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a coffee machine repair take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most jobs take 1–2 hours on-site. Complex issues (e.g., grinder rebuild) may need parts and a follow-up visit."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -128,58 +233,59 @@
 
 <!-- ==================== FOOTER ==================== -->
 <footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-column">
-        <h3>Myfixer Appliance Repair & Installation</h3>
-        <p>Fast, honest appliance repair & installation across Gauteng. Genuine parts • Same-day service • 100% satisfaction guarantee.</p>
-        <div class="footer-social-row">
-          <div class="social-links">
-            <a href="https://www.facebook.com/myfixerpage" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.twitter.com/myfixer" target="_blank" rel="noopener noreferrer" aria-label="Twitter / X"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.instagram.com/myfixer" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          </div>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h3>Myfixer Appliance Repair & Installation</h3>
+                <p>Fast, honest appliance repair & installation across Gauteng. Genuine parts • Same-day service • 100% satisfaction guarantee.</p>
+                
+                <div class="footer-social-row">
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/myfixerpage" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.twitter.com/myfixer" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/myfixer" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <div class="gumtree-badge-inline">
+                        <a rel="noopener" href="https://www.gumtree.co.za/u-seller-listings/myfixer/v1u134413046p1" target="_blank" title="Find all my products at Gumtree">
+                            <img src="https://classistatic.gumtree.co.za/assets/images/en_ZA/sellerBadge_large-b186c52131.jpg" alt="Find all my products at Gumtree" loading="lazy" decoding="async">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Working Hours</h3>
+                <ul>
+                    <li>Monday - Saturday: 8:30 AM - 6:30 PM</li>
+                    <li>Sunday: Closed</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><i class="fas fa-phone"></i> <a href="tel:+27642903654">+27 64 290 3654</a></li>
+                    <li><i class="fas fa-envelope"></i> <a href="mailto:info@myfixer.co.za">info@myfixer.co.za</a></li>
+                    <li><i class="fas fa-map-marker-alt"></i> 1 Sullivan Street, Die Hoewes, Centurion, 0157</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Emergency Service</h3>
+                <p>24/7 Emergency Service</p>
+                <a href="tel:+27642903654" class="emergency-btn"><i class="fas fa-phone"></i> +27 64 290 3654</a>
+            </div>
         </div>
-      </div>
 
-      <div class="footer-column">
-        <h3>Working Hours</h3>
-        <ul>
-          <li>Monday - Saturday: 8:30 AM - 6:30 PM</li>
-          <li>Sunday: Closed</li>
-        </ul>
-      </div>
-
-      <div class="footer-column">
-        <h3>Contact Us</h3>
-        <ul>
-          <li><i class="fas fa-phone"></i> <a href="tel:+27642903654">+27 64 290 3654</a></li>
-          <li><i class="fas fa-envelope"></i> <a href="mailto:info@myfixer.co.za">info@myfixer.co.za</a></li>
-          <li><i class="fas fa-map-marker-alt"></i> 1 Sullivan Street, Die Hoewes, Centurion, 0157</li>
-        </ul>
-      </div>
-
-      <div class="footer-column">
-        <h3>Emergency Service</h3>
-        <p>24/7 Emergency Service</p>
-        <a href="tel:+27642903654" class="emergency-btn">
-          <i class="fas fa-phone"></i> +27 64 290 3654
-        </a>
-      </div>
+        <div class="footer-bottom">
+            <p>© 2026 Myfixer Appliance Repair & Installation. All rights reserved. | Designed by <a href="https://nhx.co.za" target="_blank" rel="noopener noreferrer">www.nhx.co.za</a></p>
+            <ul class="footer-nav">
+                <li><a href="#home" class="scroll-link">Home</a></li>
+                <li><a href="#about" class="scroll-link">About</a></li>
+                <li><a href="#services" class="scroll-link">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="#contact" class="scroll-link">Contact</a></li>
+            </ul>
+        </div>
     </div>
-
-    <div class="footer-bottom">
-      <p>© 2026 Myfixer Appliance Repair & Installation. All rights reserved. | Designed by 
-         <a href="https://nhx.co.za" target="_blank" rel="noopener noreferrer">www.nhx.co.za</a>
-      </p>
-      <ul class="footer-nav">
-        <li><a href="/">Home</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="/#contact">Contact</a></li>
-      </ul>
-    </div>
-  </div>
 </footer>
 
 <!-- Scripts -->

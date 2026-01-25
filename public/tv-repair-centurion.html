@@ -26,75 +26,107 @@
 
     <!-- Local Business + Service Schema -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "TV Repair",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "MyFixer Appliance Repair & Installation",
-        "url": "https://www.myfixer.co.za",
-        "telephone": "+27642903654",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "1 Sullivan Street, Die Hoewes",
-          "addressLocality": "Centurion",
-          "addressRegion": "Gauteng",
-          "postalCode": "0157",
-          "addressCountry": "ZA"
-        }
-      },
-      "serviceArea": {
-        "@type": "Place",
-        "name": ["Centurion", "Pretoria", "Johannesburg", "Gauteng"]
-      },
-      "areaServed": ["Centurion", "Pretoria", "Johannesburg", "Gauteng"],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "TV Repair Services",
-        "itemListElement": [
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "LED / LCD TV Not Displaying"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "TV No Sound / Audio Faults"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Smart TV Software / Connectivity Issues"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Plasma / CRT TV Repairs"}}
-        ]
-      }
+   {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "TV Repair",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "MyFixer Appliance Repair & Installation",
+    "url": "https://www.myfixer.co.za",
+    "telephone": "+27642903654",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1 Sullivan Street, Die Hoewes",
+      "addressLocality": "Centurion",
+      "addressRegion": "Gauteng",
+      "postalCode": "0157",
+      "addressCountry": "ZA"
     }
+  },
+  "areaServed": [
+    {"@type": "Place", "name": "Centurion"},
+    {"@type": "Place", "name": "Pretoria"},
+    {"@type": "Place", "name": "Johannesburg"},
+    {"@type": "Place", "name": "Roodepoort"},
+    {"@type": "Place", "name": "Randburg"},
+    {"@type": "Place", "name": "Sandton"},
+    {"@type": "Place", "name": "Midrand"},
+    {"@type": "Place", "name": "Fourways"},
+    {"@type": "Place", "name": "Gauteng"}
+  ],
+  "description": "Expert TV repair in Centurion, Pretoria, Johannesburg, Roodepoort, Randburg and Gauteng. LED, OLED, Smart TVs — screen, sound, power issues fixed.",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "TV Repair Services",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "No Picture / Screen Repair"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Sound / Audio Issues"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Power Supply & Board Faults"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "HDMI / Connectivity Problems"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Smart TV Software & App Fixes"}}
+    ]
+  }
+}
     </script>
 
     <!-- FAQ Schema -->
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
     {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Do you offer same-day TV repair?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes — in most Centurion, Pretoria and Johannesburg areas we provide same-day TV repair depending on technician availability."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Which TV brands do you repair?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We repair Samsung, LG, Hisense, Sony, Panasonic, Philips, TCL, Defy and most other major TV brands."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do your TV repairs come with a warranty?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes — we provide workmanship warranty and use genuine or high-quality replacement parts."
-          }
-        }
-      ]
+      "@type": "Question",
+      "name": "How much does TV repair cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Costs range from R750–R4500 depending on size and issue (e.g., power board vs panel). We quote after diagnosis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you repair Samsung, LG, Sony, or Hisense TVs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — LED, OLED, QLED, 4K/8K smart TVs from Samsung, LG, Sony, Hisense, TCL, Defy, and most brands."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is my TV screen black but sound works?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Usually backlight failure, power supply issue, or T-Con board fault. We repair most without replacing the full panel."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer same-day TV repair in Randburg?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — fast service across Centurion, Randburg, Roodepoort, Sandton, Pretoria, and Gauteng."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do TV repairs come with a warranty?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — workmanship warranty on every repair, plus parts warranty."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you fix smart TV app or Wi-Fi issues?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — software resets, firmware updates, HDMI/Netflix/YouTube fixes, and connectivity troubleshooting."
+      }
     }
-    </script>
+  ]
+}
+</script>
 
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
@@ -253,7 +285,7 @@
     <div class="container">
         <div class="footer-grid">
             <div class="footer-column">
-                <h3>myfixer Appliance Repair & Installation</h3>
+                <h3>Myfixer Appliance Repair & Installation</h3>
                 <p>Fast, honest appliance repair & installation across Gauteng. Genuine parts • Same-day service • 100% satisfaction guarantee.</p>
                 <div class="footer-social-row">
                     <div class="social-links">
@@ -290,7 +322,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2026 myfixer Appliance Repair & Installation. All rights reserved. | Designed by <a href="https://nhx.co.za" target="_blank" rel="noopener noreferrer">www.nhx.co.za</a></p>
+            <p>© 2026 Myfixer Appliance Repair & Installation. All rights reserved. | Designed by <a href="https://nhx.co.za" target="_blank" rel="noopener noreferrer">www.nhx.co.za</a></p>
             <ul class="footer-nav">
                 <li><a href="/">Home</a></li>
                 <li><a href="gallery.html">Gallery</a></li>

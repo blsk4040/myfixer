@@ -25,75 +25,108 @@
     <meta property="og:type" content="website">
 
     <!-- Local Business + Service Schema -->
+
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Fridge & Freezer Repair",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "MyFixer Appliance Repair & Installation",
-        "url": "https://www.myfixer.co.za",
-        "telephone": "+27642903654",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "1 Sullivan Street, Die Hoewes",
-          "addressLocality": "Centurion",
-          "addressRegion": "Gauteng",
-          "postalCode": "0157",
-          "addressCountry": "ZA"
-        }
-      },
-      "serviceArea": {
-        "@type": "Place",
-        "name": ["Centurion", "Pretoria", "Johannesburg", "Gauteng"]
-      },
-      "areaServed": ["Centurion", "Pretoria", "Johannesburg", "Gauteng"],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Fridge & Freezer Repair Services",
-        "itemListElement": [
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Fridge Not Cooling Repair"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Freezer Not Freezing Fix"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Compressor Repair & Replacement"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Fridge Gas Refill & Leak Repair"}}
-        ]
-      }
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Refrigerator Repair",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "MyFixer Appliance Repair & Installation",
+    "url": "https://www.myfixer.co.za",
+    "telephone": "+27642903654",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1 Sullivan Street, Die Hoewes",
+      "addressLocality": "Centurion",
+      "addressRegion": "Gauteng",
+      "postalCode": "0157",
+      "addressCountry": "ZA"
     }
+  },
+  "areaServed": [
+    {"@type": "Place", "name": "Centurion"},
+    {"@type": "Place", "name": "Pretoria"},
+    {"@type": "Place", "name": "Johannesburg"},
+    {"@type": "Place", "name": "Roodepoort"},
+    {"@type": "Place", "name": "Randburg"},
+    {"@type": "Place", "name": "Sandton"},
+    {"@type": "Place", "name": "Midrand"},
+    {"@type": "Place", "name": "Fourways"},
+    {"@type": "Place", "name": "Gauteng"}
+  ],
+  "description": "Professional same-day refrigerator and fridge repair in Centurion, Pretoria, Johannesburg, Roodepoort, Randburg and across Gauteng. All brands serviced.",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Refrigerator Repair Services",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Not Cooling / Compressor Issues"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Leaks & Water Damage Repair"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Thermostat & Temperature Control Fix"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Defrost System & Frost Buildup Repair"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Door Seal & Gasket Replacement"}}
+    ]
+  }
+}
     </script>
 
     <!-- FAQ Schema -->
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
     {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Do you offer same-day fridge repair in Centurion?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes — we offer same-day fridge & freezer repair in Centurion, most of Pretoria and many Johannesburg areas (subject to technician availability)."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Which fridge brands do you repair?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We repair Samsung, LG, Bosch, Defy, Hisense, KIC, Whirlpool, Siemens, AEG, SMEG, Kelvinator and most other major brands."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do your fridge repairs come with a warranty?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes — every repair comes with a workmanship warranty and we use genuine or high-quality compatible parts."
-          }
-        }
-      ]
+      "@type": "Question",
+      "name": "How much does refrigerator repair cost in Centurion?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Repair costs typically range from R650–R2500 depending on the issue (e.g., thermostat vs compressor). We provide a clear, no-obligation quote after diagnosis — no hidden fees."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer same-day fridge repair in Gauteng?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — in most cases we provide same-day refrigerator repair across Centurion, Pretoria, Johannesburg, Randburg, Roodepoort, and surrounding areas, subject to parts and technician availability."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which fridge brands do you repair?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We service all major brands including Samsung, LG, Defy, Bosch, Siemens, Whirlpool, Hisense, and more — both frost-free and older models."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the most common fridge problem you fix?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not cooling properly (compressor, gas leak, or thermostat issues) is the most frequent call-out, followed by leaks, frost buildup, and noisy operation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do your fridge repairs come with a warranty?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — we provide a workmanship warranty on every repair, plus genuine or high-quality parts with their own manufacturer warranty where applicable."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you repair fridges in Randburg or Roodepoort?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely — we cover Randburg, Roodepoort, Sandton, Midrand, Fourways, and all of Gauteng from our Centurion base with fast response times."
+      }
     }
+  ]
+}
     </script>
 
     <!-- Styles & Libraries -->

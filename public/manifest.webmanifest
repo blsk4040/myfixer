@@ -1,22 +1,28 @@
 {
   "name": "MyFixer Appliance Repair",
   "short_name": "MyFixer",
+  "description": "Same-day appliance repair and installation in Centurion, Pretoria, Johannesburg, Randburg, Roodepoort, Sandton, Midrand and across Gauteng. Fridges, washing machines, HVAC, TVs, coffee machines and more.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#008037",
   "scope": "/",
-  "description": "Same-day appliance repair and installation in Centurion, Pretoria & Johannesburg.",
+  "orientation": "portrait-primary",
   "icons": [
     {
       "src": "/icons/icon-192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
       "src": "/icons/icon-512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
-  ]
+  ],
+  "categories": ["home-services", "appliances", "repair"],
+  "dir": "ltr",
+  "lang": "en-ZA"
 }

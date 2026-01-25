@@ -27,73 +27,97 @@
     <!-- Local Business + Service Schema -->
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Dishwasher Repair",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "MyFixer Appliance Repair & Installation",
-        "url": "https://www.myfixer.co.za",
-        "telephone": "+27642903654",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "1 Sullivan Street, Die Hoewes",
-          "addressLocality": "Centurion",
-          "addressRegion": "Gauteng",
-          "postalCode": "0157",
-          "addressCountry": "ZA"
-        }
-      },
-      "serviceArea": {
-        "@type": "Place",
-        "name": ["Centurion", "Pretoria", "Johannesburg", "Gauteng"]
-      },
-      "areaServed": ["Centurion", "Pretoria", "Johannesburg", "Gauteng"],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Dishwasher Repair Services",
-        "itemListElement": [
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Dishwasher Not Draining Repair"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Dishwasher Not Washing Properly"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Leaking Dishwasher Repair"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Dishwasher Electrical & Power Fault Repair"}}
-        ]
-      }
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Dishwasher Repair",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "MyFixer Appliance Repair & Installation",
+    "url": "https://www.myfixer.co.za",
+    "telephone": "+27642903654",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1 Sullivan Street, Die Hoewes",
+      "addressLocality": "Centurion",
+      "addressRegion": "Gauteng",
+      "postalCode": "0157",
+      "addressCountry": "ZA"
     }
+  },
+  "areaServed": [
+    {"@type": "Place", "name": "Centurion"},
+    {"@type": "Place", "name": "Pretoria"},
+    {"@type": "Place", "name": "Johannesburg"},
+    {"@type": "Place", "name": "Roodepoort"},
+    {"@type": "Place", "name": "Randburg"},
+    {"@type": "Place", "name": "Sandton"},
+    {"@type": "Place", "name": "Midrand"},
+    {"@type": "Place", "name": "Fourways"},
+    {"@type": "Place", "name": "Gauteng"}
+  ],
+  "description": "Reliable dishwasher repair in Centurion, Pretoria, Johannesburg, Roodepoort, Randburg and Gauteng. Leaks, not cleaning, drainage issues fixed fast.",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Dishwasher Repair Services",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Leaks & Door Seal Repair"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Not Draining / Pump Faults"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Heating Element & Water Temp Issues"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Spray Arms & Filter Cleaning"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Control Board & Error Codes"}}
+    ]
+  }
+}
     </script>
 
     <!-- FAQ Schema -->
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Do you offer same-day dishwasher repair?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes — in most Centurion, Pretoria and Johannesburg areas we provide same-day dishwasher repair depending on technician availability."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Which dishwasher brands do you repair?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We repair Bosch, Defy, Samsung, LG, Siemens, AEG, Whirlpool, Hisense, SMEG and most other major dishwasher brands."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do your dishwasher repairs come with a warranty?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes — we provide workmanship warranty and use genuine or high-quality replacement parts."
-          }
-        }
-      ]
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does dishwasher repair cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Typical costs R650–R2200 (e.g., pump vs heating element). Upfront quote after inspection."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you repair Bosch, Siemens, or Whirlpool dishwashers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — all major brands including Bosch, Siemens, Miele, Whirlpool, LG, Samsung, Defy, and more."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is my dishwasher not draining?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Usually blocked filter, faulty drain pump, or kinked hose. We clean and replace as needed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer same-day dishwasher repair in Pretoria?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — same-day where possible across Centurion, Pretoria, Johannesburg, and Gauteng suburbs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do dishwasher repairs include warranty?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — full workmanship warranty and parts coverage."
+      }
     }
+  ]
+}
     </script>
 
     <!-- Styles -->
@@ -257,7 +281,7 @@
     <div class="container">
         <div class="footer-grid">
             <div class="footer-column">
-                <h3>myfixer Appliance Repair & Installation</h3>
+                <h3>Myfixer Appliance Repair & Installation</h3>
                 <p>Fast, honest appliance repair & installation across Gauteng. Genuine parts • Same-day service • 100% satisfaction guarantee.</p>
                 <div class="footer-social-row">
                     <div class="social-links">
@@ -294,7 +318,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2026 myfixer Appliance Repair & Installation. All rights reserved. | Designed by <a href="https://nhx.co.za" target="_blank" rel="noopener noreferrer">www.nhx.co.za</a></p>
+            <p>© 2026 Myfixer Appliance Repair & Installation. All rights reserved. | Designed by <a href="https://nhx.co.za" target="_blank" rel="noopener noreferrer">www.nhx.co.za</a></p>
             <ul class="footer-nav">
                 <li><a href="/">Home</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
