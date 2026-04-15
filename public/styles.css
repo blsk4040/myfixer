@@ -37,12 +37,17 @@ body {
     width: 100%;
 }
 
-.logo {
-    margin-right: 0;
+.logo-img {
+    height: 50px;
+    width: auto;
+    max-width: 200px;
+    display: block;
+    transition: all 0.3s ease;
 }
 
-.logo h2 {
-    color: #e74c3c;
+.logo-img:hover {
+    opacity: 0.9;
+    transform: scale(1.03);
 }
 
 .nav-menu {
@@ -61,6 +66,40 @@ body {
 
 .nav-menu a:hover {
     color: #e74c3c;
+}
+
+/* Active link highlighting styles */
+.nav-menu a.active,
+.dropdown-menu a.active,
+.submenu a.active {
+    color: #e74c3c !important;
+    font-weight: 700;
+    position: relative;
+}
+
+.nav-menu a.active::after,
+.dropdown-menu a.active::after,
+.submenu a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40%;
+    height: 2px;
+    background: #e74c3c;
+    border-radius: 2px;
+}
+
+.nav-menu > li > a.active {
+    color: #e74c3c !important;
+    font-weight: 700;
+}
+
+.dropdown.active > .dropdown-toggle,
+.dropdown-submenu.active > .submenu-toggle {
+    color: #e74c3c !important;
+    font-weight: 700;
 }
 
 .phone-btn {
@@ -203,32 +242,6 @@ body {
     color: #333;
 }
 
-.hero-stats {
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-    flex-wrap: wrap;
-    align-self: center;
-}
-
-.stat {
-    text-align: center;
-}
-
-.stat h3 {
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: #e74c3c;
-    margin-bottom: 0.3rem;
-}
-
-.stat p {
-    font-size: 0.9rem;
-    color: rgba(255,255,255,0.9);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
 /* Hide Swiper Arrows */
 .swiper-button-next,
 .swiper-button-prev {
@@ -251,6 +264,53 @@ body {
     background: #e74c3c;
     transform: scale(1.3);
     box-shadow: 0 0 15px rgba(231,76,60,0.8);
+}
+
+/* Hero Trust Badges – fixed with prefix */
+.hero-trust-badges {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+}
+
+.trust-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.22);
+    padding: 10px 18px;
+    border-radius: 50px;
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+}
+
+.trust-badge i {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.trust-badge span {
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.05rem;
+}
+
+@media (max-width: 768px) {
+    .hero-trust-badges {
+        gap: 1rem;
+        margin: 1.5rem 0;
+    }
+    .trust-badge {
+        padding: 8px 14px;
+    }
+    .trust-badge i {
+        font-size: 1.3rem;
+    }
+    .trust-badge span {
+        font-size: 0.95rem;
+    }
 }
 
 /* ============================================
@@ -539,12 +599,33 @@ body {
 .services-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 25px;
+    gap: 20px 25px;
+    justify-content: center;
     max-width: 1400px;
     margin: 0 auto;
     position: relative;
     z-index: 2;
+}
+
+@media (max-width: 1200px) {
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px 22px;
+    }
+}
+
+@media (max-width: 992px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+}
+
+@media (max-width: 576px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
 }
 
 .services .section-header {
@@ -594,7 +675,7 @@ body {
     box-shadow: 0 10px 40px rgba(0,0,0,.08);
     transition: all .4s cubic-bezier(.175,.885,.32,1.275);
     height: auto;
-    min-height: 380px;
+    min-height: 360px;
     display: block;
     text-decoration: none;
     cursor: pointer;
@@ -607,9 +688,9 @@ body {
 
 .service-image {
     position: relative;
-    height: 200px;
+    height: 190px;
     overflow: hidden;
-    background:#f8f9fa;
+    background: #f8f9fa;
 }
 
 .service-placeholder {
@@ -656,9 +737,9 @@ body {
 .book-now:hover { background:rgba(255,255,255,.3); transform:translateY(-2px); }
 
 .service-content {
-    padding: 20px;
+    padding: 18px 20px;
     height: auto;
-    min-height: 180px;
+    min-height: 160px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1414,11 +1495,11 @@ body {
    ============================================ */
 @media (max-width: 991px) {
     .nav-menu.active {
-        display: block !important;  /* Ensure menu stays open during dropdown interactions */
+        display: block !important;
     }
 
     .dropdown-menu {
-        display: none;  /* Default hidden */
+        display: none;
         position: static;
         box-shadow: none;
         background: #f8f9fa;
@@ -1428,7 +1509,7 @@ body {
     }
 
     .dropdown-menu li {
-        border-bottom: none;  /* Clean up for mobile */
+        border-bottom: none;
     }
 
     .dropdown-menu a {
@@ -1436,9 +1517,6 @@ body {
         display: block;
     }
 
-    /* ────────────────────────────────────────────────
-       FIX: Make dropdown service links same size as main nav
-       ──────────────────────────────────────────────── */
     .nav-menu a,
     .dropdown-menu a,
     .dropdown-toggle {
@@ -1456,7 +1534,6 @@ body {
     }
 }
 
-/* Desktop hover – keep this untouched */
 @media (min-width: 992px) {
   .dropdown-menu {
     display: none;
@@ -1467,19 +1544,16 @@ body {
   }
 }
 
-/* Mobile click ONLY */
 @media (max-width: 991px) {
   .nav-menu.active {
     max-height: 100vh;
     overflow-y: auto;
   }
 
-
   .dropdown.active .dropdown-menu {
     display: block;
   }
 }
-
 
 @media (max-width: 1200px) {
     .why-choose-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1497,9 +1571,6 @@ body {
     .hero-content h1 { font-size: 2.5rem; }
     .hero-content p { font-size: 1.1rem; max-width: 90%; }
     .hero-buttons { flex-direction: column; align-items: center; gap: 0.8rem; }
-    .hero-stats { gap: 1.5rem; }
-    .stat h3 { font-size: 1.8rem; }
-    .stat p { font-size: 0.8rem; }
     .about-content { flex-direction: column; text-align: center; }
     .why-choose { padding: 80px 0; }
     .why-choose-grid { grid-template-columns: 1fr; gap: 1.5rem; }
@@ -1555,7 +1626,6 @@ body {
     transform: rotate(-45deg) translate(7px, -7px);
 }
 
-/* Mobile navbar fixes */
 @media (max-width: 768px) {
     .hamburger {
         display: block;
@@ -1602,21 +1672,8 @@ body {
 }
 
 /* ============================================
-   LOGO IMAGE
+   LOGO IMAGE RESPONSIVE
    ============================================ */
-.logo-img {
-    height: 50px;
-    width: auto;
-    max-width: 200px;
-    display: block;
-    transition: all 0.3s ease;
-}
-
-.logo-img:hover {
-    opacity: 0.9;
-    transform: scale(1.03);
-}
-
 @media (max-width: 992px) {
     .logo-img { height: 45px; }
 }
@@ -1831,7 +1888,6 @@ body {
     font-weight: 700;
 }
 
-/* Responsive adjustments */
 @media (max-width: 992px) {
     .gallery-grid {
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -1857,7 +1913,7 @@ body {
 }
 
 /* ============================================
-   FORCE-HIDE SEO LINKS (ABSOLUTE)
+   FORCE-HIDE SEO LINKS
    ============================================ */
 .seo-hidden-links {
     display: none !important;
@@ -1874,9 +1930,8 @@ body {
 }
 
 /*=====================================
-    Blog Page {Detailed Appliance Guides}
+    Blog Page Styles
 ================================================= */
-
 .blog-article {
     max-width: 1000px;
     margin: 0 auto 100px;
@@ -1962,7 +2017,6 @@ body {
     padding: 20px 60px;
 }
 
-/* Mobile Responsiveness */
 @media (max-width: 768px) {
     .blog-article {
         padding: 20px;
@@ -1982,15 +2036,13 @@ body {
     }
 }
 
-/* Blog Appliance image */
-
-/* Blog grid cards - match index.html services exactly */
+/* Blog grid cards - match index.html services */
 .blog-grid .service-card {
-    min-height: 380px; /* Same as index.html */
+    min-height: 380px;
 }
 
 .blog-grid .service-image {
-    height: 200px; /* Exact same as index.html */
+    height: 200px;
     overflow: hidden;
     background: #f8f9fa;
 }
@@ -1998,13 +2050,13 @@ body {
 .blog-grid .service-image img {
     width: 100%;
     height: 100%;
-    object-fit: contain;     /* Same as index.html (shows full icon with transparency) */
+    object-fit: contain;
     object-position: center;
     transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .blog-grid .service-card:hover .service-image img {
-    transform: scale(1.08); /* Same subtle zoom as index.html */
+    transform: scale(1.08);
 }
 
 .blog-grid .service-content {
@@ -2012,14 +2064,14 @@ body {
     padding: 20px;
 }
 
-/* Optional: Reduce side space in footer only */
+/* Footer container padding adjustment */
 .footer > .container {
-    padding: 0 10px; /* Less padding */
+    padding: 0 10px;
 }
 
 @media (min-width: 1440px) {
     .footer > .container {
-        padding: 0; /* No side padding on wide screens */
+        padding: 0;
     }
 }
 
@@ -2040,25 +2092,23 @@ body {
     }
 }
 
-/* ==================== Accordion / Blog Toggles ==================== */
+/* Accordion / Blog Toggles */
 .accordion-toggle {
-    text-decoration: none; /* remove underlines */
-    color: inherit;        /* keeps current text color */
-    cursor: pointer;       /* shows it’s clickable */
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
 }
 
-/* Nav menu - highlight current page */
+/* Nav menu current page highlight */
 .nav-menu a.active {
-    color: #e74c3c;         /* or your accent color */
-    font-weight: bold;       /* optional */
-    border-bottom: 2px solid #e74c3c; /* optional underline effect */
+    color: #e74c3c;
+    font-weight: bold;
+    border-bottom: 2px solid #e74c3c;
 }
 
-/* ============================================
-    BACKGROUND FOR GALLERY HERO
-   ============================================ */
+/* Gallery hero background */
 .kente-bg {
-    background: #000; /* Solid dark background */
+    background: #000;
     padding: 120px 20px;
     color: #fff;
     text-align: center;
@@ -2089,18 +2139,13 @@ body {
     margin-top: 10px;
 }
 
-
-
 /* ===============================
    UNIVERSAL NAV DROPDOWN
-   Desktop Hover + Mobile Click
-   =============================== */
-
+   ================================= */
 .dropdown {
   position: relative;
 }
 
-/* Toggle link */
 .dropdown-toggle {
   display: flex;
   align-items: center;
@@ -2108,7 +2153,6 @@ body {
   cursor: pointer;
 }
 
-/* Menu container */
 .dropdown-menu {
   list-style: none;
   margin: 0;
@@ -2128,7 +2172,6 @@ body {
   z-index: 9999;
 }
 
-/* Links */
 .dropdown-menu a {
   display: block;
   padding: 12px 20px;
@@ -2139,19 +2182,16 @@ body {
   transition: all 0.2s ease;
 }
 
-/* Hover state */
 .dropdown-menu a:hover {
   background: #f5f7f9;
   color: #008037;
   padding-left: 28px;
 }
 
-/* Divider */
 .dropdown-menu li:not(:last-child) a {
   border-bottom: 1px solid #eee;
 }
 
-/* ===== DESKTOP (hover) ===== */
 @media (min-width: 992px) {
   .dropdown:hover > .dropdown-menu {
     opacity: 1;
@@ -2161,7 +2201,6 @@ body {
   }
 }
 
-/* ===== MOBILE (click) ===== */
 @media (max-width: 991px) {
   .dropdown-menu {
     position: static;
@@ -2170,7 +2209,6 @@ body {
     transform: none;
     opacity: 1;
     visibility: visible;
-    pointer-events: auto;
     display: none;
     background: #f8f9fa;
     padding-left: 16px;
@@ -2190,42 +2228,455 @@ body {
   }
 }
 
-
-
-/* ===== Mobile Menu Scroll ===== */
 @media (max-width: 991px) {
   .nav-menu {
-    height: 100vh;       /* take full screen height */
-    overflow-y: auto;    /* allow scrolling if content is taller */
-    background: #fff;    /* optional: keep menu visible */
-    padding: 20px 0;     /* spacing at top/bottom */
+    height: 100vh;
+    overflow-y: auto;
+    background: #fff;
+    padding: 20px 0;
   }
 }
 
-
-
-
-
-
-/* Prevent auto-open on load – desktop safety net */
 @media (min-width: 992px) {
   .dropdown.active .dropdown-menu,
   .dropdown .dropdown-menu.show {
     display: none !important;
   }
 
-  /* Re-enable hover only */
   .dropdown:hover .dropdown-menu {
     display: block !important;
   }
 }
-
-
-
 
 .dropdown-toggle {
   background: none;
   border: none;
   padding: 0;
   cursor: pointer;
+}
+
+/* ============================================
+   MULTI-LEVEL DROPDOWN MENU
+   ============================================ */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 240px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    border-radius: 8px;
+    padding: 10px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.dropdown:hover > .dropdown-menu,
+.dropdown.active > .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-submenu {
+    position: relative;
+}
+
+.submenu {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background: white;
+    min-width: 240px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    border-radius: 8px;
+    padding: 10px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(10px);
+    transition: all 0.3s ease;
+    z-index: 1001;
+}
+
+.dropdown-submenu:hover > .submenu,
+.dropdown-submenu.active > .submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.dropdown-menu li,
+.submenu li {
+    list-style: none;
+}
+
+.dropdown-menu a,
+.submenu a {
+    display: block;
+    padding: 10px 20px;
+    color: #333;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.dropdown-menu a:hover,
+.submenu a:hover {
+    background: #f8f9fa;
+    color: #e74c3c;
+    padding-left: 25px;
+}
+
+.submenu-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px 20px;
+    color: #333;
+    transition: color 0.2s;
+}
+
+.submenu-toggle:hover {
+    color: #e74c3c;
+}
+
+.submenu-toggle i {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+    margin-left: auto;
+}
+
+.dropdown-submenu.active .submenu-toggle i {
+    transform: rotate(90deg);
+}
+
+@media (max-width: 991px) {
+    .dropdown-menu,
+    .submenu {
+        position: static;
+        box-shadow: none;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        display: none;
+        background: #f8f9fa;
+        padding-left: 20px;
+    }
+
+    .dropdown.active > .dropdown-menu,
+    .dropdown-submenu.active > .submenu {
+        display: block;
+    }
+
+    .submenu-toggle i {
+        font-size: 1rem;
+    }
+
+    .dropdown-submenu.active .submenu-toggle i {
+        transform: rotate(90deg);
+    }
+}
+
+@media (max-width: 480px) {
+    #sticky-book-btn {
+        bottom: 90px;
+        right: 20px;
+        padding: 12px 24px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #sticky-book-btn {
+        padding: 12px 22px;
+        font-size: 1rem;
+    }
+}
+
+/* ============================================
+   FLOATING WHATSAPP BUTTON
+   ============================================ */
+
+/* ============================================
+   PREMIUM WHATSAPP CHAT WIDGET
+   ============================================ */
+
+.whatsapp-widget {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 9999;
+}
+
+/* Floating Button */
+.whatsapp-button {
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    animation: pulse 2s infinite;
+}
+
+/* Chat Box */
+.whatsapp-chat {
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    width: 320px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    overflow: hidden;
+    display: none;
+    flex-direction: column;
+}
+
+/* Header */
+.chat-header {
+    background: #25D366;
+    color: #fff;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.chat-avatar {
+    font-size: 20px;
+}
+
+.chat-info h4 {
+    margin: 0;
+    font-size: 14px;
+}
+
+.chat-info p {
+    margin: 0;
+    font-size: 11px;
+    opacity: 0.9;
+}
+
+/* Close button */
+.chat-close {
+    margin-left: auto;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* Body */
+.chat-body {
+    padding: 15px;
+    font-size: 14px;
+}
+
+/* Message bubble */
+.chat-message {
+    background: #f1f1f1;
+    padding: 10px 12px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* Footer */
+.chat-footer {
+    padding: 15px;
+    border-top: 1px solid #eee;
+}
+
+.chat-button {
+    display: block;
+    text-align: center;
+    background: #25D366;
+    color: #fff;
+    padding: 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .whatsapp-chat {
+        width: 90vw;
+        right: 5vw;
+    }
+}
+
+/* Sticky Book Now */
+.sticky-book-btn {
+    position: fixed;
+    bottom: 150px;
+    right: 30px;
+    z-index: 999;
+    background: #e74c3c;
+    color: white;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    box-shadow: 0 6px 20px rgba(231,76,60,0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: none;
+}
+
+/* Back to Top */
+.back-to-top-btn {
+    position: fixed;
+    bottom: 220px;
+    right: 30px;
+    z-index: 998;
+    background: #333;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+
+
+
+
+
+/* ============================================
+   HERO MODERN IMPROVEMENTS
+   ============================================ */
+
+/* Hero overlay readability upgrade */
+.hero-overlay {
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.65),
+        rgba(0,0,0,0.45)
+    );
+}
+
+/* Badge (top small label) */
+.hero-badge {
+    display: inline-block;
+    background: rgba(231, 76, 60, 0.15);
+    color: #fff;
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(6px);
+}
+
+/* Headline spacing upgrade */
+.hero-content h1,
+.hero-content h2 {
+    line-height: 1.15;
+}
+
+/* Subtext */
+.hero-content p {
+    opacity: 0.95;
+}
+
+/* ============================================
+   HERO BUTTONS (MODERN TOUCH)
+   ============================================ */
+
+.hero-buttons .btn-primary {
+    box-shadow: 0 10px 25px rgba(231, 76, 60, 0.35);
+}
+
+.hero-buttons .btn-secondary {
+    backdrop-filter: blur(6px);
+}
+
+/* ============================================
+   MODERN HERO STATS (CARD STYLE)
+   ============================================ */
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+/* New stat card */
+.stat-card {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 16px;
+    padding: 18px 22px;
+    min-width: 140px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.18);
+    border-color: rgba(231, 76, 60, 0.6);
+}
+
+/* Number */
+.stat-number {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+/* Label */
+.stat-label {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.85);
+    font-weight: 500;
+}
+
+/* ============================================
+   MOBILE IMPROVEMENTS
+   ============================================ */
+
+@media (max-width: 768px) {
+    .hero-stats {
+        gap: 12px;
+    }
+
+    .stat-card {
+        min-width: 120px;
+        padding: 14px 16px;
+    }
+
+    .stat-number {
+        font-size: 1.5rem;
+    }
+
+    .stat-label {
+        font-size: 0.8rem;
+    }
 }
