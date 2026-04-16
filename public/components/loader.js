@@ -13,6 +13,12 @@ document.addEventListener('DOMContentLoaded', function () {
             if (navPlaceholder) {
                 navPlaceholder.innerHTML = data;
                 console.log("✅ Nav loaded successfully");
+
+                // Initialize all site interactions AFTER nav loads
+                if (typeof window.initSite === "function") {
+                    window.initSite();
+                    console.log("✅ Site navigation initialized");
+                }
             }
         })
         .catch(err => console.error('❌ Error loading navigation:', err));
@@ -28,6 +34,12 @@ document.addEventListener('DOMContentLoaded', function () {
             if (footerPlaceholder) {
                 footerPlaceholder.innerHTML = data;
                 console.log("✅ Footer loaded successfully");
+
+                // Initialize WhatsApp widget AFTER footer loads
+                if (typeof window.initWhatsAppWidget === "function") {
+                    window.initWhatsAppWidget();
+                    console.log("✅ WhatsApp widget initialized");
+                }
             }
         })
         .catch(err => console.error('❌ Error loading footer:', err));

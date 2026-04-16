@@ -2680,3 +2680,932 @@ body {
         font-size: 0.8rem;
     }
 }
+
+
+
+
+
+/* =========================================================
+   MYFIXER PROFESSIONAL UPGRADE BLOCK
+   Paste this at the VERY BOTTOM of styles.css
+   ========================================================= */
+
+/* Branding consistency */
+.about-text h2,
+.why-choose .section-header h2,
+.services .section-header h2,
+.testimonials .section-header h2,
+.contact-info h2,
+.booking-form-container h2,
+.faq-section .section-header h2,
+.brands-section .section-header h2 {
+    letter-spacing: -0.02em;
+}
+
+/* Buttons refinement */
+.btn-primary,
+.btn-secondary,
+.emergency-btn,
+.booking-form .btn-primary {
+    border-radius: 14px;
+}
+
+.btn-primary,
+.booking-form .btn-primary {
+    box-shadow: 0 12px 30px rgba(231, 76, 60, 0.22);
+}
+
+.btn-secondary.dark-outline {
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.75);
+    color: #fff;
+}
+
+.btn-secondary.dark-outline:hover {
+    background: #fff;
+    color: #222;
+}
+
+/* Section spacing refinement */
+.about,
+.services,
+.why-choose,
+.testimonials,
+.contact,
+.faq-section,
+.brands-section {
+    scroll-margin-top: 110px;
+}
+
+/* =========================
+   HERO IMPROVEMENTS
+   ========================= */
+.hero-content {
+    max-width: 900px;
+    padding: 0 20px;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(231, 76, 60, 0.16);
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    margin-bottom: 18px;
+    border: 1px solid rgba(255,255,255,0.22);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.hero-mini-cta {
+    margin-top: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.hero-mini-cta a,
+.hero-mini-cta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.14);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: 1px solid rgba(255,255,255,0.16);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.hero-mini-cta a:hover {
+    background: rgba(255,255,255,0.22);
+}
+
+.hero-buttons {
+    margin-top: 10px;
+}
+
+.hero-buttons .btn-primary,
+.hero-buttons .btn-secondary {
+    min-width: 190px;
+    text-align: center;
+}
+
+/* =========================
+   TRUST STRIP
+   ========================= */
+.trust-strip {
+    background: #111827;
+    color: #fff;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.trust-strip-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.trust-strip-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+    padding: 12px 15px;
+    border-radius: 14px;
+    background: rgba(255,255,255,0.04);
+    font-weight: 600;
+    font-size: 0.98rem;
+}
+
+.trust-strip-item i {
+    color: #22c55e;
+}
+
+/* =========================
+   SERVICES / BRANDS
+   ========================= */
+.brands-section {
+    padding: 100px 0;
+    background: #ffffff;
+    position: relative;
+}
+
+.brands-section .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.brands-section .section-header h2 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    color: #222;
+    margin-bottom: 1rem;
+}
+
+.brands-section .section-header p {
+    color: #666;
+    font-size: 1.1rem;
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.brands-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 18px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.brands-grid span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 72px;
+    border-radius: 16px;
+    background: #f8f9fa;
+    border: 1px solid rgba(0,0,0,0.06);
+    font-weight: 700;
+    color: #333;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+    transition: all 0.25s ease;
+}
+
+.brands-grid span:hover {
+    transform: translateY(-4px);
+    border-color: rgba(231, 76, 60, 0.28);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   CTA STRIP
+   ========================= */
+.cta-strip {
+    padding: 90px 0;
+    background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+    color: #fff;
+}
+
+.cta-strip-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    border-radius: 24px;
+    padding: 36px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.18);
+}
+
+.cta-strip-text h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 0.7rem;
+    line-height: 1.15;
+}
+
+.cta-strip-text p {
+    color: rgba(255,255,255,0.85);
+    font-size: 1.08rem;
+    max-width: 650px;
+}
+
+.cta-strip-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+/* =========================
+   FAQ SECTION
+   ========================= */
+.faq-section {
+    padding: 110px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.faq-section .section-header {
+    text-align: center;
+    margin-bottom: 3.2rem;
+}
+
+.faq-section .section-header h2 {
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    color: #222;
+    margin-bottom: 1rem;
+}
+
+.faq-section .section-header p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.faq-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 28px 24px;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.06);
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: all 0.25s ease;
+}
+
+.faq-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 42px rgba(0,0,0,0.09);
+    border-color: rgba(231, 76, 60, 0.22);
+}
+
+.faq-card h3 {
+    font-size: 1.18rem;
+    color: #222;
+    margin-bottom: 0.8rem;
+    line-height: 1.35;
+}
+
+.faq-card p {
+    color: #666;
+    line-height: 1.7;
+    font-size: 0.98rem;
+}
+
+/* =========================
+   CONTACT UPGRADES
+   ========================= */
+.contact-trust-notes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 1.4rem 0 2rem;
+}
+
+.contact-note {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, rgba(231, 76, 60, 0.08), rgba(192, 57, 43, 0.05));
+    border: 1px solid rgba(231, 76, 60, 0.14);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #333;
+    line-height: 1.3;
+    transition: all 0.25s ease;
+}
+
+.contact-note:hover {
+    transform: translateY(-2px);
+    border-color: rgba(231, 76, 60, 0.28);
+    box-shadow: 0 10px 24px rgba(231, 76, 60, 0.10);
+}
+
+.contact-note i {
+    color: #e74c3c;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .contact-trust-notes {
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .contact-note {
+        font-size: 0.88rem;
+        padding: 9px 14px;
+    }
+}
+
+.contact-map {
+    margin-top: 1rem;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    background: #fff;
+}
+
+.booking-form-notes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: -4px;
+    margin-bottom: 6px;
+}
+
+.booking-note {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.08), rgba(34, 197, 94, 0.04));
+    border: 1px solid rgba(34, 197, 94, 0.16);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+    color: #2f3b33;
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.3;
+    transition: all 0.25s ease;
+}
+
+.booking-note:hover {
+    transform: translateY(-2px);
+    border-color: rgba(34, 197, 94, 0.28);
+    box-shadow: 0 10px 24px rgba(34, 197, 94, 0.08);
+}
+
+.booking-note i {
+    color: #16a34a;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .booking-form-notes {
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .booking-note {
+        font-size: 0.88rem;
+        padding: 9px 14px;
+    }
+}
+
+/* =========================
+   PRE FOOTER CTA
+   ========================= */
+.pre-footer-cta {
+    padding: 90px 0;
+    background: #fff;
+}
+
+.pre-footer-box {
+    border-radius: 28px;
+    padding: 46px 34px;
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: #fff;
+    text-align: center;
+    box-shadow: 0 30px 70px rgba(231, 76, 60, 0.24);
+}
+
+.pre-footer-box h2 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    margin-bottom: 0.8rem;
+    line-height: 1.15;
+}
+
+.pre-footer-box p {
+    font-size: 1.08rem;
+    opacity: 0.95;
+    max-width: 760px;
+    margin: 0 auto 1.8rem;
+}
+
+.pre-footer-actions {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.pre-footer-box .btn-primary {
+    background: #fff;
+    color: #c0392b;
+}
+
+.pre-footer-box .btn-primary:hover {
+    background: #f8f8f8;
+}
+
+.pre-footer-box .btn-secondary.dark-outline {
+    border-color: rgba(255,255,255,0.8);
+    color: #fff;
+}
+
+.pre-footer-box .btn-secondary.dark-outline:hover {
+    background: #fff;
+    color: #c0392b;
+}
+
+/* =========================
+   MOBILE STICKY CTA
+   ========================= */
+.mobile-sticky-cta {
+    display: none;
+    position: fixed;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    z-index: 10000;
+    background: rgba(17, 24, 39, 0.94);
+    border-radius: 18px;
+    padding: 10px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.28);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+}
+
+.mobile-sticky-cta a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-height: 56px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.82rem;
+    font-weight: 700;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.06);
+    transition: all 0.2s ease;
+}
+
+.mobile-sticky-cta a:hover {
+    background: rgba(255,255,255,0.12);
+}
+
+.mobile-sticky-cta a i {
+    font-size: 1.05rem;
+}
+
+.mobile-sticky-cta a:nth-child(2) i {
+    color: #25D366;
+}
+
+/* =========================
+   PROFESSIONAL FORM FEEL
+   ========================= */
+.booking-form-container {
+    border-radius: 28px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    border-radius: 14px;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #8c95a1;
+}
+
+.small-text {
+    color: #666;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* =========================
+   TESTIMONIAL NAME FIX
+   ========================= */
+.testimonial-meta .name {
+    font-size: 1.2rem;
+    color: #222;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.3;
+}
+
+/* =========================
+   WHATSAPP WIDGET TWEAKS
+   ========================= */
+.whatsapp-button {
+    border: 3px solid rgba(255,255,255,0.28);
+}
+
+.whatsapp-chat {
+    border-radius: 18px;
+    box-shadow: 0 18px 48px rgba(0,0,0,0.22);
+}
+
+.chat-button {
+    border-radius: 10px;
+    padding: 12px;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+@media (max-width: 1200px) {
+    .trust-strip-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .brands-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .faq-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .cta-strip-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cta-strip-actions {
+        justify-content: center;
+    }
+
+    .brands-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        min-height: 92vh;
+    }
+
+    .hero-mini-cta {
+        gap: 10px;
+    }
+
+    .hero-mini-cta a,
+    .hero-mini-cta span {
+        font-size: 0.88rem;
+        padding: 9px 14px;
+    }
+
+    .trust-strip {
+        padding: 18px 0;
+    }
+
+    .trust-strip-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .brands-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-note,
+    .booking-note {
+        font-size: 0.92rem;
+    }
+
+    .mobile-sticky-cta {
+        display: grid;
+    }
+
+    body {
+        padding-bottom: 92px;
+    }
+}
+
+@media (max-width: 576px) {
+    .brands-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+    }
+
+    .brands-grid span {
+        min-height: 62px;
+        font-size: 0.92rem;
+    }
+
+    .cta-strip-inner,
+    .pre-footer-box {
+        padding: 28px 20px;
+    }
+
+    .hero-buttons .btn-primary,
+    .hero-buttons .btn-secondary,
+    .cta-strip-actions .btn-primary,
+    .cta-strip-actions .btn-secondary,
+    .pre-footer-actions .btn-primary,
+    .pre-footer-actions .btn-secondary {
+        width: 100%;
+        max-width: 320px;
+    }
+}
+
+
+
+/* ============================================
+   MOBILE FINAL FIXES (ADD THIS AT VERY BOTTOM)
+   ============================================ */
+
+@media (max-width: 768px) {
+    .hero {
+        min-height: 100vh;
+        height: 100vh;
+    }
+
+    .testimonial-card {
+        padding: 30px 22px;
+    }
+
+    .contact-info ul li {
+        align-items: flex-start;
+        padding: 1rem;
+    }
+
+    .contact-info ul li a {
+        word-break: break-word;
+    }
+
+    .whatsapp-widget {
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+
+
+
+/* ============================================
+   HERO CENTERING FIX
+   ============================================ */
+
+.hero-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 20px 60px;
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content h1,
+.hero-content h2,
+.hero-content p,
+.hero-badge,
+.hero-mini-cta,
+.hero-buttons,
+.hero-stats {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.hero-content p {
+    max-width: 760px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.hero-mini-cta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+    .hero-overlay {
+        padding: 110px 16px 50px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-content h1 {
+        max-width: 100%;
+        font-size: clamp(2.1rem, 8vw, 3.2rem);
+    }
+
+    .hero-content p {
+        max-width: 100%;
+    }
+
+    .hero-mini-cta,
+    .hero-buttons,
+    .hero-stats {
+        justify-content: center;
+    }
+}
+
+
+
+/* ============================================
+   MOBILE NAV IMPROVEMENT
+   ============================================ */
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .logo {
+        min-width: 0;
+    }
+
+    .logo-img {
+        max-width: 140px;
+        height: auto;
+    }
+
+    .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .call-to-action {
+        display: flex;
+        align-items: center;
+    }
+
+    .phone-btn {
+        padding: 8px 12px;
+        font-size: 0.82rem;
+        border-radius: 999px;
+        gap: 6px;
+    }
+
+    .phone-btn span {
+        display: none;
+    }
+
+    .phone-btn i {
+        display: inline-block !important;
+        margin: 0;
+    }
+
+    .hamburger {
+        display: block;
+        margin-left: 0;
+    }
+
+    .nav-menu {
+        grid-column: 1 / -1;
+        width: 100%;
+        margin-right: 0;
+        margin-top: 10px;
+        border-top: none;
+    }
+
+    .nav-menu a.active::after,
+    .dropdown-menu a.active::after,
+    .submenu a.active::after {
+        display: none !important;
+    }
+
+    .nav-menu a.active {
+        border-bottom: none !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-img {
+        max-width: 120px;
+    }
+
+    .phone-btn {
+        padding: 7px 10px;
+        min-width: 40px;
+        justify-content: center;
+    }
+}
+
+
+/* ============================================
+   FOOTER MOBILE IMPROVEMENT
+   ============================================ */
+
+.footer-column ul li {
+    word-break: break-word;
+}
+
+.footer-column ul li span,
+.footer-column ul li a {
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 768px) {
+    .footer-column {
+        padding: 0.5rem 0;
+    }
+
+    .footer-column h3 {
+        font-size: 1.5rem;
+    }
+
+    .footer-column p,
+    .footer-column ul,
+    .footer-column ul li,
+    .footer-nav a {
+        font-size: 0.95rem;
+    }
+
+    .footer-nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .footer-bottom p {
+        line-height: 1.7;
+        max-width: 100%;
+    }
+}
