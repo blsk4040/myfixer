@@ -3609,3 +3609,37 @@ body {
         max-width: 100%;
     }
 }
+
+
+/* ============================================
+   WHATSAPP FINAL CLICK FIX
+   ============================================ */
+.whatsapp-widget,
+.whatsapp-button,
+.whatsapp-chat {
+    pointer-events: auto;
+}
+
+.whatsapp-widget {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 10001 !important;
+}
+
+.whatsapp-button {
+    position: relative;
+    z-index: 10002 !important;
+}
+
+.whatsapp-chat {
+    position: absolute;
+    z-index: 10003 !important;
+}
+
+@media (max-width: 768px) {
+    .whatsapp-widget {
+        bottom: 95px;
+        right: 20px;
+    }
+}

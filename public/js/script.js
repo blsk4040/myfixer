@@ -296,22 +296,29 @@ window.initWhatsAppWidget = function () {
   const chat = document.getElementById("whatsappChat");
   const closeBtn = document.getElementById("whatsappClose");
 
-  if (!toggle || !chat || !closeBtn) return;
+  if (!toggle || !chat || !closeBtn) {
+    console.warn("WhatsApp widget elements not found");
+    return;
+  }
 
   if (toggle.dataset.initialized === "true") return;
   toggle.dataset.initialized = "true";
 
-  toggle.addEventListener("click", (e) => {
+  toggle.addEventListener("click", function (e) {
+    e.preventDefault();
     e.stopPropagation();
-    chat.style.display = chat.style.display === "flex" ? "none" : "flex";
+
+    const isOpen = chat.style.display === "flex";
+    chat.style.display = isOpen ? "none" : "flex";
   });
 
-  closeBtn.addEventListener("click", (e) => {
+  closeBtn.addEventListener("click", function (e) {
+    e.preventDefault();
     e.stopPropagation();
     chat.style.display = "none";
   });
 
-  document.addEventListener("click", (e) => {
+  document.addEventListener("click", function (e) {
     if (!chat.contains(e.target) && !toggle.contains(e.target)) {
       chat.style.display = "none";
     }
