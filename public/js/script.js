@@ -162,10 +162,11 @@ function initSite() {
     bookingForm.dataset.initialized = "true";
 
     bookingForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-
       const honeypot = bookingForm.querySelector('input[name="bot-field"]');
-      if (honeypot && honeypot.value) return;
+      if (honeypot && honeypot.value) {
+        e.preventDefault();
+        return;
+      }
 
       const requiredFields = [
         { id: "name", name: "Name" },
@@ -192,12 +193,12 @@ function initSite() {
       });
 
       if (!isValid) {
+        e.preventDefault();
         alert(errorMsg);
         return;
       }
 
-      bookingForm.reset();
-      alert("Thank you! Your request has been submitted.");
+      // Allow the form to submit normally so Netlify can process the lead.
     });
   }
 
