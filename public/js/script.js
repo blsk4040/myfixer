@@ -298,7 +298,6 @@ window.initWhatsAppWidget = function () {
   const closeBtn = document.getElementById("whatsappClose");
 
   if (!toggle || !chat || !closeBtn) {
-    console.warn("WhatsApp widget elements not found");
     return;
   }
 
