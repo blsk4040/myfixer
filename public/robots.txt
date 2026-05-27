@@ -1,6 +1,8 @@
-# myfixer.co.za - robots.txt (Jan 2026)
+# myfixer.co.za - robots.txt
 User-agent: *
-Disallow:
+Allow: /
+
+Sitemap: https://www.myfixer.co.za/sitemap.xml
 
 # Block AI training & scraping bots
 User-agent: GPTBot
@@ -35,6 +37,3 @@ User-agent: GrokBot
 Disallow: /
 User-agent: xAI
 Disallow: /
-
-# Sitemap
-Sitemap: https://www.myfixer.co.za/sitemap.xml
