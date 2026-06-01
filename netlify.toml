@@ -1,101 +1,112 @@
 [build]
   publish = "public"
 
+[build.environment]
+  NODE_VERSION = "18"
+
+# ========================================================
+# SPECIFIC PAGE REDIRECTS (FIRST PRIORITY)
+# ========================================================
+
 [[redirects]]
   from = "/tv-repair-centurion"
   to = "/tv-repair.html"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/tv-repair-centurion.html"
   to = "/tv-repair.html"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/dishwasher-repair-centurion"
   to = "/dishwasher-repair.html"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/dishwasher-repair-centurion.html"
   to = "/dishwasher-repair.html"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/hvac-repair-centurion"
   to = "/hvac-repair.html"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/hvac-repair-centurion.html"
   to = "/hvac-repair.html"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/aircon-installation-centurion"
   to = "/hvac-repair.html"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/aircon-installation-centurion.html"
   to = "/hvac-repair.html"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/aircon-repair"
   to = "/hvac-repair.html"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/aircon-repair.html"
   to = "/hvac-repair.html"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/stove-oven-repair-centurion"
   to = "/stove-oven-repair.html"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/stove-oven-repair-centurion.html"
   to = "/stove-oven-repair.html"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/coffee-machine-repair-centurion"
   to = "/coffeemachine-repair.html"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/coffee-machine-repair-centurion.html"
   to = "/coffeemachine-repair.html"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/coffeemachine-repair-centurion"
   to = "/coffeemachine-repair.html"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/coffeemachine-repair-centurion.html"
   to = "/coffeemachine-repair.html"
   status = 301
+
+
+# ========================================================
+# GLOBAL DOMAIN CANONICALIZATION (LAST PRIORITY CATCH-ALL)
+# ========================================================
+
+[[redirects]]
+  from = "http://myfixer.co.za/*"
+  to = "https://www.myfixer.co.za/:splat"
+  status = 301
   force = true
 
-[build.environment]
-  NODE_VERSION = "18"
+[[redirects]]
+  from = "http://www.myfixer.co.za/*"
+  to = "https://www.myfixer.co.za/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://myfixer.co.za/*"
+  to = "https://www.myfixer.co.za/:splat"
+  status = 301
+  force = true
