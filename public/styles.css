@@ -564,7 +564,7 @@ body {
 .about-content {
   display: flex;
   gap: 3rem;
-  align-items: center;
+  align-items: flex-start;
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 20px;
@@ -618,7 +618,9 @@ body {
 .about-image {
   flex: 1;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 2rem;
 }
 
 .about-image-wrapper {
@@ -646,6 +648,8 @@ body {
 .about-image-wrapper:hover img {
   transform: scale(1.05);
 }
+
+
 
 /* ============================================
    WHY CHOOSE SECTION
