@@ -10,7 +10,7 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- Gallery page with images -->
+  <!-- Gallery page with optimized Local SEO images -->
   <url>
     <loc>https://www.myfixer.co.za/gallery.html</loc>
     <lastmod>2026-05-27</lastmod>
@@ -18,13 +18,28 @@
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://www.myfixer.co.za/img/gallery/001.webp</image:loc>
-      <image:title>Appliance Repair Gallery 1 | MyFixer</image:title>
+      <image:title>Commercial Outdoor Unit Air Conditioning Installation Gauteng | MyFixer</image:title>
     </image:image>
     <image:image>
       <image:loc>https://www.myfixer.co.za/img/gallery/002.webp</image:loc>
-      <image:title>Appliance Repair Gallery 2 | MyFixer</image:title>
+      <image:title>HVAC Outdoor Unit Installation Pretoria | MyFixer</image:title>
     </image:image>
-    <!-- Add remaining gallery images similarly -->
+    <image:image>
+      <image:loc>https://www.myfixer.co.za/img/gallery/003.webp</image:loc>
+      <image:title>Commercial Display Freezer Repair | MyFixer</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.myfixer.co.za/img/gallery/005.webp</image:loc>
+      <image:title>Walk-In Cold Room Installation Sandton | MyFixer</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.myfixer.co.za/img/gallery/013.webp</image:loc>
+      <image:title>SMEG Dishwasher Repair Service | MyFixer</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.myfixer.co.za/img/gallery/016.webp</image:loc>
+      <image:title>Industrial Plant Machinery Maintenance Johannesburg | MyFixer</image:title>
+    </image:image>
   </url>
 
   <!-- Blog overview page -->
@@ -33,6 +48,14 @@
     <lastmod>2026-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <!-- Individual Blog Article Placeholders (CRITICAL: Add your actual posts here) -->
+  <url>
+    <loc>https://www.myfixer.co.za/blog/how-to-fix-fridge-not-cooling.html</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <!-- Service pages (Gauteng-focused) -->

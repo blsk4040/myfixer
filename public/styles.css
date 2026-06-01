@@ -3501,3 +3501,109 @@ body {
     text-align: center;
   }
 }
+/* ============================================
+   BLOG PAGE: DETAILED GUIDE BUTTONS
+   ============================================ */
+
+/* Target the specific buttons inside the blog articles */
+.blog-article .article-cta .btn-primary {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff !important; /* White background as requested */
+    color: #222 !important;
+    padding: 20px 30px !important;
+    margin: 20px auto;
+    max-width: 500px;
+    border-radius: 14px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border: 2px solid #e74c3c !important; /* Red border to make it pop */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+.blog-article .article-cta .btn-primary:hover {
+    background: #e74c3c !important; /* Flips to red on hover */
+    color: #ffffff !important;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(231, 76, 60, 0.2);
+}
+
+/* Adds the Info Icon to the left */
+.blog-article .article-cta .btn-primary::before {
+    content: "\f05a"; 
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 15px;
+    color: #e74c3c;
+}
+
+/* Adds the Arrow to the right */
+.blog-article .article-cta .btn-primary::after {
+    content: "\f105";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-left: 15px;
+}
+
+/* Ensure icons change color on hover too */
+.blog-article .article-cta .btn-primary:hover::before {
+    color: #ffffff;
+}
+
+/* ============================================
+   GALLERY PAGE: PREMIUM CTA BUTTON
+   ============================================ */
+
+/* Targets the main button at the bottom of the gallery grid */
+.gallery-full .gallery-cta .btn-primary {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff !important; /* White background */
+    color: #222 !important;
+    padding: 20px 30px !important;
+    margin: 40px auto 20px auto; /* Centered with healthy top spacing */
+    max-width: 500px;
+    border-radius: 14px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border: 2px solid #e74c3c !important; /* Premium red border */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+.gallery-full .gallery-cta .btn-primary:hover {
+    background: #e74c3c !important; /* Flips completely red on hover */
+    color: #ffffff !important;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(231, 76, 60, 0.2);
+}
+
+/* Adds the Wrench/Repair Icon to the left */
+.gallery-full .gallery-cta .btn-primary::before {
+    content: "\f1ad"; /* Font Awesome Calendar-check or wrench icon */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 15px;
+    color: #e74c3c;
+}
+
+/* Adds the Arrow to the right */
+.gallery-full .gallery-cta .btn-primary::after {
+    content: "\f105"; /* Arrow icon */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-left: 15px;
+}
+
+/* Ensure the left icon changes color to white on hover */
+.gallery-full .gallery-cta .btn-primary:hover::before {
+    color: #ffffff;
+}
+
