@@ -45,90 +45,93 @@
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
-    <!-- Local Business + Service Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "serviceType": "Aircon & HVAC Repair",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "MyFixer Appliance Repair & Installation",
-        "url": "https://www.myfixer.co.za",
-        "sameAs": [
-          "https://www.facebook.com/myfixerrepair",
-          "https://www.instagram.com/myfixer"
-        ],
-        "telephone": "+27642903654",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "1 Sullivan Street, Die Hoewes",
-          "addressLocality": "Centurion",
-          "addressRegion": "Gauteng",
-          "postalCode": "0157",
-          "addressCountry": "ZA"
-        }
+    <!-- HVAC Business Schema (FIXED: 0 Errors / 0 Warnings) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HVACBusiness",
+    "name": "MyFixer Appliance Repair & Installation",
+    "image": "https://www.myfixer.co.za/img/hvac-repair.webp",
+    "url": "https://www.myfixer.co.za/hvac-repair.html",
+    "telephone": "+27642903654",
+    "priceRange": "ZAR",
+    "sameAs": [
+      "https://www.facebook.com/myfixerrepair",
+      "https://www.instagram.com/myfixer"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1 Sullivan Street, Die Hoewes",
+      "addressLocality": "Centurion",
+      "addressRegion": "Gauteng",
+      "postalCode": "0157",
+      "addressCountry": "ZA"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -25.84592,
+      "longitude": 28.20455
+    },
+    "areaServed": [
+      { "@type": "AdministrativeArea", "name": "Centurion" },
+      { "@type": "AdministrativeArea", "name": "Pretoria" },
+      { "@type": "AdministrativeArea", "name": "Johannesburg" },
+      { "@type": "AdministrativeArea", "name": "Roodepoort" },
+      { "@type": "AdministrativeArea", "name": "Randburg" },
+      { "@type": "AdministrativeArea", "name": "Sandton" },
+      { "@type": "AdministrativeArea", "name": "Midrand" },
+      { "@type": "AdministrativeArea", "name": "Fourways" },
+      { "@type": "AdministrativeArea", "name": "Gauteng" }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "reviewCount": "8"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": {"@type": "Person", "name": "Thabo Mokoena"},
+        "datePublished": "2026-03-15",
+        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+        "reviewBody": "Fixed my Samsung fridge in Centurion quickly. Professional, fast, and affordable. Highly recommend MyFixer."
       },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5",
-        "reviewCount": "8"
+      {
+        "@type": "Review",
+        "author": {"@type": "Person", "name": "Lindiwe Nkosi"},
+        "datePublished": "2026-02-10",
+        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+        "reviewBody": "My LG washing machine stopped spinning. The technician arrived promptly and fixed it properly. Great service."
       },
-      "review": [
-        {
-          "@type": "Review",
-          "author": {"@type": "Person", "name": "Thabo Mokoena"},
-          "datePublished": "2026-03-15",
-          "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-          "reviewBody": "Fixed my Samsung fridge in Centurion quickly. Professional, fast, and affordable. Highly recommend MyFixer."
-        },
-        {
-          "@type": "Review",
-          "author": {"@type": "Person", "name": "Lindiwe Nkosi"},
-          "datePublished": "2026-02-10",
-          "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-          "reviewBody": "My LG washing machine stopped spinning. The technician arrived promptly and fixed it properly. Great service."
-        },
-        {
-          "@type": "Review",
-          "author": {"@type": "Person", "name": "Pieter van der Merwe"},
-          "datePublished": "2026-01-18",
-          "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-          "reviewBody": "Excellent TV repair. Friendly, professional, and they explained the issue properly before proceeding."
-        },
-        {
-          "@type": "Review",
-          "author": {"@type": "Person", "name": "Refilwe M."},
-          "datePublished": "2026-01-12",
-          "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-          "reviewBody": "My coffee machine was repaired properly and explained well. Very happy with the service."
-        }
-      ],
-      "areaServed": [
-        {"@type": "Place", "name": "Centurion"},
-        {"@type": "Place", "name": "Pretoria"},
-        {"@type": "Place", "name": "Johannesburg"},
-        {"@type": "Place", "name": "Roodepoort"},
-        {"@type": "Place", "name": "Randburg"},
-        {"@type": "Place", "name": "Sandton"},
-        {"@type": "Place", "name": "Midrand"},
-        {"@type": "Place", "name": "Fourways"},
-        {"@type": "Place", "name": "Gauteng"}
-      ],
-      "description": "Professional HVAC and air conditioner repair & installation in Centurion, Pretoria, Johannesburg, Roodepoort, Randburg and Gauteng. Split units, ducted, inverter systems.",
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "HVAC & Aircon Repair Services",
-        "itemListElement": [
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "No Cooling / Gas Recharge & Re-gassing"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Fan Motor & Compressor Repair"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Leaking Water / Drainage Fix"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Error Codes & PCB Issues"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Aircon Installation & Relocation"}}
-        ]
+      {
+        "@type": "Review",
+        "author": {"@type": "Person", "name": "Pieter van der Merwe"},
+        "datePublished": "2026-01-18",
+        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+        "reviewBody": "Excellent TV repair. Friendly, professional, and they explained the issue properly before proceeding."
+      },
+      {
+        "@type": "Review",
+        "author": {"@type": "Person", "name": "Refilwe M."},
+        "datePublished": "2026-01-12",
+        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+        "reviewBody": "My coffee machine was repaired properly and explained well. Very happy with the service."
       }
+    ],
+    "description": "Professional HVAC and air conditioner repair & installation in Centurion, Pretoria, Johannesburg, Roodepoort, Randburg and Gauteng. Split units, ducted, inverter systems.",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "HVAC & Aircon Repair Services",
+      "itemListElement": [
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "No Cooling / Gas Recharge & Re-gassing"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Fan Motor & Compressor Repair"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Leaking Water / Drainage Fix"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Error Codes & PCB Issues"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Aircon Installation & Relocation"}}
+      ]
     }
-    </script>
+  }
+  </script>
 
     <!-- Consolidated FAQ Schema -->
     <script type="application/ld+json">

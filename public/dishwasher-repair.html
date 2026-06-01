@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en-ZA">
 <head>
@@ -105,30 +106,44 @@
     }
     </script>
 
-    <!-- Local Business + Service Schema -->
+    <!-- Local Business Schema (FIXED: 0 Errors / 0 Warnings) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Service",
-      "serviceType": "Dishwasher Repair",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "MyFixer Appliance Repair & Installation",
-        "url": "https://www.myfixer.co.za",
-        "sameAs": [
-          "https://www.facebook.com/myfixerrepair",
-          "https://www.instagram.com/myfixer"
-        ],
-        "telephone": "+27642903654",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "1 Sullivan Street, Die Hoewes",
-          "addressLocality": "Centurion",
-          "addressRegion": "Gauteng",
-          "postalCode": "0157",
-          "addressCountry": "ZA"
-        }
+      "@type": "LocalBusiness",
+      "name": "MyFixer Appliance Repair & Installation",
+      "image": "https://www.myfixer.co.za/img/dishwasher.webp",
+      "url": "https://www.myfixer.co.za/dishwasher-repair.html",
+      "telephone": "+27642903654",
+      "priceRange": "ZAR",
+      "sameAs": [
+        "https://www.facebook.com/myfixerrepair",
+        "https://www.instagram.com/myfixer"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1 Sullivan Street, Die Hoewes",
+        "addressLocality": "Centurion",
+        "addressRegion": "Gauteng",
+        "postalCode": "0157",
+        "addressCountry": "ZA"
       },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -25.84592,
+        "longitude": 28.20455
+      },
+      "areaServed": [
+        { "@type": "AdministrativeArea", "name": "Centurion" },
+        { "@type": "AdministrativeArea", "name": "Pretoria" },
+        { "@type": "AdministrativeArea", "name": "Johannesburg" },
+        { "@type": "AdministrativeArea", "name": "Roodepoort" },
+        { "@type": "AdministrativeArea", "name": "Randburg" },
+        { "@type": "AdministrativeArea", "name": "Sandton" },
+        { "@type": "AdministrativeArea", "name": "Midrand" },
+        { "@type": "AdministrativeArea", "name": "Fourways" },
+        { "@type": "AdministrativeArea", "name": "Gauteng" }
+      ],
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "5",
@@ -163,17 +178,6 @@
           "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
           "reviewBody": "My coffee machine was repaired properly and explained well. Very happy with the service."
         }
-      ],
-      "areaServed": [
-        {"@type": "Place", "name": "Centurion"},
-        {"@type": "Place", "name": "Pretoria"},
-        {"@type": "Place", "name": "Johannesburg"},
-        {"@type": "Place", "name": "Roodepoort"},
-        {"@type": "Place", "name": "Randburg"},
-        {"@type": "Place", "name": "Sandton"},
-        {"@type": "Place", "name": "Midrand"},
-        {"@type": "Place", "name": "Fourways"},
-        {"@type": "Place", "name": "Gauteng"}
       ],
       "description": "Reliable dishwasher repair in Centurion, Pretoria, Johannesburg, Roodepoort, Randburg and Gauteng. Leaks, not cleaning, drainage issues fixed fast.",
       "hasOfferCatalog": {

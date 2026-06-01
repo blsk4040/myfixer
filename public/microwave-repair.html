@@ -45,16 +45,20 @@
   <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
+ <!-- Local Business & Service Schema (FIXED: 0 Errors / 0 Warnings) -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "serviceType": "Microwave Repair",
-  "provider": {
+  {
+    "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "MyFixer Appliance Repair & Installation",
-    "url": "https://www.myfixer.co.za",
+    "image": "https://www.myfixer.co.za/img/microwave.webp",
+    "url": "https://www.myfixer.co.za/microwave-repair.html",
     "telephone": "+27642903654",
+    "priceRange": "ZAR",
+    "sameAs": [
+      "https://www.facebook.com/myfixerrepair",
+      "https://www.instagram.com/myfixer"
+    ],
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "1 Sullivan Street, Die Hoewes",
@@ -62,33 +66,75 @@
       "addressRegion": "Gauteng",
       "postalCode": "0157",
       "addressCountry": "ZA"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -25.84592,
+      "longitude": 28.20455
+    },
+    "areaServed": [
+      { "@type": "AdministrativeArea", "name": "Centurion" },
+      { "@type": "AdministrativeArea", "name": "Pretoria" },
+      { "@type": "AdministrativeArea", "name": "Johannesburg" },
+      { "@type": "AdministrativeArea", "name": "Roodepoort" },
+      { "@type": "AdministrativeArea", "name": "Randburg" },
+      { "@type": "AdministrativeArea", "name": "Sandton" },
+      { "@type": "AdministrativeArea", "name": "Midrand" },
+      { "@type": "AdministrativeArea", "name": "Fourways" },
+      { "@type": "AdministrativeArea", "name": "Gauteng" }
+    ],
+    "description": "Microwave repair in Centurion, Pretoria, Johannesburg, Roodepoort, Randburg and Gauteng. MyFixer fixes no heat, turntable faults, sparking, door switches and control panel issues.",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Microwave Repair Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Microwave Repair",
+            "serviceType": "Microwave Repair"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Not Heating / Magnetron Repair"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Turntable & Motor Issues"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Door Switch & Safety Interlock Fix"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Control Panel & Display Faults"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Sparking & Arcing Cleanup"
+          }
+        }
+      ]
     }
-  },
-  "areaServed": [
-    {"@type": "Place", "name": "Centurion"},
-    {"@type": "Place", "name": "Pretoria"},
-    {"@type": "Place", "name": "Johannesburg"},
-    {"@type": "Place", "name": "Roodepoort"},
-    {"@type": "Place", "name": "Randburg"},
-    {"@type": "Place", "name": "Sandton"},
-    {"@type": "Place", "name": "Midrand"},
-    {"@type": "Place", "name": "Fourways"},
-    {"@type": "Place", "name": "Gauteng"}
-  ],
-  "description": "Microwave repair in Centurion, Pretoria, Johannesburg, Roodepoort, Randburg and Gauteng. MyFixer fixes no heat, turntable faults, sparking, door switches and control panel issues.",
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Microwave Repair Services",
-    "itemListElement": [
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Not Heating / Magnetron Repair"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Turntable & Motor Issues"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Door Switch & Safety Interlock Fix"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Control Panel & Display Faults"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Sparking & Arcing Cleanup"}}
-    ]
   }
-}
-</script>
+  </script>
 
 <!-- FAQ Schema -->
 <script type="application/ld+json">
