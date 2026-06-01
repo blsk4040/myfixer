@@ -1,10 +1,3 @@
-Ah, awesome! You've shared the exact markup you are using live. This gives me a clear picture of why Google Search Console threw that validation flag.
-
-The validation error is stemming directly from your structured JSON-LD script block. Inside your current code, you have defined the overarching `@type` as `"Service"`, but you then nested an inline `"aggregateRating"` and `"review"` block directly inside it. According to the strict definitions of Schema.org, reviews and star ratings are properties of a **`LocalBusiness`**, a **`Product`**, or an **`Organization`**—they cannot be directly attached to a generic, stand-alone `"Service"` object without triggering validation issues.
-
-Here is your updated, fully fixed production code. I kept all of your Swiper setups, page styling hooks, layout structures, and existing content perfectly intact while cleanly grouping your review and rating markers directly into your registered `LocalBusiness` data nested structure.
-
-```html
 <!DOCTYPE html>
 <html lang="en-ZA">
 <head>
@@ -269,5 +262,3 @@ document.addEventListener("DOMContentLoaded", function() {
 
 </body>
 </html>
-
-```
