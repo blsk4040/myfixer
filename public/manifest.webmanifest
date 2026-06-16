@@ -7,7 +7,7 @@
   "background_color": "#ffffff",
   "theme_color": "#008037",
   "scope": "/",
-  "orientation": "portrait-primary",
+  "orientation": "any",
   "icons": [
     {
       "src": "/icons/icon-192.png",
@@ -46,11 +46,11 @@
       "name": "View Our Gallery",
       "short_name": "Gallery",
       "description": "See proof of our completed appliance transformations.",
-      "url": "/gallery.html",
+      "url": "/gallery",
       "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
     }
   ],
-  "categories": ["home-services", "appliances", "repair"],
+  "categories": ["home-services", "business"],
   "dir": "ltr",
   "lang": "en-ZA"
 }

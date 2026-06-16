@@ -1,10 +1,21 @@
 document.addEventListener("DOMContentLoaded", function () {
   console.log("🚀 Component loader started...");
 
+  // Detect if running locally via file:// or a strict subdirectory local server
+  const isLocalFile = window.location.protocol === 'file:' || window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost';
+  
+  // Set the base path dynamically based on where the file is being viewed
+  const basePath = isLocalFile ? "" : "/";
+  
+  const navUrl = `${basePath}components/nav.html`;
+  const footerUrl = `${basePath}components/footer.html`;
+
+  console.log(`📦 Fetching components using base path: "${basePath}"`);
+
   // Load Navigation
-  fetch("components/nav.html")
+  fetch(navUrl)
     .then(response => {
-      if (!response.ok) throw new Error(`Nav failed: ${response.status}`);
+      if (!response.ok) throw new Error(`Nav failed to load from ${navUrl}: ${response.status}`);
       return response.text();
     })
     .then(data => {
@@ -22,9 +33,9 @@ document.addEventListener("DOMContentLoaded", function () {
     .catch(err => console.error("❌ Error loading navigation:", err));
 
   // Load Footer
-  fetch("components/footer.html")
+  fetch(footerUrl)
     .then(response => {
-      if (!response.ok) throw new Error(`Footer failed: ${response.status}`);
+      if (!response.ok) throw new Error(`Footer failed to load from ${footerUrl}: ${response.status}`);
       return response.text();
     })
     .then(data => {

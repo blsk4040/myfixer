@@ -5,89 +5,100 @@
   NODE_VERSION = "18"
 
 # ========================================================
-# SPECIFIC PAGE REDIRECTS (FIRST PRIORITY)
+# ASSET OPTIMIZATION - FORCE PRETTY URLS ON LIVE SERVER
+# ========================================================
+[build.processing.html]
+  pretty_urls = true
+
+# ========================================================
+# PLUGINS
+# ========================================================
+[[plugins]]
+  package = "@netlify/plugin-lighthouse"
+
+# ========================================================
+# SPECIFIC PAGE REDIRECTS (FIRST PRIORITY - CLEAN PATHS)
 # ========================================================
 
 [[redirects]]
   from = "/tv-repair-centurion"
-  to = "/tv-repair.html"
+  to = "/tv-repair"
   status = 301
 
 [[redirects]]
   from = "/tv-repair-centurion.html"
-  to = "/tv-repair.html"
+  to = "/tv-repair"
   status = 301
 
 [[redirects]]
   from = "/dishwasher-repair-centurion"
-  to = "/dishwasher-repair.html"
+  to = "/dishwasher-repair"
   status = 301
 
 [[redirects]]
   from = "/dishwasher-repair-centurion.html"
-  to = "/dishwasher-repair.html"
+  to = "/dishwasher-repair"
   status = 301
 
 [[redirects]]
   from = "/hvac-repair-centurion"
-  to = "/hvac-repair.html"
+  to = "/hvac-repair"
   status = 301
 
 [[redirects]]
   from = "/hvac-repair-centurion.html"
-  to = "/hvac-repair.html"
+  to = "/hvac-repair"
   status = 301
 
 [[redirects]]
   from = "/aircon-installation-centurion"
-  to = "/hvac-repair.html"
+  to = "/hvac-repair"
   status = 301
 
 [[redirects]]
   from = "/aircon-installation-centurion.html"
-  to = "/hvac-repair.html"
+  to = "/hvac-repair"
   status = 301
 
 [[redirects]]
   from = "/aircon-repair"
-  to = "/hvac-repair.html"
+  to = "/hvac-repair"
   status = 301
 
 [[redirects]]
   from = "/aircon-repair.html"
-  to = "/hvac-repair.html"
+  to = "/hvac-repair"
   status = 301
 
 [[redirects]]
   from = "/stove-oven-repair-centurion"
-  to = "/stove-oven-repair.html"
+  to = "/stove-oven-repair"
   status = 301
 
 [[redirects]]
   from = "/stove-oven-repair-centurion.html"
-  to = "/stove-oven-repair.html"
+  to = "/stove-oven-repair"
   status = 301
 
 [[redirects]]
   from = "/coffee-machine-repair-centurion"
-  to = "/coffeemachine-repair.html"
+  to = "/coffeemachine-repair"
   status = 301
 
 [[redirects]]
   from = "/coffee-machine-repair-centurion.html"
-  to = "/coffeemachine-repair.html"
+  to = "/coffeemachine-repair"
   status = 301
 
 [[redirects]]
   from = "/coffeemachine-repair-centurion"
-  to = "/coffeemachine-repair.html"
+  to = "/coffeemachine-repair"
   status = 301
 
 [[redirects]]
   from = "/coffeemachine-repair-centurion.html"
-  to = "/coffeemachine-repair.html"
+  to = "/coffeemachine-repair"
   status = 301
-
 
 # ========================================================
 # GLOBAL DOMAIN CANONICALIZATION (LAST PRIORITY CATCH-ALL)
