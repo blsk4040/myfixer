@@ -16,9 +16,6 @@ Sitemap: https://www.myfixer.co.za/sitemap.xml
 User-agent: GPTBot
 Disallow: /
 
-User-agent: ChatGPT-User
-Disallow: /
-
 User-agent: Google-Extended
 Disallow: /
 
@@ -67,8 +64,5 @@ Disallow: /
 User-agent: Omgili
 Disallow: /
 
-# Note: OAI-SearchBot is left allowed by default above so 
-# ChatGPT web search features can surface your business link. 
-# If you want to block ChatGPT Search as well, uncomment the 2 lines below:
-# User-agent: OAI-SearchBot
-# Disallow: /
+# Note: OAI-SearchBot and ChatGPT-User are left allowed by default above so 
+# ChatGPT web search features and user requests can surface your business link.
