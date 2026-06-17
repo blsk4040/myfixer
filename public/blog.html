@@ -38,25 +38,54 @@
     <meta name="twitter:image" content="https://www.myfixer.co.za/img/4-1024x683.jpg">
     <meta name="twitter:url" content="https://www.myfixer.co.za/blog.html">
 
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
+   <!-- JSON-LD Structured Data: Optimized Blog Landing Page -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
       "@type": "Blog",
-      "name": "MyFixer Blog",
+      "@id": "https://www.myfixer.co.za/blog.html#blog",
+      "name": "MyFixer Appliance Repair Blog",
       "url": "https://www.myfixer.co.za/blog.html",
-      "description": "Expert guides on appliance repair and common problems in Centurion, Pretoria & Johannesburg.",
+      "description": "Expert guides on appliance repair and common troubleshooting tips for fridges, washing machines, and TVs in Gauteng.",
       "publisher": {
-        "@type": "Organization",
-        "name": "MyFixer",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://myfixer.co.za/img/myfixer_logo.png"
-        }
+        "@type": "LocalBusiness",
+        "@id": "https://www.myfixer.co.za/#localbusiness",
+        "name": "MyFixer Appliance Repair & Installation",
+        "image": "https://myfixer.co.za/img/myfixer_logo.png",
+        "url": "https://www.myfixer.co.za/"
       },
-      "mainEntityOfPage": "https://www.myfixer.co.za/blog.html"
+      "blogPost": [
+        {
+          "@type": "BlogPosting",
+          "headline": "Why Is My TV Screen Black But Sound Works? Backlight Troubleshooting",
+          "url": "https://www.myfixer.co.za/blog/tv-black-screen-sound-works.html",
+          "datePublished": "2026-05-12"
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Top 5 Reasons Your Front-Loader Washing Machine Won't Spin",
+          "url": "https://www.myfixer.co.za/blog/washing-machine-not-spinning.html",
+          "datePublished": "2026-04-20"
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "How to Tell If Your Fridge Compressor Needs a Gas Refill",
+          "url": "https://www.myfixer.co.za/blog/fridge-compressor-gas-refill-signs.html",
+          "datePublished": "2026-03-18"
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.myfixer.co.za/blog.html#webpage",
+      "url": "https://www.myfixer.co.za/blog.html",
+      "name": "Appliance Repair Guides & Tips Blog | MyFixer"
     }
-    </script>
+  ]
+}
+</script>
 
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">

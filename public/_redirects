@@ -1,0 +1,20 @@
+# Specific Page Redirects
+/tv-repair-centurion                      /tv-repair 301
+/tv-repair-centurion.html                 /tv-repair 301
+/dishwasher-repair-centurion              /dishwasher-repair 301
+/dishwasher-repair-centurion.html         /dishwasher-repair 301
+/hvac-repair-centurion                    /hvac-repair 301
+/hvac-repair-centurion.html               /hvac-repair 301
+/aircon-installation-centurion            /hvac-repair 301
+/aircon-installation-centurion.html       /hvac-repair 301
+/aircon-repair                            /hvac-repair 301
+/aircon-repair.html                       /hvac-repair 301
+/stove-oven-repair-centurion              /stove-oven-repair 301
+/stove-oven-repair-centurion.html         /stove-oven-repair 301
+/coffee-machine-repair-centurion          /coffeemachine-repair 301
+/coffee-machine-repair-centurion.html     /coffeemachine-repair 301
+/coffeemachine-repair-centurion           /coffeemachine-repair 301
+/coffeemachine-repair-centurion.html      /coffeemachine-repair 301
+
+# Domain Canonicalization (Force non-www to www)
+https://myfixer.co.za/*                   https://www.myfixer.co.za/:splat 301
