@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
   console.log("🚀 Component loader started...");
 
-  // 1. Your working environment detection setup
+  // 1. Working environment detection setup
   const isLocalEnv = window.location.protocol === 'file:' || window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost';
   const isSubFolder = window.location.pathname.includes('/locations/') || window.location.pathname.includes('/services/');
   const hasPublicInUrl = window.location.pathname.includes('/public/');
   
-  // Set the base path dynamically based on context (Kept exactly how you like it)
+  // Set the base path dynamically based on context
   let basePath = "/";
   if (isLocalEnv) {
     basePath = isSubFolder ? "../" : "";
@@ -17,22 +17,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
   console.log(`📦 Fetching components using base path: "${basePath}"`);
 
-  // 2. Link Fixer Function for flawless local navigation
-  function fixLocalLinks() {
-    if (isLocalEnv) {
-      console.log("🛠️ Local environment active. Checking navigation links...");
-      
-      document.querySelectorAll('a').forEach(link => {
-        let href = link.getAttribute('href');
-        if (!href) return;
+  // 2. Link Fixer Function for both local testing AND Cloudflare optimization
+  function fixNavigationLinks() {
+    document.querySelectorAll('a').forEach(link => {
+      let href = link.getAttribute('href');
+      if (!href || href.startsWith('javascript:') || href.startsWith('tel:') || href.startsWith('mailto:') || href.startsWith('#')) return;
 
+      // --- LIVE PRODUCTION MODE (Cloudflare Pages Optimization) ---
+      if (!isLocalEnv) {
+        // Strip out .html extensions to match Cloudflare's extensionless routing rule
+        if (href.endsWith('.html')) {
+          const cleanHref = href.substring(0, href.length - 5);
+          link.setAttribute('href', cleanHref);
+        }
+        return; // Exit early for live environment execution
+      }
+
+      // --- LOCAL DEVELOPMENT MODE ---
+      if (isLocalEnv) {
         // Condition A: Testing via http://127.0.0.1:5555/public/...
         if (hasPublicInUrl) {
           if (href.startsWith('/') && !href.startsWith('/public/')) {
             link.setAttribute('href', `/public${href}`);
           } else if (href.startsWith('../')) {
-            // If the link explicitly uses relative stepping, make sure it stays pointing to public
-            // (e.g., changing '../services/fridge-repair.html' to ensure it fits the root routing structure)
             const cleanPath = href.replace('../', '/public/');
             link.setAttribute('href', cleanPath.replace('//', '/'));
           }
@@ -40,12 +47,11 @@ document.addEventListener("DOMContentLoaded", function () {
         // Condition B: Testing via http://127.0.0.1:5555/... (without 'public' in the URL)
         else if (isSubFolder) {
           if (href.startsWith('/')) {
-            // Strip leading slash and attach relative step back
             link.setAttribute('href', `../${href.substring(1)}`);
           }
         }
-      });
-    }
+      }
+    });
   }
 
   // Load Navigation
@@ -61,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log("✅ Nav loaded successfully");
 
         // Run link patching right after nav HTML is injected
-        fixLocalLinks();
+        fixNavigationLinks();
 
         if (typeof window.initSite === "function") {
           window.initSite();
@@ -84,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log("✅ Footer loaded successfully");
 
         // Run link patching right after footer HTML is injected
-        fixLocalLinks();
+        fixNavigationLinks();
 
         if (typeof window.initWhatsAppWidget === "function") {
           window.initWhatsAppWidget();
