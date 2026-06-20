@@ -240,9 +240,7 @@ body {
   }
 }
 
-/* ============================================
-   HERO CAROUSEL
-   ============================================ */
+
 /* ============================================
    HERO CAROUSEL
    ============================================ */
@@ -633,6 +631,12 @@ body {
   position: relative;
 }
 
+/* PLACE THE NEW RULE DIRECTLY HERE */
+.about-image .about-image-wrapper:nth-child(2) {
+  margin-top: 15rem;
+}
+
+
 .about-image-wrapper:hover {
   transform: translateY(-10px);
 }
@@ -895,6 +899,12 @@ body {
   cursor: pointer;
 }
 
+/* Strips underlines and enforces correct color inheritance for internal links */
+.service-card a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .service-card:hover {
   transform: translateY(-12px) scale(1.02);
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
@@ -942,21 +952,16 @@ body {
   width: 100%;
 }
 
-.overlay-content h3 {
-  font-size: 1.4rem;
-  margin-bottom: 0.6rem;
-}
-
-.overlay-content p {
+.overlay-description {
   font-size: 0.95rem;
   line-height: 1.5;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .book-now {
   display: inline-block;
   background: rgba(255, 255, 255, 0.2);
-  color: #fff;
+  color: #fff !important; /* Preserves crisp button look over generic link inheritance */
   padding: 8px 20px;
   border-radius: 25px;
   font-weight: 600;
@@ -1946,6 +1951,24 @@ body {
   background: #fff;
   color: #c0392b;
   transform: translateY(-2px);
+}
+
+
+/* ============================================
+   IFRAME & SECURITY STYLING (MIGRATED INLINE DESIGNS)
+   ============================================ */
+
+/* Cleans up the Google Map Iframe Border profile */
+.map-iframe {
+  border: 0;
+}
+
+/* Replaces inline style rules for form security layout protection mechanisms */
+.hidden-field {
+  display: none !important;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
 }
 
 /* ============================================
