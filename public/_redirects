@@ -1,4 +1,5 @@
 # Specific Page Redirects
+/gallery.html                             /gallery 301
 /tv-repair-centurion                      /tv-repair 301
 /tv-repair-centurion.html                 /tv-repair 301
 /dishwasher-repair-centurion              /dishwasher-repair 301
@@ -17,4 +18,4 @@
 /coffeemachine-repair-centurion.html      /coffeemachine-repair 301
 
 # Domain Canonicalization (Force non-www to www)
-https://myfixer.co.za/*                   https://www.myfixer.co.za/:splat 301
+https://myfixer.co.za/*                    https://www.myfixer.co.za/:splat 301
