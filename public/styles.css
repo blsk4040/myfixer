@@ -1046,6 +1046,115 @@ body {
   margin: 0 auto;
 }
 
+.google-review-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.google-reviews-cta {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 24px;
+  max-width: 980px;
+  margin: 0 auto 4rem;
+  padding: 28px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.18);
+}
+
+.google-reviews-mark {
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #fff;
+  color: #4285f4;
+  font-size: 2.2rem;
+  box-shadow: inset 0 0 0 1px rgba(66, 133, 244, 0.18), 0 14px 32px rgba(0, 0, 0, 0.12);
+}
+
+.google-reviews-copy {
+  text-align: left;
+}
+
+.google-reviews-copy h3 {
+  margin: 0 0 6px;
+  color: #111827;
+  font-size: 1.55rem;
+  line-height: 1.2;
+}
+
+.google-reviews-copy p {
+  margin: 0 0 10px;
+  color: #4b5563;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.google-reviews-stars {
+  display: flex;
+  gap: 3px;
+  color: #fbbc04;
+  font-size: 1.1rem;
+}
+
+.google-reviews-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 20px;
+  border-radius: 8px;
+  background: #111827;
+  color: #fff;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.google-reviews-button:hover {
+  transform: translateY(-2px);
+  background: #008037;
+  box-shadow: 0 18px 36px rgba(0, 128, 55, 0.24);
+}
+
+@media (max-width: 768px) {
+  .google-reviews-cta {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    padding: 24px 18px;
+  }
+
+  .google-reviews-copy {
+    text-align: center;
+  }
+
+  .google-reviews-stars {
+    justify-content: center;
+  }
+
+  .google-reviews-button {
+    width: 100%;
+    white-space: normal;
+  }
+}
+
 .testimonial-slider {
   position: relative;
   max-width: 1100px;
