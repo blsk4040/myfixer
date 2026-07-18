@@ -19,8 +19,6 @@ https://myfixer.co.za/*                    https://www.myfixer.co.za/:splat 301
 # Static Pages
 # ============================================
 
-/blog                                     /blog.html 301
-/gallery                                  /gallery.html 301
 
 # ============================================
 # Service Pages
