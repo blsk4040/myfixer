@@ -52,9 +52,6 @@ https://myfixer.co.za/*                    https://www.myfixer.co.za/:splat 301
 # Location Pages
 # ============================================
 
-/locations/appliance-repair-centurion     /locations/appliance-repair-centurion.html 301
-/locations/appliance-repair-johannesburg  /locations/appliance-repair-johannesburg.html 301
-/locations/appliance-repair-pretoria      /locations/appliance-repair-pretoria.html 301
 
 # ============================================
 # Legacy URLs
