@@ -1,10 +1,30 @@
-# Domain Canonicalization (Force non-www to www)
+# ============================================
+# Canonical Domain (non-www -> www)
+# ============================================
+
 https://myfixer.co.za/*                    https://www.myfixer.co.za/:splat 301
 
-# Static HTML canonical paths
+# ============================================
+# Homepage
+# ============================================
+
+/index                                    / 301
+/index/                                   / 301
 /index.html                               / 301
-/gallery                                  /gallery.html 301
+/index.htm                                / 301
+/default.html                             / 301
+/default.htm                              / 301
+
+# ============================================
+# Static Pages
+# ============================================
+
 /blog                                     /blog.html 301
+/gallery                                  /gallery.html 301
+
+# ============================================
+# Service Pages
+# ============================================
 
 /fridge-repair                            /services/fridge-repair.html 301
 /fridge-repair.html                       /services/fridge-repair.html 301
@@ -14,7 +34,6 @@ https://myfixer.co.za/*                    https://www.myfixer.co.za/:splat 301
 
 /dishwasher-repair                        /services/dishwasher-repair.html 301
 /dishwasher-repair.html                   /services/dishwasher-repair.html 301
-/locations/dishwasher-repair.html         /services/dishwasher-repair.html 301
 
 /stove-oven-repair                        /services/stove-oven-repair.html 301
 /stove-oven-repair.html                   /services/stove-oven-repair.html 301
@@ -31,24 +50,40 @@ https://myfixer.co.za/*                    https://www.myfixer.co.za/:splat 301
 /hvac-repair                              /services/hvac-repair.html 301
 /hvac-repair.html                         /services/hvac-repair.html 301
 
+# ============================================
+# Location Pages
+# ============================================
+
 /locations/appliance-repair-centurion     /locations/appliance-repair-centurion.html 301
 /locations/appliance-repair-johannesburg  /locations/appliance-repair-johannesburg.html 301
 /locations/appliance-repair-pretoria      /locations/appliance-repair-pretoria.html 301
 
-# Specific Page Redirects
+# ============================================
+# Legacy URLs
+# ============================================
+
+/locations/dishwasher-repair.html         /services/dishwasher-repair.html 301
+
 /tv-repair-centurion                      /services/tv-repair.html 301
 /tv-repair-centurion.html                 /services/tv-repair.html 301
+
 /dishwasher-repair-centurion              /services/dishwasher-repair.html 301
 /dishwasher-repair-centurion.html         /services/dishwasher-repair.html 301
+
 /hvac-repair-centurion                    /services/hvac-repair.html 301
 /hvac-repair-centurion.html               /services/hvac-repair.html 301
+
 /aircon-installation-centurion            /services/hvac-repair.html 301
 /aircon-installation-centurion.html       /services/hvac-repair.html 301
+
 /aircon-repair                            /services/hvac-repair.html 301
 /aircon-repair.html                       /services/hvac-repair.html 301
+
 /stove-oven-repair-centurion              /services/stove-oven-repair.html 301
 /stove-oven-repair-centurion.html         /services/stove-oven-repair.html 301
+
 /coffee-machine-repair-centurion          /services/coffeemachine-repair.html 301
 /coffee-machine-repair-centurion.html     /services/coffeemachine-repair.html 301
+
 /coffeemachine-repair-centurion           /services/coffeemachine-repair.html 301
 /coffeemachine-repair-centurion.html      /services/coffeemachine-repair.html 301
