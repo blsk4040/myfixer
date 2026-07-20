@@ -66,13 +66,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 </div>
             </div>
             <div class="reviews-controls">
-                <button class="reviews-nav reviews-prev" type="button" aria-label="Previous Google review">
-                    <i class="fas fa-chevron-left" aria-hidden="true"></i>
-                </button>
                 <div class="reviews-dots" aria-label="Google review slides"></div>
-                <button class="reviews-nav reviews-next" type="button" aria-label="Next Google review">
-                    <i class="fas fa-chevron-right" aria-hidden="true"></i>
-                </button>
             </div>
         `;
 
@@ -88,13 +82,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 function initReviewsCarousel(container) {
     const track = container.querySelector(".reviews-track");
     const cards = Array.from(container.querySelectorAll(".review-card"));
-    const prev = container.querySelector(".reviews-prev");
-    const next = container.querySelector(".reviews-next");
     const dots = container.querySelector(".reviews-dots");
     let index = 0;
     let autoRotate;
 
-    if (!track || cards.length === 0 || !prev || !next || !dots) return;
+    if (!track || cards.length === 0 || !dots) return;
 
     cards.forEach((_, i) => {
         const dot = document.createElement("button");
@@ -106,16 +98,6 @@ function initReviewsCarousel(container) {
             restartAutoRotate();
         });
         dots.appendChild(dot);
-    });
-
-    prev.addEventListener("click", () => {
-        showReview(index - 1);
-        restartAutoRotate();
-    });
-
-    next.addEventListener("click", () => {
-        showReview(index + 1);
-        restartAutoRotate();
     });
 
     function showReview(nextIndex) {

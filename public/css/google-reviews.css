@@ -1,5 +1,5 @@
 .google-reviews-carousel {
-    max-width: 920px;
+    max-width: 420px;
     margin: 0 auto;
 }
 
@@ -20,8 +20,8 @@
     display: flex;
     flex: 0 0 100%;
     flex-direction: column;
-    min-height: 290px;
-    padding: 30px;
+    min-height: 300px;
+    padding: 24px;
     overflow: hidden;
     background: #fff;
     border: 1px solid rgba(17, 24, 39, 0.08);
@@ -107,28 +107,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 18px;
-    margin-top: 22px;
-}
-
-.reviews-nav {
-    display: grid;
-    place-items: center;
-    width: 42px;
-    height: 42px;
-    border: 0;
-    border-radius: 50%;
-    color: #111827;
-    background: #fff;
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.14);
-    cursor: pointer;
-    transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
-}
-
-.reviews-nav:hover {
-    transform: translateY(-2px);
-    color: #fff;
-    background: #008037;
+    margin-top: 18px;
 }
 
 .reviews-dots {
@@ -157,7 +136,7 @@
 .google-reviews-actions {
     display: flex;
     justify-content: center;
-    margin: 30px auto 0;
+    margin: 24px auto 56px;
 }
 
 .google-reviews-button {
@@ -195,11 +174,11 @@
 
 @media (min-width: 900px) {
     .google-reviews-carousel {
-        max-width: 1040px;
+        max-width: 420px;
     }
 
     .review-card {
-        min-height: 265px;
+        min-height: 300px;
     }
 }
 
