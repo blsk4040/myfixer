@@ -75,7 +75,8 @@ function normalizeLegacyDetails(place) {
       },
       authorAttribution: {
         displayName: review.author_name || "Google User",
-        uri: review.author_url || ""
+        uri: review.author_url || "",
+        photoUri: review.profile_photo_url || ""
       },
       relativePublishTimeDescription: review.relative_time_description || ""
     }))
