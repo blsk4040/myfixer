@@ -27,12 +27,10 @@ document.addEventListener("DOMContentLoaded", async () => {
             return;
         }
 
-        let html = "";
-
-        reviews.slice(0, 6).forEach((review) => {
+        const reviewCards = reviews.slice(0, 7).map((review) => {
             const stars = "\u2605".repeat(review.rating);
 
-            html += `
+            return `
                 <article class="review-card">
                     <div class="review-header">
                         ${review.photo
@@ -59,9 +57,26 @@ document.addEventListener("DOMContentLoaded", async () => {
                     </p>
                 </article>
             `;
-        });
+        }).join("");
 
-        container.innerHTML = html;
+        container.innerHTML = `
+            <div class="reviews-viewport">
+                <div class="reviews-track">
+                    ${reviewCards}
+                </div>
+            </div>
+            <div class="reviews-controls">
+                <button class="reviews-nav reviews-prev" type="button" aria-label="Previous Google review">
+                    <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                </button>
+                <div class="reviews-dots" aria-label="Google review slides"></div>
+                <button class="reviews-nav reviews-next" type="button" aria-label="Next Google review">
+                    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </button>
+            </div>
+        `;
+
+        initReviewsCarousel(container);
     } catch (e) {
         console.error(e);
 
@@ -69,6 +84,61 @@ document.addEventListener("DOMContentLoaded", async () => {
             "<p>Unable to load Google reviews.</p>";
     }
 });
+
+function initReviewsCarousel(container) {
+    const track = container.querySelector(".reviews-track");
+    const cards = Array.from(container.querySelectorAll(".review-card"));
+    const prev = container.querySelector(".reviews-prev");
+    const next = container.querySelector(".reviews-next");
+    const dots = container.querySelector(".reviews-dots");
+    let index = 0;
+    let autoRotate;
+
+    if (!track || cards.length === 0 || !prev || !next || !dots) return;
+
+    cards.forEach((_, i) => {
+        const dot = document.createElement("button");
+        dot.type = "button";
+        dot.className = "reviews-dot";
+        dot.setAttribute("aria-label", `Show Google review ${i + 1}`);
+        dot.addEventListener("click", () => {
+            showReview(i);
+            restartAutoRotate();
+        });
+        dots.appendChild(dot);
+    });
+
+    prev.addEventListener("click", () => {
+        showReview(index - 1);
+        restartAutoRotate();
+    });
+
+    next.addEventListener("click", () => {
+        showReview(index + 1);
+        restartAutoRotate();
+    });
+
+    function showReview(nextIndex) {
+        index = (nextIndex + cards.length) % cards.length;
+        track.style.transform = `translateX(-${index * 100}%)`;
+
+        cards.forEach((card, i) => {
+            card.setAttribute("aria-hidden", i === index ? "false" : "true");
+        });
+
+        dots.querySelectorAll(".reviews-dot").forEach((dot, i) => {
+            dot.classList.toggle("is-active", i === index);
+        });
+    }
+
+    function restartAutoRotate() {
+        window.clearInterval(autoRotate);
+        autoRotate = window.setInterval(() => showReview(index + 1), 6500);
+    }
+
+    showReview(0);
+    restartAutoRotate();
+}
 
 function normalizeReview(review) {
     const author = sanitizeText(
