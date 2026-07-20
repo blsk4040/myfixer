@@ -1,6 +1,6 @@
 export async function onRequestGet(context) {
   const apiKey = context.env.GOOGLE_API_KEY;
-  const configuredPlaceId = context.env.GOOGLE_PLACE_ID;
+  const placeId = normalizePlaceId(context.env.GOOGLE_PLACE_ID);
 
   if (!apiKey) {
     return Response.json(
@@ -9,34 +9,43 @@ export async function onRequestGet(context) {
     );
   }
 
-  try {
-    const placeId = configuredPlaceId || await findPlaceId(apiKey);
-    const detailsResponse = await fetch(
-      `https://places.googleapis.com/v1/places/${placeId}`,
+  if (!placeId) {
+    return Response.json(
       {
-        headers: {
-          "X-Goog-Api-Key": apiKey,
-          "X-Goog-FieldMask": "displayName,rating,userRatingCount,reviews"
-        }
-      }
+        error: "GOOGLE_PLACE_ID secret is missing.",
+        details: "Add GOOGLE_PLACE_ID to the Cloudflare Pages Production environment variables, then redeploy."
+      },
+      { status: 500 }
     );
+  }
 
+  try {
+    const url = new URL("https://maps.googleapis.com/maps/api/place/details/json");
+    url.searchParams.set("place_id", placeId);
+    url.searchParams.set("fields", "name,rating,user_ratings_total,reviews");
+    url.searchParams.set("reviews_sort", "newest");
+    url.searchParams.set("key", apiKey);
+
+    const detailsResponse = await fetch(url.toString());
     const details = await detailsResponse.json();
 
-    if (!detailsResponse.ok) {
-      return googleError("Google Places details request failed.", detailsResponse.status, details);
+    if (!detailsResponse.ok || details.status !== "OK") {
+      return Response.json(
+        {
+          error: "Google Places details request failed.",
+          googleStatus: detailsResponse.status,
+          details: details.error_message || details.status || details
+        },
+        { status: details.status === "NOT_FOUND" ? 404 : 502 }
+      );
     }
 
-    return Response.json(details, {
+    return Response.json(normalizeLegacyDetails(details.result), {
       headers: {
         "Cache-Control": "public, max-age=43200"
       }
     });
   } catch (err) {
-    if (err instanceof GooglePlacesError) {
-      return googleError(err.message, err.status, err.data);
-    }
-
     return Response.json(
       { error: err.message },
       { status: 500 }
@@ -44,54 +53,31 @@ export async function onRequestGet(context) {
   }
 }
 
-async function findPlaceId(apiKey) {
-  const searchResponse = await fetch(
-    "https://places.googleapis.com/v1/places:searchText",
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "X-Goog-Api-Key": apiKey,
-        "X-Goog-FieldMask": "places.id,places.displayName"
-      },
-      body: JSON.stringify({
-        textQuery: "MyFixer Appliance Repair 1 Sullivan Street Die Hoewes Centurion South Africa"
-      })
-    }
-  );
+function normalizePlaceId(placeId) {
+  if (!placeId) return "";
 
-  const searchData = await searchResponse.json();
-
-  if (!searchResponse.ok) {
-    throw new GooglePlacesError(
-      "Google Places text search failed.",
-      searchResponse.status,
-      searchData
-    );
-  }
-
-  if (!searchData.places || searchData.places.length === 0) {
-    throw new GooglePlacesError("Business not found.", 404, searchData);
-  }
-
-  return searchData.places[0].id;
+  return placeId
+    .trim()
+    .replace(/^places\//, "");
 }
 
-function googleError(message, status, data) {
-  return Response.json(
-    {
-      error: message,
-      googleStatus: status,
-      details: data.error?.message || data
+function normalizeLegacyDetails(place) {
+  return {
+    displayName: {
+      text: place.name || "MyFixer"
     },
-    { status: status === 404 ? 404 : 502 }
-  );
-}
-
-class GooglePlacesError extends Error {
-  constructor(message, status, data) {
-    super(message);
-    this.status = status;
-    this.data = data;
-  }
+    rating: place.rating,
+    userRatingCount: place.user_ratings_total,
+    reviews: (place.reviews || []).map((review) => ({
+      rating: review.rating,
+      text: {
+        text: review.text || ""
+      },
+      authorAttribution: {
+        displayName: review.author_name || "Google User",
+        uri: review.author_url || ""
+      },
+      relativePublishTimeDescription: review.relative_time_description || ""
+    }))
+  };
 }
