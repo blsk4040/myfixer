@@ -1,0 +1,4 @@
+GOOGLE_API_KEY=your-google-places-api-key
+
+# Optional but recommended. Use your Google Place ID to skip text search.
+GOOGLE_PLACE_ID=your-google-place-id
