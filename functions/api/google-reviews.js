@@ -66,19 +66,28 @@ function normalizeLegacyDetails(place) {
     displayName: {
       text: place.name || "MyFixer"
     },
-    rating: place.rating,
-    userRatingCount: place.user_ratings_total,
     reviews: (place.reviews || []).map((review) => ({
-      rating: review.rating,
+      rating: Number(review.rating) || 0,
       text: {
-        text: review.text || ""
+        text: sanitizeText(review.text || "", 500)
       },
       authorAttribution: {
-        displayName: review.author_name || "Google User",
+        displayName: sanitizeText(review.author_name || "Google User", 80),
         uri: review.author_url || "",
         photoUri: review.profile_photo_url || ""
       },
-      relativePublishTimeDescription: review.relative_time_description || ""
+      relativePublishTimeDescription: sanitizeText(review.relative_time_description || "", 50)
     }))
   };
+}
+
+function sanitizeText(value, maxLength) {
+  const cleaned = String(value)
+    .replace(/[\u0000-\u001f\u007f]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+
+  return cleaned.length > maxLength
+    ? `${cleaned.slice(0, maxLength - 1).trim()}...`
+    : cleaned;
 }

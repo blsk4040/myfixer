@@ -16,7 +16,11 @@ document.addEventListener("DOMContentLoaded", async () => {
             return;
         }
 
-        const reviews = data.reviews || [];
+        removeLegacyReviewSummary();
+
+        const reviews = (data.reviews || [])
+            .map(normalizeReview)
+            .filter((review) => review.text.length > 0);
 
         if (reviews.length === 0) {
             container.innerHTML = "<p>No reviews available.</p>";
@@ -25,59 +29,39 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         let html = "";
 
-        reviews.forEach((review) => {
-            const author = review.authorAttribution?.displayName || review.authorName || "Google User";
-            const photo = review.authorAttribution?.photoUri || "";
-            const stars = "\u2605".repeat(review.rating || 0);
+        reviews.slice(0, 6).forEach((review) => {
+            const stars = "\u2605".repeat(review.rating);
 
             html += `
-                <div class="review-slide">
+                <article class="review-card">
                     <div class="review-header">
-                        ${photo
-                            ? `<img class="review-avatar" src="${escapeAttribute(photo)}" alt="${escapeAttribute(author)}" loading="lazy" decoding="async">`
-                            : `<div class="review-avatar review-avatar-fallback">${escapeHtml(author.charAt(0))}</div>`
+                        ${review.photo
+                            ? `<img class="review-avatar" src="${escapeAttribute(review.photo)}" alt="${escapeAttribute(review.author)}" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.replaceWith(createReviewFallbackAvatar('${escapeAttribute(review.initial)}'))">`
+                            : `<div class="review-avatar review-avatar-fallback">${escapeHtml(review.initial)}</div>`
                         }
 
                         <div class="review-meta">
                             <div class="review-author">
-                                ${escapeHtml(author)}
+                                ${escapeHtml(review.author)}
                             </div>
                             <div class="review-date">
-                                ${escapeHtml(review.relativePublishTimeDescription || "")}
+                                ${escapeHtml(review.date)}
                             </div>
                         </div>
 
                         <i class="fab fa-google review-google-icon" aria-hidden="true"></i>
                     </div>
 
-                    <div class="review-stars" aria-label="${review.rating || 0} out of 5 stars">${stars}</div>
+                    <div class="review-stars" aria-label="${review.rating} out of 5 stars">${stars}</div>
 
                     <p class="review-text">
-                        "${escapeHtml(review.text?.text || review.text || "")}"
+                        ${escapeHtml(review.text)}
                     </p>
-                </div>
+                </article>
             `;
         });
 
         container.innerHTML = html;
-
-        let index = 0;
-        const slides = document.querySelectorAll(".review-slide");
-
-        slides.forEach((slide, i) => {
-            slide.style.display = i === 0 ? "block" : "none";
-        });
-
-        setInterval(() => {
-            slides[index].style.display = "none";
-            index++;
-
-            if (index >= slides.length) {
-                index = 0;
-            }
-
-            slides[index].style.display = "block";
-        }, 6000);
     } catch (e) {
         console.error(e);
 
@@ -85,6 +69,50 @@ document.addEventListener("DOMContentLoaded", async () => {
             "<p>Unable to load Google reviews.</p>";
     }
 });
+
+function normalizeReview(review) {
+    const author = sanitizeText(
+        review.authorAttribution?.displayName || review.authorName || "Google User",
+        70
+    );
+    const text = sanitizeText(review.text?.text || review.text || "", 320);
+    const photo = review.authorAttribution?.photoUri || "";
+    const rating = Math.max(0, Math.min(5, Number(review.rating) || 0));
+
+    return {
+        author,
+        text,
+        photo,
+        rating,
+        date: sanitizeText(review.relativePublishTimeDescription || "", 40),
+        initial: (author.charAt(0) || "G").toUpperCase()
+    };
+}
+
+function sanitizeText(value, maxLength) {
+    const cleaned = String(value)
+        .replace(/[\u0000-\u001f\u007f]/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+
+    if (cleaned.length <= maxLength) {
+        return cleaned;
+    }
+
+    return `${cleaned.slice(0, maxLength - 1).trim()}...`;
+}
+
+function removeLegacyReviewSummary() {
+    document.getElementById("googleRating")?.remove();
+    document.getElementById("googleReviewCount")?.remove();
+}
+
+function createReviewFallbackAvatar(initial) {
+    const avatar = document.createElement("div");
+    avatar.className = "review-avatar review-avatar-fallback";
+    avatar.textContent = initial || "G";
+    return avatar;
+}
 
 function escapeHtml(value) {
     return String(value)
