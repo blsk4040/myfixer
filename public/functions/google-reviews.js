@@ -36,8 +36,7 @@ export async function onRequestGet(context) {
         { status: 404 }
       );
     }
-
-    const placeId = searchData.places[0].id;
+     const placeId = searchData.places[0].id;
 
     // Fetch place details
     const detailsResponse = await fetch(

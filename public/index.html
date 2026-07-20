@@ -211,6 +211,9 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
 
+    <!--Google Reviews CSS -->
+    <link rel="stylesheet" href="css/google-reviews.css">
+
     <!-- Preconnect -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://unpkg.com">
@@ -647,26 +650,54 @@
 
 <section id="testimonials" class="testimonials">
     <div class="container">
+
         <div class="section-header">
-            <span class="google-review-badge"><i class="fab fa-google"></i> Google Business Reviews</span>
+            <span class="google-review-badge">
+                <i class="fab fa-google"></i> Google Business Reviews
+            </span>
+
             <h2>Reviewed by Local Customers</h2>
-            <p>See what local customers say about MyFixer on Google.</p>
+
+            <p>
+                See what local customers say about MyFixer on Google.
+            </p>
         </div>
 
-        <div class="google-reviews-cta" aria-label="View MyFixer Google Business reviews">
-            <div class="google-reviews-mark">
+        <!-- Google Review Summary -->
+        <div class="google-review-summary">
+
+            <div class="google-review-logo">
                 <i class="fab fa-google"></i>
             </div>
-            <div class="google-reviews-copy">
-                <h3>See Our Real Google Reviews</h3>
-                <p>Read customer feedback directly on Google before you book your appliance repair.</p>
-                <div class="google-reviews-stars" aria-label="Google review ratings">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
-            </div>
-            <a href="https://g.page/r/Cf5AtJfObdXWEBM/review" target="_blank" rel="noopener noreferrer" class="google-reviews-button">
-                Read Our Google Reviews <i class="fas fa-arrow-right"></i>
+
+            <h3 id="googleRating">
+                Loading...
+            </h3>
+
+            <p id="googleReviewCount">
+                Loading Google Reviews...
+            </p>
+
+            <a href="https://g.page/r/Cf5AtJfObdXWEBM/review"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="google-reviews-button">
+
+                Read All Google Reviews
+                <i class="fas fa-arrow-right"></i>
+
             </a>
+
+        </div>
+
+        <!-- Review Carousel -->
+        <div id="googleReviews" class="google-reviews-carousel">
+
+            <div class="loading-reviews">
+                <i class="fas fa-spinner fa-spin"></i>
+                Loading customer reviews...
+            </div>
+
         </div>
 
         <div class="service-areas">
@@ -914,5 +945,6 @@
 <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
 <script src="components/loader.js" defer></script>
 <script src="js/script.js" defer></script>
+<script src="js/google-reviews.js"></script>
 </body>
 </html>
