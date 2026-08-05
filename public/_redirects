@@ -2,7 +2,9 @@
 # Canonical Domain (non-www -> www)
 # ============================================
 
-https://myfixer.co.za/*                    https://www.myfixer.co.za/:splat 301
+https://myfixer.co.za/* https://www.myfixer.co.za/:splat 301
+http://myfixer.co.za/* https://www.myfixer.co.za/:splat 301
+http://www.myfixer.co.za/* https://www.myfixer.co.za/:splat 301
 
 # ============================================
 # Homepage
@@ -24,29 +26,29 @@ https://myfixer.co.za/*                    https://www.myfixer.co.za/:splat 301
 # Service Pages
 # ============================================
 
-/fridge-repair                            /services/fridge-repair.html 301
-/fridge-repair.html                       /services/fridge-repair.html 301
+/fridge-repair                            /services/fridge-repair 301
+/fridge-repair.html                       /services/fridge-repair 301
 
-/washingmachine-repair                    /services/washingmachine-repair.html 301
-/washingmachine-repair.html               /services/washingmachine-repair.html 301
+/washingmachine-repair                    /services/washingmachine-repair 301
+/washingmachine-repair.html               /services/washingmachine-repair 301
 
-/dishwasher-repair                        /services/dishwasher-repair.html 301
-/dishwasher-repair.html                   /services/dishwasher-repair.html 301
+/dishwasher-repair                        /services/dishwasher-repair 301
+/dishwasher-repair.html                   /services/dishwasher-repair 301
 
-/stove-oven-repair                        /services/stove-oven-repair.html 301
-/stove-oven-repair.html                   /services/stove-oven-repair.html 301
+/stove-oven-repair                        /services/stove-oven-repair 301
+/stove-oven-repair.html                   /services/stove-oven-repair 301
 
-/microwave-repair                         /services/microwave-repair.html 301
-/microwave-repair.html                    /services/microwave-repair.html 301
+/microwave-repair                         /services/microwave-repair 301
+/microwave-repair.html                    /services/microwave-repair 301
 
-/tv-repair                                /services/tv-repair.html 301
-/tv-repair.html                           /services/tv-repair.html 301
+/tv-repair                                /services/tv-repair 301
+/tv-repair.html                           /services/tv-repair 301
 
-/coffeemachine-repair                     /services/coffeemachine-repair.html 301
-/coffeemachine-repair.html                /services/coffeemachine-repair.html 301
+/coffeemachine-repair                     /services/coffeemachine-repair 301
+/coffeemachine-repair.html                /services/coffeemachine-repair 301
 
-/hvac-repair                              /services/hvac-repair.html 301
-/hvac-repair.html                         /services/hvac-repair.html 301
+/hvac-repair                              /services/hvac-repair 301
+/hvac-repair.html                         /services/hvac-repair 301
 
 # ============================================
 # Location Pages
@@ -57,28 +59,28 @@ https://myfixer.co.za/*                    https://www.myfixer.co.za/:splat 301
 # Legacy URLs
 # ============================================
 
-/locations/dishwasher-repair.html         /services/dishwasher-repair.html 301
+/locations/dishwasher-repair.html         /services/dishwasher-repair 301
 
-/tv-repair-centurion                      /services/tv-repair.html 301
-/tv-repair-centurion.html                 /services/tv-repair.html 301
+/tv-repair-centurion                      /services/tv-repair 301
+/tv-repair-centurion.html                 /services/tv-repair 301
 
-/dishwasher-repair-centurion              /services/dishwasher-repair.html 301
-/dishwasher-repair-centurion.html         /services/dishwasher-repair.html 301
+/dishwasher-repair-centurion              /services/dishwasher-repair 301
+/dishwasher-repair-centurion.html         /services/dishwasher-repair 301
 
-/hvac-repair-centurion                    /services/hvac-repair.html 301
-/hvac-repair-centurion.html               /services/hvac-repair.html 301
+/hvac-repair-centurion                    /services/hvac-repair 301
+/hvac-repair-centurion.html               /services/hvac-repair 301
 
-/aircon-installation-centurion            /services/hvac-repair.html 301
-/aircon-installation-centurion.html       /services/hvac-repair.html 301
+/aircon-installation-centurion            /services/hvac-repair 301
+/aircon-installation-centurion.html       /services/hvac-repair 301
 
-/aircon-repair                            /services/hvac-repair.html 301
-/aircon-repair.html                       /services/hvac-repair.html 301
+/aircon-repair                            /services/hvac-repair 301
+/aircon-repair.html                       /services/hvac-repair 301
 
-/stove-oven-repair-centurion              /services/stove-oven-repair.html 301
-/stove-oven-repair-centurion.html         /services/stove-oven-repair.html 301
+/stove-oven-repair-centurion              /services/stove-oven-repair 301
+/stove-oven-repair-centurion.html         /services/stove-oven-repair 301
 
-/coffee-machine-repair-centurion          /services/coffeemachine-repair.html 301
-/coffee-machine-repair-centurion.html     /services/coffeemachine-repair.html 301
+/coffee-machine-repair-centurion          /services/coffeemachine-repair 301
+/coffee-machine-repair-centurion.html     /services/coffeemachine-repair 301
 
-/coffeemachine-repair-centurion           /services/coffeemachine-repair.html 301
-/coffeemachine-repair-centurion.html      /services/coffeemachine-repair.html 301
+/coffeemachine-repair-centurion           /services/coffeemachine-repair 301
+/coffeemachine-repair-centurion.html      /services/coffeemachine-repair 301
