@@ -64,61 +64,84 @@
         }
     </style>
 
-        <!-- Structured Data Schema -->
-        <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "@id": "https://www.myfixer.co.za/locations/appliance-repair-centurion#localbusiness",
-            "name": "MyFixer Appliance Repair Centurion",
-            "url": "https://www.myfixer.co.za/locations/appliance-repair-centurion",
-            "logo": "https://www.myfixer.co.za/img/myfixer_logo.png",
-            "image": "https://www.myfixer.co.za/img/background.webp",
-            "description": "Expert domestic and commercial appliance repair services dispatched locally throughout Centurion and surrounding secure estates.",
-            "telephone": "+27642903654",
-            "email": "info@myfixer.co.za",
-            "priceRange": "R350 - R2500",
-            "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "1 Sullivan Street, Die Hoewes",
-                "addressLocality": "Centurion",
-                "addressRegion": "Gauteng",
-                "postalCode": "0157",
-                "addressCountry": "ZA"
-            },
-            "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": -25.8404,
-                "longitude": 28.2012
-            },
-            "areaServed": [
-                "Centurion",
-                "Die Hoewes",
-                "Rooihuiskraal",
-                "Wierdapark",
-                "Eldoraigne",
-                "Clubview",
-                "Irene",
-                "Amberfield"
-            ],
-            "openingHoursSpecification": [{
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
-                "opens": "08:30",
-                "closes": "18:30"
-            }],
-            "sameAs": [
-                "https://www.facebook.com/myfixerrepair",
-                "https://www.instagram.com/myfixer_repair"
-            ],
-            "serviceType": [
-                "Fridge Repair",
-                "Washing Machine Repair",
-                "Dishwasher Repair",
-                "Oven & Stove Repair"
-            ]
-        }
-        </script>
+       
+<!-- Local Business Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://www.myfixer.co.za/#localbusiness",
+  "name": "MyFixer Appliance Repair & Installation",
+  "url": "https://www.myfixer.co.za/locations/appliance-repair-centurion",
+  "logo": "https://www.myfixer.co.za/img/myfixer_logo.png",
+  "image": "https://www.myfixer.co.za/img/background.webp",
+  "description": "Professional mobile appliance repair services across Centurion, including Die Hoewes, Eldoraigne, Wierdapark, Rooihuiskraal, Irene, Doringkloof, Lyttelton Manor, Clubview and surrounding areas.",
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Centurion"
+    },
+    {
+      "@type": "Place",
+      "name": "Die Hoewes"
+    },
+    {
+      "@type": "Place",
+      "name": "Centurion Central"
+    },
+    {
+      "@type": "Place",
+      "name": "Lyttelton Manor"
+    },
+    {
+      "@type": "Place",
+      "name": "Clubview"
+    },
+    {
+      "@type": "Place",
+      "name": "Eldoraigne"
+    },
+    {
+      "@type": "Place",
+      "name": "Wierdapark"
+    },
+    {
+      "@type": "Place",
+      "name": "Rooihuiskraal"
+    },
+    {
+      "@type": "Place",
+      "name": "Raslouw"
+    },
+    {
+      "@type": "Place",
+      "name": "Amberfield"
+    },
+    {
+      "@type": "Place",
+      "name": "Irene"
+    },
+    {
+      "@type": "Place",
+      "name": "Doringkloof"
+    },
+    {
+      "@type": "Place",
+      "name": "Pierre van Ryneveld"
+    }
+  ],
+  "sameAs": [
+    "https://www.facebook.com/myfixerrepair",
+    "https://www.instagram.com/myfixer_repair"
+  ],
+  "serviceType": [
+    "Fridge Repair",
+    "Washing Machine Repair",
+    "Stove & Oven Repair",
+    "Aircon & HVAC Repair"
+  ]
+}
+</script>
 
     <!-- Microsoft Clarity Setup (Compiler Safe) -->
     <script type="text/javascript">

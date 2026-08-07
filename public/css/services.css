@@ -1067,8 +1067,34 @@
   background-color: #006d2f !important;
 }
 
-/* Dishwasher */
+/* =========================
+   DISHWASHER PAGE SPACING
+   ========================= */
 
+/* =========================
+   DISHWASHER PAGE SPACING
+   ========================= */
+
+.page-dishwasher .value-chips-container {
+  margin-bottom: px !important;
+}
+
+.page-dishwasher .faq-section {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.page-dishwasher .faq-section h3 {
+  margin-top: 0 !important;
+}
+
+.page-dishwasher .dishwasher-conversion {
+  margin-top: 36px;
+}
+
+.page-dishwasher .dishwasher-conversion h3 {
+  margin-top: 0 !important;
+}
 
 
 

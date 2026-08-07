@@ -46,28 +46,32 @@
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
-    <!-- Local Business & Service Schema (Dishwasher Targeted) -->
-    <script type="application/ld+json">
+<!-- Local Business & Service Schema (Dishwasher Targeted) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://www.myfixer.co.za/#localbusiness",
+  "name": "MyFixer Appliance Repair & Installation",
+  "image": "https://www.myfixer.co.za/img/dishwasher.webp",
+  "url": "https://www.myfixer.co.za/",
+  "description": "Reliable appliance repair services in Centurion, Pretoria, and surrounding Gauteng areas.",
+  "sameAs": [
+    "https://www.facebook.com/myfixerrepair",
+    "https://www.instagram.com/myfixer"
+  ],
+  "areaServed": [
     {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "@id": "https://www.myfixer.co.za/#localbusiness",
-      "name": "MyFixer Appliance Repair & Installation",
-      "image": "https://www.myfixer.co.za/img/dishwasher.webp",
-      "url": "https://www.myfixer.co.za/",
-      "telephone": "+27642903654",
-      "description": "Reliable appliance repair services in Centurion, Pretoria, and surrounding Gauteng areas.",
-      "sameAs": [
-        "https://www.facebook.com/myfixerrepair",
-        "https://www.instagram.com/myfixer"
-      ],
-      "areaServed": [
-        { "@type": "City", "name": "Centurion" },
-        { "@type": "City", "name": "Pretoria" },
-        
-      ]
+      "@type": "City",
+      "name": "Centurion"
+    },
+    {
+      "@type": "City",
+      "name": "Pretoria"
     }
-    </script>
+  ]
+}
+</script>
 
     <script type="application/ld+json">
     {
@@ -181,8 +185,8 @@
                 <img src="../img/dishwasher_fx.webp" alt="Dishwasher Repair Technician in Centurion &amp; Pretoria" class="hero-slide-img">
                 <div class="hero-overlay">
                     <div class="hero-content">
-                        <h1>Dishwasher Repair Centurion &amp; Pretoria</h1>
-                        <p>Professional dishwasher diagnostics and repairs for drainage, leaks, heating, cleaning and electrical faults. Service for major domestic and commercial brands.</p>
+                        <h1>Dishwasher Repair &amp; Servicing</h1>
+                        <p>Need your dishwasher repaired or serviced? We work on domestic and commercial dishwashers and provide on-site service where possible.</p>
                         <div class="hero-buttons">
                             <a href="https://www.myfixer.co.za/#contact" class="mf-btn"><i class="fas fa-calendar-check" style="margin-right: 8px;"></i> Book a Dishwasher Repair</a>
                         </div>
@@ -203,125 +207,139 @@
     <div class="mf-content">
       <h2>Dishwasher Repair Services</h2>
 
-      <p>A dishwasher that won't drain, leaks water, leaves dishes dirty or doesn't heat properly can quickly become a problem. <strong>MyFixer</strong> provides dishwasher repair services for homes and businesses, with technicians who can inspect the appliance and identify what needs to be repaired.</p>
+    <p>A dishwasher that won't drain, leaks water, leaves dishes dirty or doesn't heat properly can quickly become a problem. <strong>MyFixer</strong> provides dishwasher repair services for homes and businesses, with technicians who can inspect the appliance, identify the fault and recommend the right repair.</p>
 
-      <p>We provide dishwasher repairs in <strong>Centurion</strong>, <strong>Pretoria</strong> and surrounding areas across Gauteng. Our technicians come to you to check the dishwasher, explain the problem and, where possible, carry out the repair during the visit.</p>
+    <p>We provide dishwasher repairs in <strong>Centurion</strong>, <strong>Pretoria</strong> and surrounding areas. Our technicians come to you to check the dishwasher, explain the problem and, where possible, carry out the repair during the visit.</p>
 
-      <p>We work with many popular dishwasher brands, including <strong>Bosch, Defy, Samsung, LG, Whirlpool and Smeg</strong>. If a replacement part is needed, we will let you know what is required and advise you on the next step.</p>
+    <p>We work with many popular dishwasher brands, including <strong>Bosch, Defy, Samsung, LG, Whirlpool and Smeg</strong>. If a replacement part is needed, we will let you know what is required and advise you on the next step.</p>
+      
+    
+    <!-- Common Problems -->
 
-      <!-- Common Problems Grid Layout -->
       <h3>Common Dishwasher Problems We Repair</h3>
-      <div class="problems-grid">
-        <div class="problem-card">
-          <div class="problem-card-header">
-            <i class="fas fa-water"></i> <strong>Dishwasher Not Draining</strong>
+
+        <div class="problems-grid">
+
+          <div class="problem-card">
+            <div class="problem-card-header">
+              <i class="fas fa-water"></i> <strong>Dishwasher Not Draining</strong>
+            </div>
+            <p>We check the drain pump, filter, hoses and other parts of the drainage system to find the cause of standing water.</p>
           </div>
-          <p>Our technicians inspect the drainage system, pump, hoses, and related components to identify and resolve the cause of standing water.</p>
+
+          <div class="problem-card">
+            <div class="problem-card-header">
+              <i class="fas fa-tint"></i> <strong>Water Leaks</strong>
+            </div>
+            <p>We find the source of leaks around the door seal, hoses, valves, gaskets and other internal components.</p>
+          </div>
+
+          <div class="problem-card">
+            <div class="problem-card-header">
+              <i class="fas fa-soap"></i> <strong>Poor Cleaning</strong>
+            </div>
+            <p>We check the spray arms, filters, water circulation and other components when dishes are left dirty or covered in residue.</p>
+          </div>
+
+          <div class="problem-card">
+            <div class="problem-card-header">
+              <i class="fas fa-power-off"></i> <strong>Dishwasher Not Starting</strong>
+            </div>
+            <p>We check the power supply, door latch, controls and other components when the dishwasher won't start.</p>
+          </div>
+
+          <div class="problem-card">
+            <div class="problem-card-header">
+              <i class="fas fa-thermometer-high"></i> <strong>Heating Problems</strong>
+            </div>
+            <p>We diagnose heating faults involving the heating element, thermostat, temperature sensor and related components.</p>
+          </div>
+
+          <div class="problem-card">
+            <div class="problem-card-header">
+              <i class="fas fa-exclamation-triangle"></i> <strong>Error Codes &amp; Faults</strong>
+            </div>
+            <p>We diagnose error codes and other electrical or mechanical faults that prevent the dishwasher from working correctly.</p>
+          </div>
+
         </div>
 
-        <div class="problem-card">
-          <div class="problem-card-header">
-            <i class="fas fa-tint"></i> <strong>Water Leaks</strong>
-          </div>
-          <p>We trace the source of water leakage around door seals, internal hoses, valves, and gaskets to restore watertight operation.</p>
-        </div>
+      <!-- Why Choose Us -->
 
-        <div class="problem-card">
-          <div class="problem-card-header">
-            <i class="fas fa-soap"></i> <strong>Poor Cleaning Results</strong>
-          </div>
-          <p>We evaluate wash arms, filtration systems, and internal circulation components to address spotting, residue, and weak spray performance.</p>
-        </div>
-
-        <div class="problem-card">
-          <div class="problem-card-header">
-            <i class="fas fa-power-off"></i> <strong>Dishwasher Not Starting</strong>
-          </div>
-          <p>We check electrical connections, door latch mechanisms, and control systems to diagnose why a cycle won't initiate.</p>
-        </div>
-
-        <div class="problem-card">
-          <div class="problem-card-header">
-            <i class="fas fa-thermometer-high"></i> <strong>Heating Problems</strong>
-          </div>
-          <p>We inspect heating elements and temperature regulation components so your dishwasher reaches the right water temperature for cleaning.</p>
-        </div>
-
-        <div class="problem-card">
-          <div class="problem-card-header">
-            <i class="fas fa-exclamation-triangle"></i> <strong>Error Codes &amp; Faults</strong>
-          </div>
-          <p>We read system fault codes and test internal sensors to pinpoint hidden electrical or mechanical issues causing operation errors.</p>
-        </div>
-      </div>
-
-      <!-- Value Proposition Feature Grid -->
-      <h3>Why Choose MyFixer for Local Repairs?</h3>
+        <h3>Why Choose MyFixer ? </h3>
       <div class="value-chips-container">
-        <div class="value-chip-card">
-          <i class="fas fa-bolt"></i>
-          <div>
-            <strong>Fast Local Response</strong>
-            <span>Repair appointments available across Centurion, Pretoria and selected surrounding areas.</span>
-          </div>
-        </div>
-        
-        <div class="value-chip-card">
-          <i class="fas fa-search-dollar"></i>
-          <div>
-            <strong>Clear Pricing</strong>
-            <span>Transparent diagnostic and repair pricing before additional work is carried out.</span>
-          </div>
-        </div>
-        
-        <div class="value-chip-card">
-          <i class="fas fa-award"></i>
-          <div>
-            <strong>Experienced Technicians</strong>
-            <span>Technicians diagnose mechanical, plumbing, heating and electrical dishwasher faults.</span>
-          </div>
-        </div>
-        
-        <div class="value-chip-card">
-          <i class="fas fa-shield-alt"></i>
-          <div>
-            <strong>Quality Repairs</strong>
-            <span>Quality replacement parts are used where available, with repair recommendations based on the condition and requirements of the appliance.</span>
-          </div>
-        </div>
-      </div>
 
-      <!-- Visible FAQ Section -->
-      <div class="faq-section" style="margin-top: 40px;">
-        <h3>Frequently Asked Questions</h3>
-        <div class="faq-item">
-          <h4>What dishwasher problems does MyFixer repair?</h4>
-          <p>We troubleshoot and fix a full range of issues including drainage failures, water leaks, poor cleaning performance, unit start failures, water heating issues, spray arm blockages, worn door seals, inlet valve faults, control board errors, and system error codes.</p>
-        </div>
-        <div class="faq-item">
-          <h4>Which dishwasher brands do you repair?</h4>
-          <p>We repair major domestic and commercial dishwasher brands such as Bosch, Defy, Samsung, LG, Whirlpool, Smeg, and others where replacement parts and technical support are available.</p>
-        </div>
-        <div class="faq-item">
-          <h4>Do you provide dishwasher repair in Centurion and Pretoria?</h4>
-          <p>Yes, we provide professional dishwasher diagnostics and repair services across Centurion and Pretoria, as well as selected surrounding areas in Gauteng, subject to technician availability.</p>
-        </div>
-        <div class="faq-item">
-          <h4>Can you repair a dishwasher at my home or business?</h4>
-          <p>On-site diagnostics and repairs are provided at your residence or commercial premises whenever practical. Should a complex fault require dedicated workbench testing or specialized tools, component transport options will be discussed.</p>
-        </div>
-      </div>
-
-      <!-- Conversion Section -->
-      <div style="margin-top: 40px;">
-        <h3>Need Dishwasher Repair?</h3>
-        <p>Tell us what is wrong with your dishwasher and provide the brand and model where available. Our team can help determine the appropriate repair service and next steps.</p>
-        <div style="margin-top: 20px;">
-           <a href="https://www.myfixer.co.za/#contact" class="mf-btn"><i class="fas fa-tools" style="margin-right: 8px;"></i> Book a Dishwasher Repair</a>
-        </div>
+    <div class="value-chip-card">
+      <i class="fas fa-bolt"></i>
+      <div>
+        <strong>Local Service</strong>
+        <span>Dishwasher repair appointments are available in Centurion, Pretoria and surrounding areas.</span>
       </div>
     </div>
+
+    <div class="value-chip-card">
+      <i class="fas fa-search-dollar"></i>
+      <div>
+        <strong>Clear Pricing</strong>
+        <span>We explain the required repair and any additional costs before proceeding with the work.</span>
+      </div>
+    </div>
+
+    <div class="value-chip-card">
+      <i class="fas fa-award"></i>
+      <div>
+        <strong>Experienced Technicians</strong>
+        <span>Our technicians diagnose mechanical, plumbing, heating and electrical dishwasher faults.</span>
+      </div>
+    </div>
+
+    <div class="value-chip-card">
+      <i class="fas fa-shield-alt"></i>
+      <div>
+        <strong>Practical Repair Advice</strong>
+        <span>We explain the fault and let you know whether repair or replacement is the better option.</span>
+      </div>
+    </div>
+
   </div>
+
+     <!-- Visible FAQ Section -->
+<div class="faq-section">
+  <h3>Frequently Asked Questions</h3>
+
+  <div class="faq-item">
+    <h4>What dishwasher problems does MyFixer repair?</h4>
+    <p>We troubleshoot and fix a full range of issues including drainage failures, water leaks, poor cleaning performance, unit start failures, water heating issues, spray arm blockages, worn door seals, inlet valve faults, control board errors, and system error codes.</p>
+  </div>
+
+  <div class="faq-item">
+    <h4>Which dishwasher brands do you repair?</h4>
+    <p>We repair major domestic and commercial dishwasher brands such as Bosch, Defy, Samsung, LG, Whirlpool, Smeg, and others where replacement parts and technical support are available.</p>
+  </div>
+
+  <div class="faq-item">
+    <h4>Do you provide dishwasher repair in Centurion and Pretoria?</h4>
+    <p>Yes, we provide professional dishwasher diagnostics and repair services across Centurion and Pretoria, as well as selected surrounding areas in Gauteng, subject to technician availability.</p>
+  </div>
+
+  <div class="faq-item">
+    <h4>Can you repair a dishwasher at my home or business?</h4>
+    <p>On-site diagnostics and repairs are provided at your residence or commercial premises whenever practical. Should a complex fault require dedicated workbench testing or specialized tools, component transport options will be discussed.</p>
+  </div>
+</div>
+
+<!-- Conversion Section -->
+<div class="dishwasher-conversion">
+  <h3>Need Dishwasher Repair?</h3>
+  <p>Tell us what is wrong with your dishwasher and provide the brand and model where available. Our team can help determine the appropriate repair service and next steps.</p>
+
+  <div style="margin-top: 20px;">
+    <a href="https://www.myfixer.co.za/#contact" class="mf-btn">
+      <i class="fas fa-tools" style="margin-right: 8px;"></i>
+      Book a Dishwasher Repair
+    </a>
+  </div>
+</div>
 </section>
 
 <section class="service-related-section" aria-labelledby="related-dishwasher-services">

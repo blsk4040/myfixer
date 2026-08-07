@@ -6,8 +6,8 @@
   <meta name="robots" content="index, follow">
 
   <!-- SEO Optimized Title & Description -->
-  <title>Coffee Machine Repair in Centurion & Pretoria | MyFixer</title>
-  <meta name="description" content="Coffee machine repair and servicing in Centurion and Pretoria. We diagnose and repair heating, pump, grinder, water flow, steam wand and electrical faults.">
+  <title>Coffee Machine Repair & Servicing | MyFixer</title>
+  <meta name="description" content="Coffee machine repair and servicing for domestic and commercial machines. MyFixer provides mobile diagnostics and repairs across Gauteng, including Johannesburg, Pretoria and Centurion.">
 
   <!-- Favicon -->
   <link rel="icon" href="/favicon.png" type="image/png">
@@ -16,16 +16,16 @@
   <link rel="canonical" href="https://www.myfixer.co.za/services/coffeemachine-repair">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Coffee Machine Repair in Centurion & Pretoria | MyFixer">
-  <meta property="og:description" content="Same-day coffee machine repair and servicing across Centurion and Pretoria — heating, pumps, grinders, descaling and steam wand repairs for major brands.">
+  <meta property="og:title" content="Coffee Machine Repair & Servicing | MyFixer">
+  <meta property="og:description" content="Fast mobile repair response across Gauteng, subject to technician availability — heating, pumps, grinders, descaling and steam wand repairs for major brands.">
   <meta property="og:image" content="https://www.myfixer.co.za/img/coffee_machine.webp">
   <meta property="og:url" content="https://www.myfixer.co.za/services/coffeemachine-repair">
   <meta property="og:type" content="website">
 
   <!-- Twitter / X Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Coffee Machine Repair in Centurion & Pretoria | MyFixer">
-  <meta name="twitter:description" content="Same-day coffee machine repair — on-site heating, pump, grinder and descaling services for Nespresso, DeLonghi, Saeco, Jura and more.">
+  <meta name="twitter:title" content="Coffee Machine Repair & Servicing | MyFixer">
+  <meta name="twitter:description" content="Fast mobile repair response across Gauteng, subject to technician availability — heating, pumps, grinders, descaling and steam wand repairs for major brands.">
   <meta name="twitter:image" content="https://www.myfixer.co.za/img/coffee_machine.webp">
   <meta name="twitter:url" content="https://www.myfixer.co.za/services/coffeemachine-repair">
 
@@ -61,10 +61,74 @@
       .modern-cta:active {
           transform: translateY(0);
       }
+
+      /* Page-scoped FAQ layout matching coffeemachine-repair */
+      .faq-row .problems-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding-bottom: 6px;
+        overflow: visible;
+        align-items: stretch;
+        justify-content: center;
+      }
+
+      .faq-row .mf-container {
+        display: block;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .faq-row .mf-content {
+        max-width: none;
+        width: 100%;
+        background: transparent;
+        box-shadow: none;
+        border: none;
+        padding: 0;
+      }
+
+      .faq-row h3 {
+        text-align: center;
+        margin-bottom: 18px;
+      }
+
+      .faq-row .problem-card {
+        text-align: left;
+        flex: 0 0 calc(25% - 15px);
+        max-width: calc(25% - 15px);
+        min-width: 220px;
+        box-sizing: border-box;
+      }
+
+      .faq-row .problem-card .problem-card-header {
+        margin-bottom: 8px;
+      }
+
+      /* Two columns for medium widths */
+      @media (max-width: 1100px) {
+        .faq-row .problem-card {
+          flex: 0 0 calc(50% - 10px);
+          max-width: calc(50% - 10px);
+        }
+      }
+
+      /* Stacked single column for small screens */
+      @media (max-width: 720px) {
+        .faq-row .problems-grid {
+          display: block;
+        }
+        .faq-row .problem-card {
+          flex: 1 1 100%;
+          max-width: none;
+          min-width: auto;
+          margin-bottom: 12px;
+        }
+      }
   </style>
 
-  <!-- Local Business Schema (Coffee Machine Targeted) -->
- 
+  <!-- Local Business Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -73,39 +137,25 @@
     "name": "MyFixer Appliance Repair & Installation",
     "image": "https://www.myfixer.co.za/img/coffee_machine.webp",
     "url": "https://www.myfixer.co.za/",
-    "telephone": "+27642903654",
     "sameAs": [
       "https://www.facebook.com/myfixerrepair",
       "https://www.instagram.com/myfixer"
     ],
     "address": {
       "@type": "PostalAddress",
-      
       "addressLocality": "Centurion",
       "addressRegion": "Gauteng",
       "addressCountry": "ZA"
     },
-    
-    },
     "areaServed": [
-      {
-        "@type": "City",
-        "name": "Centurion"
-      },
-      {
-        "@type": "City",
-        "name": "Pretoria"
-      },
-      {
-        "@type": "City",
-        "name": "Johannesburg"
-      },
-     
+      { "@type": "City", "name": "Centurion" },
+      { "@type": "City", "name": "Pretoria" },
+      { "@type": "City", "name": "Johannesburg" }
     ]
   }
   </script>
 
-  <!-- WebPage + Service Schema -->
+  <!-- WebPage, Service & FAQ Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -127,140 +177,51 @@
           "@id": "https://www.myfixer.co.za/#localbusiness"
         },
         "areaServed": [
-          {
-            "@type": "City",
-            "name": "Centurion"
-          },
-          {
-            "@type": "City",
-            "name": "Pretoria"
-          },
-          {
-            "@type": "City",
-            "name": "Johannesburg"
-          },
-          {
-            "@type": "City",
-            "name": "Midrand"
-          },
-          {
-            "@type": "AdministrativeArea",
-            "name": "Gauteng"
-          }
+          { "@type": "City", "name": "Centurion" },
+          { "@type": "City", "name": "Pretoria" },
+          { "@type": "City", "name": "Johannesburg" },
+          { "@type": "City", "name": "Midrand" },
+          { "@type": "AdministrativeArea", "name": "Gauteng" }
         ],
-        "description": "Professional coffee machine repair and servicing for domestic and commercial machines, including heating and boiler faults, pump and pressure problems, grinder faults, water flow issues, descaling, steam wand problems and electrical faults.",
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Coffee Machine Repair Services",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Coffee Machine Repair"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Coffee Machine Servicing"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Espresso Machine Repair"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Heating and Boiler Repair"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Pump and Pressure Repair"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Coffee Grinder Repair"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Water Flow and Descaling"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Steam Wand and Milk Frother Repair"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Electrical Fault Diagnosis"
-              }
+        "description": "Coffee machine repair and servicing for domestic and commercial machines, including heating and boiler faults, pump and pressure problems, grinder faults, water flow issues, descaling, steam wand problems and electrical faults."
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.myfixer.co.za/services/coffeemachine-repair#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What coffee machine problems does MyFixer repair?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "MyFixer repairs a wide range of coffee machine problems, including heating and boiler faults, pump and pressure problems, grinder issues, poor water flow, leaks, descaling problems, steam wand and milk frother faults, and electrical or control problems."
             }
-          ]
-        }
-      }
-    ]
-  }
-  </script>
-
-  <!-- FAQ Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "@id": "https://www.myfixer.co.za/services/coffeemachine-repair#faq",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What coffee machine problems does MyFixer repair?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "MyFixer repairs a wide range of coffee machine problems, including heating and boiler faults, pump and pressure problems, grinder issues, water flow problems, leaks, descaling issues, steam wand and milk frother faults, and electrical or control faults."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Which coffee machine brands do you repair?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "We service many major coffee machine brands, including Nespresso, DeLonghi, Saeco, Jura, Gaggia, Breville and other domestic and commercial coffee machine brands."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you provide coffee machine repair in Centurion and Pretoria?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. MyFixer provides coffee machine repair and servicing across Centurion & Pretoria areas, subject to technician and parts availability."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can you repair coffee machines at my home or business?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Where practical, our technicians provide on-site diagnostics and repair services at residential and commercial locations. Some repairs may require the machine to be taken to a suitable workshop depending on the fault."
-        }
+          },
+          {
+            "@type": "Question",
+            "name": "Which coffee machine brands do you repair?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We service many popular coffee machine brands, including Nespresso, DeLonghi, Saeco, Jura, Gaggia and Breville, as well as other domestic and commercial coffee machine brands."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you provide coffee machine repair in Centurion and Pretoria?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. MyFixer provides coffee machine repair and servicing in Centurion, Pretoria, Johannesburg and surrounding areas across Gauteng, subject to technician availability."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can you repair a coffee machine at my home or business?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Where practical, our technicians can provide on-site diagnostics and repair services at residential and commercial locations."
+            }
+          }
+        ]
       }
     ]
   }
@@ -288,7 +249,7 @@
 
   <div id="nav-placeholder"></div>
 
-  <!-- HERO (With Locally Target H1) -->
+  <!-- HERO -->
   <section class="hero service-hero">
     <div class="swiper hero-swiper">
       <div class="swiper-wrapper">
@@ -296,8 +257,8 @@
           <img src="../img/3_coffee-machines.jpg" alt="Coffee machine repair technician in Centurion" class="hero-slide-img">
           <div class="hero-overlay">
             <div class="hero-content">
-              <h1>Coffee Machine Repair in Centurion & Pretoria</h1>
-              <p>Professional on-site diagnostics, precision descaling, and electrical part replacements for domestic and office espresso systems.</p>
+              <h1>Coffee Machine Repair & Servicing</h1>
+              <p>Need your coffee machine repaired or serviced? <br>We work on domestic and commercial coffee machines and provide on-site service where possible.</p>
               <div class="hero-buttons">
                 <a href="https://www.myfixer.co.za/#contact" class="modern-cta"><i class="fas fa-mug-hot" style="margin-right: 8px;"></i> Book a Repair Now</a>
               </div>
@@ -308,7 +269,7 @@
     </div>
   </section>
 
-  <!-- CONTENT (With Strong Local Sub-Headers) -->
+  <!-- CONTENT -->
   <section class="mf-section">
     <div class="mf-container">
       <div class="mf-image">
@@ -316,91 +277,91 @@
       </div>
 
       <div class="mf-content">
-        <h2>Coffee Machine Repair Services</h2>
-        <p>A coffee machine that stops working can be a real inconvenience, especially at home or in the office. Whether your machine is not heating, leaking water, making unusual noises or simply not making coffee properly, <strong>MyFixer</strong> can help diagnose the problem and advise on the right repair.</p>
-        <p>We provide mobile coffee machine repair services in <strong>Centurion</strong>, <strong>Pretoria</strong> and surrounding areas. Our technicians come to your home or business to inspect the machine, identify the fault and, where possible, carry out the repair on site.</p>
-        <p>We work on a range of domestic and commercial coffee machines, including bean-to-cup machines, capsule machines and home espresso machines. We service popular brands such as <strong>DeLonghi, Jura, Nespresso, Saeco, Breville and Gaggia</strong>, as well as other makes and models.</p>
+        <h2>Coffee Machine Repair</h2>
+       <p>A coffee machine that stops working can be a real inconvenience, especially at home or in the office. Whether your machine is not heating, leaking water, making unusual noises or simply not making coffee properly, <strong>MyFixer</strong> can help diagnose the problem and recommend the right repair.</p>
+      <p>We provide mobile coffee machine repair services in <strong>Centurion</strong>, <strong>Pretoria</strong> and surrounding areas. Our technicians come to your home or business to inspect the machine, identify the fault and, where possible, carry out the repair on site.</p>
+      <p>We work on a range of domestic and commercial coffee machines, including bean-to-cup machines, capsule machines and home espresso machines. We service popular brands such as <strong>DeLonghi, Jura, Nespresso, Saeco, Breville and Gaggia</strong>, as well as other makes and models.</p>
 
-       <h3>Common Coffee Machine Problems We Repair</h3>
-<div class="problems-grid">
-  <div class="problem-card">
-    <div class="problem-card-header">
-      <i class="fas fa-water"></i> <strong>Water Flow Disruptions</strong>
-    </div>
-    <p>Unclogging internal line blockages and repairing faulty high-pressure water pumps.</p>
-  </div>
+        <h3>Common Coffee Machine Problems We Repair</h3>
+        <div class="problems-grid">
+          <div class="problem-card">
+            <div class="problem-card-header">
+              <i class="fas fa-water"></i> <strong>Water Flow Problems</strong>
+            </div>
+            <p>We repair coffee machines with poor water flow, blocked lines, weak pressure, faulty pumps or water delivery problems.</p>
+          </div>
 
-  <div class="problem-card">
-    <div class="problem-card-header">
-      <i class="fas fa-thermometer-half"></i> <strong>Temperature Anomalies</strong>
-    </div>
-    <p>Replacing burnt-out heating elements, boilers, and faulty thermal sensors.</p>
-  </div>
+          <div class="problem-card">
+            <div class="problem-card-header">
+              <i class="fas fa-thermometer-half"></i> <strong>Heating Problems</strong>
+            </div>
+            <p>We diagnose and repair machines that are not heating properly, including faulty heating elements, boilers, thermostats and temperature sensors.</p>
+          </div>
 
-  <div class="problem-card">
-    <div class="problem-card-header">
-      <i class="fas fa-tint-slash"></i> <strong>Structural Base Leaking</strong>
-    </div>
-    <p>Replacing worn-out O-rings, degraded silicone seals, and cracked valve connectors.</p>
-  </div>
+          <div class="problem-card">
+            <div class="problem-card-header">
+              <i class="fas fa-tint-slash"></i> <strong>Water Leaks</strong>
+            </div>
+            <p>We repair leaks caused by worn seals, O-rings, hoses, valves, connectors and other internal components.</p>
+          </div>
 
-  <div class="problem-card">
-    <div class="problem-card-header">
-      <i class="fas fa-blender"></i> <strong>Grinder Operational Failures</strong>
-    </div>
-    <p>Clearing stone jams, recalibrating burrs, and fixing unreactive grinder motors.</p>
-  </div>
+          <div class="problem-card">
+            <div class="problem-card-header">
+              <i class="fas fa-blender"></i> <strong>Grinder Problems</strong>
+            </div>
+            <p>We diagnose grinder faults, including blocked grinders, worn burrs, inconsistent grinding and grinder motor problems.</p>
+          </div>
 
-  <div class="problem-card">
-    <div class="problem-card-header">
-      <i class="fas fa-cloud"></i> <strong>Steam & Frothing Issues</strong>
-    </div>
-    <p>Troubleshooting unreactive steam wands and clearing milk-frother line obstructions.</p>
-  </div>
+          <div class="problem-card">
+            <div class="problem-card-header">
+              <i class="fas fa-cloud"></i> <strong>Steam &amp; Frothing Problems</strong>
+            </div>
+            <p>We repair steam wands and milk frothers affected by blockages, poor steam pressure, faulty valves and other common faults.</p>
+          </div>
 
-  <div class="problem-card">
-    <div class="problem-card-header">
-      <i class="fas fa-microchip"></i> <strong>Digital Display Faults</strong>
-    </div>
-    <p>Diagnosing continuous warning alarms and resetting framework electronic error codes.</p>
-  </div>
-</div>
+          <div class="problem-card">
+            <div class="problem-card-header">
+              <i class="fas fa-microchip"></i> <strong>Electrical &amp; Control Faults</strong>
+            </div>
+            <p>We diagnose power problems, control panel faults, warning messages, electronic issues and machines that fail to start or operate correctly.</p>
+          </div>
+        </div>
 
-<!-- Value Proposition Feature Grid -->
-<h3>Why Choose MyFixer for Local Repairs?</h3>
-<div class="value-chips-container">
-  <div class="value-chip-card">
-    <i class="fas fa-bolt"></i>
-    <div>
-      <strong>Rapid On-Site Deployments</strong>
-      <span>Efficient same-day repair response across Centurion and Pretoria.</span>
-    </div>
-  </div>
-  
-  <div class="value-chip-card">
-    <i class="fas fa-search-dollar"></i>
-    <div>
-      <strong>Upfront & Transparent Estimations</strong>
-      <span>Competitively priced diagnostic fees with zero hidden call-out charges.</span>
-    </div>
-  </div>
-  
-  <div class="value-chip-card">
-    <i class="fas fa-award"></i>
-    <div>
-      <strong>Certified Field Experts</strong>
-      <span>Specialized technical knowledge regarding complex European and local coffee hardware.</span>
-    </div>
-  </div>
-  
-  <div class="value-chip-card">
-    <i class="fas fa-shield-alt"></i>
-    <div>
-      <strong>Premium Workmanship Assured</strong>
-      <span>All internal replacement tasks are backed by our definitive structural service warranty.</span>
-    </div>
-  </div>
-</div>
+        <!-- Value Proposition Feature Grid -->
+        <h3>Why Choose MyFixer for Local Repairs?</h3>
+        <div class="value-chips-container">
+          <div class="value-chip-card">
+            <i class="fas fa-bolt"></i>
+            <div>
+              <strong>Rapid On-Site Deployments</strong>
+              <span>Fast mobile repair response across Centurion, Pretoria and surrounding areas.</span>
+            </div>
+          </div>
+          
+          <div class="value-chip-card">
+            <i class="fas fa-search-dollar"></i>
+            <div>
+              <strong>Upfront & Transparent Estimations</strong>
+              <span>Competitively priced diagnostic fees with zero hidden call-out charges.</span>
+            </div>
+          </div>
+          
+          <div class="value-chip-card">
+            <i class="fas fa-award"></i>
+            <div>
+              <strong>Experienced Technicians</strong>
+              <span>Specialized technical knowledge regarding complex European and local coffee hardware.</span>
+            </div>
+          </div>
+          
+          <div class="value-chip-card">
+            <i class="fas fa-shield-alt"></i>
+            <div>
+              <strong>Quality Repairs</strong>
+              <span>Repairs are carried out using suitable replacement parts and appropriate repair procedures.</span>
+            </div>
+          </div>
+        </div>
 
         <div style="margin-top: 30px;">
           <a href="https://www.myfixer.co.za/#contact" class="modern-cta"><i class="fas fa-tools" style="margin-right: 8px;"></i> Schedule an On-Site Inspection</a>
@@ -409,6 +370,45 @@
     </div>
   </section>
 
+  <!-- ==================== FAQ SECTION (GRID STYLE - 4 CARDS) ==================== -->
+  <section class="mf-section faq-row" style="background-color: #f9f9f9;">
+    <div class="mf-container">
+      <div class="mf-content" style="width: 100%;">
+        <h3>Frequently Asked Questions</h3>
+        <div class="problems-grid">
+          <div class="problem-card">
+            <div class="problem-card-header">
+              <strong>What coffee machine problems does MyFixer repair?</strong>
+            </div>
+            <p>MyFixer repairs a wide range of coffee machine problems, including heating and boiler faults, pump and pressure problems, grinder issues, poor water flow, leaks, descaling problems, steam wand and milk frother faults, and electrical or control problems.</p>
+          </div>
+
+          <div class="problem-card">
+            <div class="problem-card-header">
+              <strong>Which coffee machine brands do you repair?</strong>
+            </div>
+            <p>We service many popular coffee machine brands, including Nespresso, DeLonghi, Saeco, Jura, Gaggia and Breville, as well as other domestic and commercial coffee machine brands.</p>
+          </div>
+
+          <div class="problem-card">
+            <div class="problem-card-header">
+              <strong>Do you provide coffee machine repair in Centurion and Pretoria?</strong>
+            </div>
+            <p>Yes. MyFixer provides coffee machine repair and servicing in Centurion, Pretoria and surrounding areas subject to technician availability and the type of repair required.</p>
+          </div>
+
+          <div class="problem-card">
+            <div class="problem-card-header">
+              <strong>Can you repair a coffee machine at my home or business?</strong>
+            </div>
+            <p>Where practical, our technicians can provide on-site diagnostics and repair services at residential and commercial locations. Some repairs may require the coffee machine to be taken to our workshop.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== RELATED SERVICES ==================== -->
   <section class="service-related-section" aria-labelledby="related-coffee-services">
     <div class="service-related-container">
       <div class="service-related-header">
