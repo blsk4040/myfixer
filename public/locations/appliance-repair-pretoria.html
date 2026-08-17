@@ -63,7 +63,7 @@
         }
     </style>
 
-    <!-- Local Business Schema - Pretoria -->
+<!-- Local Business Schema - Pretoria -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -74,6 +74,7 @@
   "logo": "https://www.myfixer.co.za/img/myfixer_logo.png",
   "image": "https://www.myfixer.co.za/img/background.webp",
   "description": "Professional mobile appliance repair services across Pretoria and surrounding areas, including Pretoria East, Garsfontein, Moreleta Park, Faerie Glen, Lynnwood, Hatfield and nearby suburbs.",
+  "telephone": "+27642903654",
   "areaServed": [
     {
       "@type": "City",
@@ -122,10 +123,10 @@
     {
       "@type": "Place",
       "name": "Pretoria West"
-    }
+    },
     {
-        "@type": "Place",
-        "name": "The Moot"
+      "@type": "Place",
+      "name": "The Moot"
     }
   ],
   "openingHoursSpecification": [
@@ -147,36 +148,89 @@
     "https://www.facebook.com/myfixerrepair",
     "https://www.instagram.com/myfixer_repair"
   ],
-  "serviceType": [
-    "Fridge Repair",
-    "Washing Machine Repair",
-    "Dishwasher Repair",
-    "Oven & Stove Repair",
-    "Microwave Repair",
-    "TV Repair",
-    "Coffee Machine Repair",
-    "HVAC Repair"
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Fridge Repair",
+        "url": "https://www.myfixer.co.za/services/fridge-repair"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Washing Machine Repair",
+        "url": "https://www.myfixer.co.za/services/washingmachine-repair"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Dishwasher Repair",
+        "url": "https://www.myfixer.co.za/services/dishwasher-repair"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Oven & Stove Repair",
+        "url": "https://www.myfixer.co.za/services/stove-oven-repair"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Microwave Repair",
+        "url": "https://www.myfixer.co.za/services/microwave-repair"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "TV Repair",
+        "url": "https://www.myfixer.co.za/services/tv-repair"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Coffee Machine Repair",
+        "url": "https://www.myfixer.co.za/services/coffeemachine-repair"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "HVAC Repair",
+        "url": "https://www.myfixer.co.za/services/hvac-repair"
+      }
+    }
   ]
 }
 </script>
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "WebSite",
-          "@id": "https://www.myfixer.co.za/#website",
-          "url": "https://www.myfixer.co.za/",
-          "name": "MyFixer",
-          "publisher": {
-            "@id": "https://www.myfixer.co.za/#localbusiness"
-          },
-          "inLanguage": "en-ZA"
-        }
-      ]
-    }
-    </script>
+<!-- WebSite Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://www.myfixer.co.za/#website",
+  "url": "https://www.myfixer.co.za/",
+  "name": "MyFixer",
+  "publisher": {
+    "@id": "https://www.myfixer.co.za/#localbusiness"
+  },
+  "inLanguage": "en-ZA"
+}
+</script>
 
     <!-- Microsoft Clarity Setup -->
     <script type="text/javascript">
