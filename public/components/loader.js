@@ -12,8 +12,8 @@ document.addEventListener("DOMContentLoaded", function () {
     basePath = isSubFolder ? "../" : "";
   }
   
-  const navUrl = `${basePath}components/nav.html`;
-  const footerUrl = `${basePath}components/footer.html`;
+  const navUrl = `${basePath}components/nav`;
+  const footerUrl = `${basePath}components/footer`;
 
   console.log(`📦 Fetching components using base path: "${basePath}"`);
 

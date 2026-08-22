@@ -1,5 +1,5 @@
 # ============================================
-# HOMEPAGE
+# HOMEPAGE / INDEX
 # ============================================
 
 /index / 301
@@ -11,7 +11,7 @@
 
 
 # ============================================
-# SERVICE PAGES
+# OLD SERVICE URLS → CANONICAL SERVICE URLS
 # ============================================
 
 /fridge-repair /services/fridge-repair 301
@@ -40,7 +40,7 @@
 
 
 # ============================================
-# LOCATION PAGES
+# OLD LOCATION URLS → CANONICAL LOCATION URLS
 # ============================================
 
 /locations/appliance-repair-centurion.html /locations/appliance-repair-centurion 301
@@ -49,7 +49,7 @@
 
 
 # ============================================
-# LEGACY URLS
+# LEGACY SERVICE URLS
 # ============================================
 
 /locations/dishwasher-repair.html /services/dishwasher-repair 301
