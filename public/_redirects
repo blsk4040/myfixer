@@ -77,3 +77,55 @@
 
 /coffeemachine-repair-centurion /services/coffeemachine-repair 301
 /coffeemachine-repair-centurion.html /services/coffeemachine-repair 301
+
+
+# ============================================
+# LEGACY .HTML SERVICE VARIANTS
+# ============================================
+
+/services/fridge-repair.html /services/fridge-repair 301
+
+/services/washingmachine-repair.html /services/washingmachine-repair 301
+
+/services/dishwasher-repair.html /services/dishwasher-repair 301
+
+/services/stove-oven-repair.html /services/stove-oven-repair 301
+
+/services/microwave-repair.html /services/microwave-repair 301
+
+/services/tv-repair.html /services/tv-repair 301
+
+/services/coffeemachine-repair.html /services/coffeemachine-repair 301
+
+/services/hvac-repair.html /services/hvac-repair 301
+
+
+# ============================================
+# LEGACY .HTML LOCATION VARIANTS
+# ============================================
+
+/locations/appliance-repair-centurion.html /locations/appliance-repair-centurion 301
+
+/locations/appliance-repair-johannesburg.html /locations/appliance-repair-johannesburg 301
+
+/locations/appliance-repair-pretoria.html /locations/appliance-repair-pretoria 301
+
+
+# ============================================
+# LEGACY ROOT SERVICE VARIANTS
+# ============================================
+
+/stove-oven-repair.html /services/stove-oven-repair 301
+
+/microwave-repair.html /services/microwave-repair 301
+
+/tv-repair.html /services/tv-repair 301
+
+/coffeemachine-repair.html /services/coffeemachine-repair 301
+
+
+# ============================================
+# LEGACY GALLERY VARIANT
+# ============================================
+
+/gallery.html /gallery 301
