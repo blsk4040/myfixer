@@ -80,7 +80,7 @@
 
 
 # ============================================
-# LEGACY .HTML SERVICE VARIANTS
+# LEGACY SERVICE URL VARIANTS
 # ============================================
 
 /services/fridge-repair.html /services/fridge-repair 301
@@ -97,11 +97,13 @@
 
 /services/coffeemachine-repair.html /services/coffeemachine-repair 301
 
+/services/coffeemachinerepair /services/coffeemachine-repair 301
+
 /services/hvac-repair.html /services/hvac-repair 301
 
 
 # ============================================
-# LEGACY .HTML LOCATION VARIANTS
+# LEGACY LOCATION VARIANTS
 # ============================================
 
 /locations/appliance-repair-centurion.html /locations/appliance-repair-centurion 301
