@@ -1,23 +1,77 @@
 # ========================================================
-# myfixer.co.za - Robots.txt
+
+# MyFixer - Robots.txt
+
+# https://www.myfixer.co.za/
+
 # ========================================================
 
-# Global Directives for Search Engines
+# ========================================================
+
+# GENERAL SEARCH ENGINE ACCESS
+
+# ========================================================
+
 User-agent: *
 Allow: /
 
-# Sitemap Location
-Sitemap: https://www.myfixer.co.za/sitemap.xml
+# ========================================================
+
+# OPENAI / CHATGPT SEARCH
 
 # ========================================================
-# Block AI Training & Unwanted Content Scraping Bots
+
+# Allows MyFixer to be discovered and cited in ChatGPT Search.
+
+User-agent: OAI-SearchBot
+Allow: /
+
 # ========================================================
+
+# OPENAI / CHATGPT ADS
+
+# ========================================================
+
+# Allows OpenAI to validate MyFixer landing pages if
+
+# ChatGPT Ads are used in the future.
+
+User-agent: OAI-AdsBot
+Allow: /
+
+# ========================================================
+
+# OPENAI MODEL TRAINING
+
+# ========================================================
+
+# Keep GPTBot blocked.
+
+# This allows ChatGPT Search while not granting permission
+
+# for GPTBot's model-training crawl.
 
 User-agent: GPTBot
 Disallow: /
 
+# ========================================================
+
+# GOOGLE AI / GEMINI TRAINING
+
+# ========================================================
+
+# Keep Google-Extended blocked.
+
+# This does NOT block normal Google Search crawling.
+
 User-agent: Google-Extended
 Disallow: /
+
+# ========================================================
+
+# OTHER AI TRAINING / SCRAPING CRAWLERS
+
+# ========================================================
 
 User-agent: Applebot-Extended
 Disallow: /
@@ -64,5 +118,10 @@ Disallow: /
 User-agent: Omgili
 Disallow: /
 
-# Note: OAI-SearchBot and ChatGPT-User are left allowed by default above so 
-# ChatGPT web search features and user requests can surface your business link.
+# ========================================================
+
+# SITEMAP
+
+# ========================================================
+
+Sitemap: https://www.myfixer.co.za/sitemap.xml
