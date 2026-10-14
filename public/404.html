@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | MyFixer</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="stylesheet" href="/styles.css">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    >
+    <style>
+        .not-found {
+            min-height: 65vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 140px 20px 80px;
+            background: #f7f9f8;
+            text-align: center;
+        }
+
+        .not-found-content {
+            width: 100%;
+            max-width: 680px;
+            padding: clamp(28px, 6vw, 56px);
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(44, 62, 80, 0.1);
+        }
+
+        .not-found-code {
+            display: block;
+            margin-bottom: 8px;
+            color: #008037;
+            font-size: clamp(4rem, 15vw, 7rem);
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        .not-found h1 {
+            margin-bottom: 12px;
+            color: #2c3e50;
+            font-size: clamp(1.7rem, 5vw, 2.4rem);
+            line-height: 1.2;
+        }
+
+        .not-found p {
+            margin: 0 auto;
+            max-width: 520px;
+            color: #555;
+            font-size: 1.05rem;
+        }
+
+        .not-found-actions {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-top: 28px;
+        }
+
+        .not-found-actions a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 54px;
+            padding: 14px 26px;
+            border: 2px solid #e74c3c;
+            border-radius: 14px;
+            background: #e74c3c;
+            color: #fff;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .not-found-actions a:hover {
+            border-color: #c0392b;
+            background: #c0392b;
+            transform: translateY(-2px);
+        }
+
+        .not-found-actions a.secondary {
+            border-color: #008037;
+            background: #008037;
+        }
+
+        .not-found-actions a.secondary:hover {
+            border-color: #00692d;
+            background: #00692d;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 480px) {
+            .not-found-actions {
+                flex-direction: column;
+            }
+
+            .not-found-actions a {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+
+    <main class="not-found">
+        <div class="not-found-content">
+            <span class="not-found-code" aria-hidden="true">404</span>
+            <h1>We couldn't find that page</h1>
+            <p>
+                The address may be incorrect, or the page may have moved.
+                Choose a link below to continue.
+            </p>
+            <nav class="not-found-actions" aria-label="Helpful links">
+                <a href="/">Go to homepage</a>
+                <a class="secondary" href="/services/fridge-repair">Appliance services</a>
+                <a class="secondary" href="/#contact">Contact MyFixer</a>
+            </nav>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="/components/loader.js" defer></script>
+    <script src="/js/script.js" defer></script>
+</body>
+</html>
