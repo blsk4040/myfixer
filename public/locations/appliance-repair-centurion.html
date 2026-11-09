@@ -24,11 +24,11 @@
 
     <!-- SEO -->
 
-    <title>Appliance Repair in Centurion | On-Site Fridge, Washing Machine & Oven Repair | MyFixer</title>
+    <title>Appliance Repairs in Centurion – On-Site & Workshop | MyFixer</title>
 
     <meta
         name="description"
-        content="On-Site appliance repair in Centurion, Die Hoewes, Lyttelton, Eldoraigne, Wierdapark, Irene and surrounding suburbs. MyFixer repairs fridges, washing machines, stoves, ovens and other household appliances on-site where practical."
+        content="Need appliance repairs in Centurion? Selected appliances are repaired on site, while microwaves, TVs and coffee machines are repaired at our workshop."
     >
 
     <meta
@@ -49,12 +49,12 @@
 
     <meta
         property="og:title"
-        content="Appliance Repair in Centurion | On-Site Fridge, Washing Machine & Oven Repair | MyFixer"
+        content="Appliance Repair in Centurion | On-Site & Workshop Repairs | MyFixer"
     >
 
     <meta
         property="og:description"
-        content="On-Site appliance repair in Centurion, Die Hoewes, Lyttelton, Eldoraigne, Wierdapark, Irene and surrounding suburbs. MyFixer repairs fridges, washing machines, stoves, ovens and other household appliances on-site where practical."
+        content="Appliance repair in Centurion. We repair selected appliances on site and microwaves, TVs and coffee machines at our workshop."
     >
 
     <meta
@@ -92,12 +92,12 @@
 
     <meta
         name="twitter:title"
-        content="Appliance Repair in Centurion | On-Site Fridge, Washing Machine & Oven Repair | MyFixer"
+        content="Appliance Repair in Centurion | On-Site & Workshop Repairs | MyFixer"
     >
 
     <meta
         name="twitter:description"
-        content="On-Site appliance repair in Centurion, Die Hoewes, Lyttelton, Eldoraigne, Wierdapark, Irene and surrounding suburbs. MyFixer repairs fridges, washing machines, stoves, ovens and other household appliances on-site where practical."
+        content="Appliance repair in Centurion. We repair selected appliances on site and microwaves, TVs and coffee machines at our workshop."
     >
 
     <meta
@@ -157,6 +157,227 @@
             transform: translateY(0);
         }
 
+        .centurion-content {
+            padding: clamp(56px, 8vw, 96px) 0;
+            background: linear-gradient(180deg, #f7faf8 0, #ffffff 34%);
+        }
+
+        .centurion-content .container {
+            display: grid;
+            gap: clamp(48px, 7vw, 88px);
+        }
+
+        .centurion-intro,
+        .centurion-service-area,
+        .centurion-services,
+        .centurion-regional-info {
+            width: min(100%, 1120px);
+            margin: 0 auto;
+        }
+
+        .centurion-intro {
+            position: relative;
+            overflow: hidden;
+            padding: clamp(28px, 5vw, 52px);
+            border: 1px solid #dceae1;
+            border-radius: 20px;
+            background: #ffffff;
+            box-shadow: 0 18px 45px rgba(20, 61, 40, 0.08);
+            color: #3f4a45;
+            line-height: 1.8;
+        }
+
+        .centurion-intro::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #008037, #55ad72);
+            content: "";
+        }
+
+        .centurion-intro p,
+        .centurion-regional-info p {
+            margin: 0 0 18px;
+        }
+
+        .centurion-intro p:last-child,
+        .centurion-regional-info p:last-child {
+            margin-bottom: 0;
+        }
+
+        .centurion-section-heading {
+            margin: 0 0 14px;
+            color: #183d2a;
+            font-size: clamp(1.7rem, 3vw, 2.35rem);
+            line-height: 1.2;
+            letter-spacing: -0.035em;
+            text-align: center;
+        }
+
+        .centurion-intro .centurion-section-heading {
+            max-width: 720px;
+            margin-right: auto;
+            margin-bottom: 24px;
+            margin-left: auto;
+        }
+
+        .centurion-section-intro {
+            max-width: 690px;
+            margin: 0 auto 32px;
+            color: #617067;
+            font-size: 1.04rem;
+            line-height: 1.7;
+            text-align: center;
+        }
+
+        .centurion-area-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .centurion-area-grid li {
+            position: relative;
+            padding: 24px 22px 24px 54px;
+            border: 1px solid #e1ebe5;
+            border-radius: 14px;
+            background: #ffffff;
+            box-shadow: 0 8px 20px rgba(20, 61, 40, 0.045);
+            color: #526059;
+            line-height: 1.65;
+        }
+
+        .centurion-area-grid li::before {
+            position: absolute;
+            top: 27px;
+            left: 22px;
+            display: grid;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #e0f1e5;
+            color: #008037;
+            content: "✓";
+            font-size: 0.75rem;
+            font-weight: 800;
+            place-items: center;
+        }
+
+        .centurion-area-grid strong {
+            display: block;
+            margin-bottom: 5px;
+            color: #234833;
+        }
+
+        .centurion-service-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 18px;
+            margin-top: 30px;
+        }
+
+        .centurion-service-grid > div {
+            min-height: 100%;
+            padding: 28px 24px 24px !important;
+            border: 1px solid #e1ebe5 !important;
+            border-radius: 16px !important;
+            background: #ffffff !important;
+            box-shadow: 0 8px 24px rgba(20, 61, 40, 0.05) !important;
+            transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+        }
+
+        .centurion-service-grid > div:hover {
+            border-color: #b7d9c1 !important;
+            box-shadow: 0 14px 30px rgba(20, 61, 40, 0.11) !important;
+            transform: translateY(-4px);
+        }
+
+        .centurion-service-grid h3 {
+            margin: 0 0 16px;
+            color: #234833;
+            font-size: 1.14rem;
+            line-height: 1.35;
+        }
+
+        .centurion-service-grid h3 i {
+            display: inline-grid;
+            width: 32px;
+            height: 32px;
+            margin-right: 8px !important;
+            border-radius: 9px;
+            background: #f0f7f2;
+            place-items: center;
+        }
+
+        .centurion-service-grid p {
+            margin: 0 0 24px !important;
+            color: #627169 !important;
+            font-size: 0.94rem !important;
+            line-height: 1.65 !important;
+        }
+
+        .centurion-service-grid a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #007433 !important;
+            font-size: 0.93rem;
+            font-weight: 700 !important;
+        }
+
+        .centurion-service-grid a:hover {
+            color: #005e2a !important;
+            text-decoration: underline !important;
+            text-underline-offset: 4px;
+        }
+
+        .centurion-regional-info {
+            padding: clamp(28px, 5vw, 48px);
+            border: 1px solid #d7e8dc;
+            border-radius: 20px;
+            background: #edf7f0;
+            color: #41564a;
+            line-height: 1.8;
+        }
+
+        .centurion-regional-info .centurion-section-heading {
+            max-width: 760px;
+            margin-right: auto;
+            margin-bottom: 24px;
+            margin-left: auto;
+        }
+
+        @media (max-width: 980px) {
+            .centurion-service-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 760px) {
+            .centurion-content {
+                padding: 46px 0;
+            }
+
+            .centurion-content .container {
+                gap: 44px;
+            }
+
+            .centurion-area-grid,
+            .centurion-service-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .centurion-intro,
+            .centurion-regional-info {
+                border-radius: 16px;
+            }
+        }
+
     </style>
 
 
@@ -169,7 +390,7 @@
         "@id": "https://www.myfixer.co.za/locations/appliance-repair-centurion#webpage",
         "url": "https://www.myfixer.co.za/locations/appliance-repair-centurion",
         "name": "Appliance Repair in Centurion | MyFixer",
-        "description": "On-Site appliance repair in Centurion, Die Hoewes, Lyttelton, Eldoraigne, Wierdapark, Irene and surrounding suburbs. MyFixer provides diagnostics and on-site appliance repairs where practical for homes and businesses.",
+        "description": "Appliance repair in Centurion, Die Hoewes, Lyttelton, Eldoraigne, Wierdapark, Irene and surrounding suburbs, with on-site repairs for selected appliances and workshop repairs for microwaves, TVs and coffee machines.",
         "isPartOf": {
             "@type": "WebSite",
             "@id": "https://www.myfixer.co.za/#website",
@@ -197,7 +418,7 @@
         "url": "https://www.myfixer.co.za/",
         "logo": "https://www.myfixer.co.za/img/myfixer_logo.png",
         "image": "https://www.myfixer.co.za/img/background.webp",
-        "description": "On-Site appliance repair services across Centurion and surrounding Gauteng areas, including fridge, washing machine, stove, oven, dishwasher, microwave, TV, coffee machine and aircon repair.",
+        "description": "Appliance repair services across Centurion and surrounding Gauteng areas, with on-site repairs for selected appliances and workshop-based microwave, TV and coffee machine repairs.",
         "telephone": "+27642903654",
         "areaServed": [
             {
@@ -349,7 +570,7 @@
         "name": "Appliance Repair in Centurion",
         "serviceType": "Appliance Repair",
         "url": "https://www.myfixer.co.za/locations/appliance-repair-centurion",
-        "description": "On-Site appliance repair in Centurion for homes and businesses, including fridge and refrigerator repair, washing machine repair, stove and oven repair, dishwasher repair, microwave repair, TV repair, coffee machine repair and aircon and HVAC repair. MyFixer provides diagnostics and on-site repairs where practical.",
+        "description": "Appliance repair in Centurion for homes and businesses. Fridges, washing machines, dishwashers, aircon systems, stoves and ovens are repaired on site where practical; microwaves, TVs and coffee machines are repaired at the MyFixer workshop.",
         "provider": {
             "@id": "https://www.myfixer.co.za/#localbusiness"
         },
@@ -425,7 +646,7 @@
 
         <section
             class="hero-section location-hero"
-            style="background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('../img/centurion-suburbs.jpg') no-repeat center center/cover; padding: 120px 20px; color: #fff; text-align: center;"
+            style="background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('../img/background.webp') no-repeat center center/cover; padding: 120px 20px; color: #fff; text-align: center;"
         >
 
             <div class="container text-center">
@@ -433,15 +654,15 @@
                 <h1
                     style="font-size: 2.6rem; font-weight: 700; margin-bottom: 15px; letter-spacing: -0.5px;"
                 >
-                    On-Site Appliance Repair in Centurion
+                    Appliance Repair in Centurion
                 </h1>
 
                 <p
                     style="margin-bottom: 35px; font-size: 1.25rem; max-width: 800px; margin-left: auto; margin-right: auto; color: #e5e7eb; line-height: 1.6;"
                 >
-                    MyFixer provides On-Site appliance repair in Centurion,
-                    with technicians travelling to homes and businesses for
-                    appliance diagnostics and on-site repairs where practical.
+                    MyFixer provides on-site repairs for selected appliances at
+                    homes and businesses in Centurion, while microwaves, TVs and
+                    coffee machines are repaired at our workshop.
                 </p>
 
                 <a
@@ -459,31 +680,33 @@
 
         <!-- Main Content -->
 
-        <section class="content-section" style="padding: 60px 0;">
+        <section class="content-section centurion-content">
 
             <div class="container">
 
 
                 <!-- Introduction -->
 
-                <div
-                    style="margin-bottom: 40px; line-height: 1.8; font-size: 1.1rem;"
-                >
+                <section class="centurion-intro" aria-labelledby="centurion-introduction">
+
+                    <h2 id="centurion-introduction" class="centurion-section-heading">
+                        Mobile Appliance Repair in Centurion
+                    </h2>
 
                     <p>
-                        MyFixer provides On-Site appliance repair in Centurion,
+                        MyFixer provides appliance repair in Centurion,
                         helping homes, offices, landlords and businesses with
-                        common appliance breakdowns. <br>Our technicians travel to
+                        common appliance breakdowns. Our technicians travel to
                         you for diagnostics and repairs where practical, so you
                         do not need to transport a large appliance to a repair shop.
                     </p>
 
                     <p>
-                        We repair fridges and refrigerators, washing machines,
-                        stoves and ovens, dishwashers, microwaves, TVs, coffee
-                        machines and air-conditioning systems. We first inspect
-                        the appliance to identify the fault, then explain the
-                        available repair options before any repair work is carried out.
+                        Fridges and refrigerators, washing machines, stoves and ovens,
+                        dishwashers and air-conditioning systems can be repaired on site
+                        where practical. Microwaves, TVs and coffee machines are assessed
+                        and repaired at the MyFixer workshop. We explain the available
+                        repair options before work is carried out.
                     </p>
 
                     <p>
@@ -494,22 +717,21 @@
                         technician availability.
                     </p>
 
-                </div>
+                    <p>
+                        To arrange an on-site appliance repair appointment in Centurion,
+                        call, WhatsApp or use the booking form with the appliance type,
+                        your suburb and a short description of the fault. This helps us
+                        understand the request and confirm the appropriate next step.
+                    </p>
 
-
-                <hr
-                    style="border: 0; border-top: 1px solid #eee; margin: 40px 0;"
-                >
+                </section>
 
 
                 <!-- Areas We Service -->
 
-                <div
-                    class="locations-section"
-                    style="text-align: center;"
-                >
+                <section class="centurion-service-area" aria-labelledby="centurion-areas">
 
-                    <h2>
+                    <h2 id="centurion-areas" class="centurion-section-heading">
                         <i
                             class="fas fa-map-marker-alt"
                             style="color: #008037;"
@@ -517,62 +739,48 @@
                         Areas We Service in Centurion
                     </h2>
 
-                    <p
-                        style="margin-bottom: 20px; max-width: 700px; margin-left: auto; margin-right: auto;"
-                    >
-                        MyFixer provides On-Site appliance repair services across
-                        Centurion and surrounding suburbs, subject to technician
-                        availability.
+                    <p class="centurion-section-intro">
+                        MyFixer provides appliance repair services for customers across
+                        Centurion and surrounding suburbs, subject to service availability.
                     </p>
 
-                    <ul
-                        style="line-height: 1.9; padding-left: 0; list-style: none; font-size: 1.05rem;"
-                    >
+                    <ul class="centurion-area-grid">
 
-                        <li style="margin-bottom: 12px;">
+                        <li>
                             <strong>Central Centurion:</strong>
                             Die Hoewes, Centurion Central, Lyttelton Manor and Clubview.
                         </li>
 
-                        <li style="margin-bottom: 12px;">
+                        <li>
                             <strong>West and North:</strong>
                             Eldoraigne, Wierdapark, Rooihuiskraal, Raslouw and Amberfield.
                         </li>
 
-                        <li style="margin-bottom: 12px;">
+                        <li>
                             <strong>East and Surrounding Areas:</strong>
                             Irene, Doringkloof, Pierre van Ryneveld and nearby residential areas.
                         </li>
 
                     </ul>
 
-                </div>
-
-
-                <hr
-                    style="border: 0; border-top: 1px solid #eee; margin: 40px 0;"
-                >
+                </section>
 
 
                 <!-- Related Services -->
 
-                <div class="services-links-section">
+                <section class="services-links-section centurion-services" aria-labelledby="centurion-services">
 
-                    <h2 style="text-align: center;">
+                    <h2 id="centurion-services" class="centurion-section-heading">
                         Appliance Repair Services in Centurion
                     </h2>
 
-                    <p
-                        style="margin-bottom: 25px; text-align: center;"
-                    >
-                        We repair a range of household appliances and provide
-                        On-Site service across Centurion and surrounding areas.
+                    <p class="centurion-section-intro">
+                        We provide on-site repair for selected household appliances and
+                        workshop-based repair for microwaves, TVs and coffee machines.
                     </p>
 
 
-                    <div
-                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 15px;"
-                    >
+                    <div class="centurion-service-grid">
 
 
                         <!-- Fridge Repair -->
@@ -609,7 +817,7 @@
                                     href="/services/fridge-repair"
                                     style="font-weight: bold; text-decoration: none; color: #2980b9;"
                                 >
-                                    Book Fridge Repair &rarr;
+                                    Fridge Repair in Centurion &rarr;
                                 </a>
 
                             </div>
@@ -652,7 +860,7 @@
                                     href="/services/washingmachine-repair"
                                     style="font-weight: bold; text-decoration: none; color: #2980b9;"
                                 >
-                                    Book Washing Machine Repair &rarr;
+                                    Washing Machine Repair in Centurion &rarr;
                                 </a>
 
                             </div>
@@ -906,24 +1114,17 @@
 
                     </div>
 
-                </div>
-
-
-                <hr
-                    style="border: 0; border-top: 1px solid #eee; margin: 40px 0;"
-                >
+                </section>
 
 
                 <!-- Regional Information -->
 
-                <div
-                    class="grid-challenges-section"
-                    style="max-width: 850px; margin: 0 auto; line-height: 1.8; font-size: 1.05rem;"
+                <section
+                    class="grid-challenges-section centurion-regional-info"
+                    aria-labelledby="centurion-power-faults"
                 >
 
-                    <h2
-                        style="text-align: center; margin-bottom: 20px;"
-                    >
+                    <h2 id="centurion-power-faults" class="centurion-section-heading">
                         Appliance Electrical Faults After Power Interruptions
                     </h2>
 
@@ -944,7 +1145,7 @@
                         electrical damage.
                     </p>
 
-                </div>
+                </section>
 
 
             </div>

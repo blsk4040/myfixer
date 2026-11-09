@@ -419,6 +419,46 @@
             margin-bottom: 8px;
         }
 
+        .appointment-locations {
+            max-width: 720px;
+            margin: 24px auto 0;
+            text-align: center;
+        }
+
+        .appointment-location-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 14px;
+        }
+
+        .appointment-location-link {
+            display: inline-flex;
+            align-items: center;
+            min-height: 40px;
+            padding: 8px 15px;
+            border: 1px solid #2c6b47;
+            border-radius: 999px;
+            background: #f3faf5;
+            color: #1f5939 !important;
+            font-weight: 700;
+            line-height: 1;
+            text-decoration: none !important;
+            transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+        }
+
+        .appointment-location-link:hover {
+            background: #1f5939;
+            color: #fff !important;
+            transform: translateY(-1px);
+        }
+
+        .appointment-location-link:focus-visible {
+            outline: 3px solid #80c594;
+            outline-offset: 3px;
+        }
+
         /* Two columns for medium widths */
         @media (max-width: 1100px) {
 
@@ -509,7 +549,7 @@
                             </h1>
 
                             <p>
-                                Need washing machine repair? We diagnose and
+                                Need washing machine repair?</br> We diagnose and
                                 repair washers that are not spinning, draining,
                                 filling, starting or completing a cycle.
                             </p>
@@ -810,6 +850,12 @@
                     and explain the appropriate repair option.
                 </p>
 
+                <p>
+                    When booking, it helps to share the machine brand and model if known,
+                    the fault symptoms, any error code and your area. This gives us a clearer
+                    picture of the request before an appointment is confirmed.
+                </p>
+
                 <!-- ==================== WHY CHOOSE MYFIXER ==================== -->
 
                 <h3>
@@ -924,6 +970,15 @@
                     away from the site, we will explain the next step before
                     proceeding.
                 </p>
+
+                <div class="appointment-locations">
+                    <p>For local appointment information, choose your area:</p>
+                    <div class="appointment-location-links">
+                        <a class="appointment-location-link" href="/locations/appliance-repair-centurion">Centurion</a>
+                        <a class="appointment-location-link" href="/locations/appliance-repair-pretoria">Pretoria</a>
+                        <a class="appointment-location-link" href="/locations/appliance-repair-johannesburg">Johannesburg</a>
+                    </div>
+                </div>
 
                 <!-- ==================== CTA ==================== -->
 

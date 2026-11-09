@@ -28,11 +28,11 @@
 
     <!-- SEO -->
 
-    <title>Appliance Repair in Pretoria | On-Site Fridge, Washing Machine & Oven Repair | MyFixer</title>
+    <title>Appliance Repairs in Pretoria – On-Site & Workshop | MyFixer</title>
 
     <meta
         name="description"
-        content="On-Site appliance repair in Pretoria, Pretoria East, Hatfield, Brooklyn, Centurion and surrounding areas. MyFixer repairs fridges, washing machines, stoves, ovens, dishwashers and other household appliances on-site where practical."
+        content="MyFixer provides appliance repairs in Pretoria, repairing selected appliances on site and microwaves, TVs and coffee machines at our workshop."
     >
 
     <meta
@@ -53,12 +53,12 @@
 
     <meta
         property="og:title"
-        content="Appliance Repair in Pretoria | On-Site Fridge, Washing Machine & Oven Repair | MyFixer"
+        content="Appliance Repair in Pretoria | On-Site & Workshop Repairs | MyFixer"
     >
 
     <meta
         property="og:description"
-        content="On-Site appliance repair in Pretoria, Pretoria East, Hatfield, Brooklyn, Centurion and surrounding areas. MyFixer repairs fridges, washing machines, stoves, ovens, dishwashers and other household appliances on-site where practical."
+        content="Appliance repair in Pretoria, with on-site repairs for selected appliances and workshop-based microwave, TV and coffee machine repairs."
     >
 
     <meta
@@ -96,12 +96,12 @@
 
     <meta
         name="twitter:title"
-        content="Appliance Repair in Pretoria | On-Site Fridge, Washing Machine & Oven Repair | MyFixer"
+        content="Appliance Repair in Pretoria | On-Site & Workshop Repairs | MyFixer"
     >
 
     <meta
         name="twitter:description"
-        content="On-Site appliance repair in Pretoria, Pretoria East, Hatfield, Brooklyn, Centurion and surrounding areas. MyFixer repairs fridges, washing machines, stoves, ovens, dishwashers and other household appliances on-site where practical."
+        content="Appliance repair in Pretoria, with on-site repairs for selected appliances and workshop-based microwave, TV and coffee machine repairs."
     >
 
     <meta
@@ -161,6 +161,238 @@
             transform: translateY(0);
         }
 
+        .pretoria-content {
+            --location-accent: #008037;
+            --location-accent-dark: #005e2a;
+            --location-soft: #edf7f0;
+            padding: clamp(56px, 8vw, 96px) 0 !important;
+            background: linear-gradient(180deg, #f7faf8 0, #ffffff 34%);
+        }
+
+        .pretoria-content .container {
+            display: grid;
+            gap: clamp(48px, 7vw, 88px);
+        }
+
+        .pretoria-content .location-intro,
+        .pretoria-content .locations-section,
+        .pretoria-content .services-links-section,
+        .pretoria-content .location-outro {
+            width: min(100%, 1120px);
+            margin: 0 auto !important;
+        }
+
+        .pretoria-content hr {
+            display: none;
+        }
+
+        .pretoria-content .location-intro,
+        .pretoria-content .location-outro {
+            position: relative;
+            overflow: hidden;
+            padding: clamp(28px, 5vw, 48px);
+            border: 1px solid #d7e8dc;
+            border-radius: 20px;
+            background: #fff;
+            box-shadow: 0 18px 45px rgba(20, 61, 40, 0.08);
+            color: #41564a;
+            font-size: 1rem !important;
+            line-height: 1.8 !important;
+        }
+
+        .pretoria-content .location-intro::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--location-accent), #55ad72);
+            content: "";
+        }
+
+        .pretoria-content h2 {
+            margin: 0 0 14px;
+            color: #183d2a;
+            font-size: clamp(1.7rem, 3vw, 2.35rem);
+            line-height: 1.2;
+            letter-spacing: -0.035em;
+            text-align: center;
+        }
+
+        .pretoria-content .location-intro p,
+        .pretoria-content .location-outro p {
+            margin: 0 0 18px;
+        }
+
+        .pretoria-content .location-intro p:last-child,
+        .pretoria-content .location-outro p:last-child {
+            margin-bottom: 0;
+        }
+
+        .pretoria-content .locations-section > p,
+        .pretoria-content .services-links-section > p {
+            max-width: 700px !important;
+            margin: 0 auto 32px !important;
+            color: #617067 !important;
+            font-size: 1.04rem;
+            line-height: 1.7;
+            text-align: center !important;
+        }
+
+        .pretoria-content .services-links-section > p.services-intro {
+            display: block !important;
+            width: min(100%, 760px) !important;
+            max-width: none !important;
+            margin: 0 0 30px !important;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center !important;
+        }
+
+        .pretoria-content .locations-section ul {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+            padding: 0 !important;
+            margin: 0 !important;
+            font-size: 1rem !important;
+            line-height: 1.65 !important;
+            list-style: none;
+            text-align: left;
+        }
+
+        .pretoria-content .locations-section li {
+            position: relative;
+            margin: 0 !important;
+            padding: 24px 22px 24px 54px;
+            border: 1px solid #e1ebe5;
+            border-radius: 14px;
+            background: #fff;
+            box-shadow: 0 8px 20px rgba(20, 61, 40, 0.045);
+            color: #526059;
+        }
+
+        .pretoria-content .locations-section li::before {
+            position: absolute;
+            top: 27px;
+            left: 22px;
+            display: grid;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #e0f1e5;
+            color: var(--location-accent);
+            content: "✓";
+            font-size: 0.75rem;
+            font-weight: 800;
+            place-items: center;
+        }
+
+        .pretoria-content .locations-section strong {
+            display: block;
+            margin-bottom: 5px;
+            color: #234833;
+        }
+
+        .pretoria-content .services-links-section > div {
+            display: grid !important;
+            grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+            gap: 18px !important;
+            margin-top: 30px !important;
+        }
+
+        .pretoria-content .services-links-section > div > div {
+            display: flex !important;
+            min-height: 100%;
+            padding: 28px 24px 24px !important;
+            border: 1px solid #e1ebe5 !important;
+            border-radius: 16px !important;
+            background: #fff !important;
+            box-shadow: 0 8px 24px rgba(20, 61, 40, 0.05) !important;
+            color: #526059;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: left !important;
+            transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+        }
+
+        .pretoria-content .services-links-section > div > div:hover {
+            border-color: #b7d9c1 !important;
+            box-shadow: 0 14px 30px rgba(20, 61, 40, 0.11) !important;
+            transform: translateY(-4px);
+        }
+
+        .pretoria-content h3 {
+            margin: 0 0 16px !important;
+            color: #234833;
+            font-size: 1.14rem;
+            line-height: 1.35;
+        }
+
+        .pretoria-content .services-links-section h3 i {
+            display: inline-grid;
+            width: 32px;
+            height: 32px;
+            margin-right: 8px !important;
+            border-radius: 9px;
+            background: var(--location-soft);
+            place-items: center;
+        }
+
+        .pretoria-content .services-links-section p {
+            margin: 0 0 24px !important;
+            color: #627169 !important;
+            font-size: 0.94rem !important;
+            line-height: 1.65 !important;
+        }
+
+        .pretoria-content .services-links-section a {
+            color: var(--location-accent) !important;
+            font-size: 0.93rem;
+            font-weight: 700 !important;
+        }
+
+        .pretoria-content .services-links-section a:hover {
+            color: var(--location-accent-dark) !important;
+            text-decoration: underline !important;
+            text-underline-offset: 4px;
+        }
+
+        .pretoria-content .location-outro {
+            background: var(--location-soft);
+        }
+
+        .pretoria-content .location-outro h2 {
+            margin-bottom: 24px !important;
+        }
+
+        @media (max-width: 980px) {
+            .pretoria-content .services-links-section > div {
+                grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .pretoria-content {
+                padding: 46px 0 !important;
+            }
+
+            .pretoria-content .container {
+                gap: 44px;
+            }
+
+            .pretoria-content .services-links-section > div,
+            .pretoria-content .locations-section ul {
+                grid-template-columns: 1fr !important;
+            }
+
+            .pretoria-content .location-intro,
+            .pretoria-content .location-outro {
+                border-radius: 16px;
+            }
+        }
+
     </style>
 
 
@@ -178,7 +410,7 @@
                 "url": "https://www.myfixer.co.za/",
                 "logo": "https://www.myfixer.co.za/img/myfixer_logo.png",
                 "image": "https://www.myfixer.co.za/img/background.webp",
-                "description": "On-Site appliance repair services across Pretoria and surrounding Gauteng areas, including fridge, washing machine, stove, oven, dishwasher, microwave, TV, coffee machine and aircon repair.",
+                "description": "Appliance repair services across Pretoria and surrounding Gauteng areas, with on-site repairs for selected appliances and workshop-based microwave, TV and coffee machine repairs.",
                 "telephone": "+27642903654",
 
                 "areaServed": [
@@ -360,7 +592,7 @@
                 "name": "Appliance Repair in Pretoria",
                 "serviceType": "Appliance Repair",
                 "url": "https://www.myfixer.co.za/locations/appliance-repair-pretoria",
-                "description": "On-Site appliance repair in Pretoria for homes and businesses, including fridge and refrigerator repair, washing machine repair, stove and oven repair, dishwasher repair, microwave repair, TV repair, coffee machine repair and aircon and HVAC repair. MyFixer provides diagnostics and on-site repairs where practical.",
+                "description": "Appliance repair in Pretoria for homes and businesses. Fridges, washing machines, dishwashers, aircon systems, stoves and ovens are repaired on site where practical; microwaves, TVs and coffee machines are repaired at the MyFixer workshop.",
                 "provider": {
                     "@id": "https://www.myfixer.co.za/#localbusiness"
                 },
@@ -376,7 +608,7 @@
                 "@id": "https://www.myfixer.co.za/locations/appliance-repair-pretoria#webpage",
                 "url": "https://www.myfixer.co.za/locations/appliance-repair-pretoria",
                 "name": "Appliance Repair in Pretoria | MyFixer",
-                "description": "On-Site appliance repair in Pretoria, Pretoria East, Hatfield, Brooklyn and surrounding areas. MyFixer provides diagnostics and on-site appliance repairs where practical for homes and businesses.",
+                "description": "Appliance repair in Pretoria, Pretoria East, Hatfield, Brooklyn and surrounding areas, with on-site repairs for selected appliances and workshop repairs for microwaves, TVs and coffee machines.",
                 "isPartOf": {
                     "@id": "https://www.myfixer.co.za/#website"
                 },
@@ -471,15 +703,15 @@
                 <h1
                     style="font-size: 2.5rem; font-weight: 700; margin-bottom: 15px; letter-spacing: -0.5px;"
                 >
-                    On-Site Appliance Repair in Pretoria
+                    Appliance Repair in Pretoria
                 </h1>
 
                 <p
                     style="margin-bottom: 35px; font-size: 1.25rem; max-width: 800px; margin-left: auto; margin-right: auto; color: #e5e7eb; line-height: 1.6;"
                 >
-                    MyFixer provides On-Site appliance repair in Pretoria,
-                    with technicians travelling to homes and businesses for
-                    appliance diagnostics and on-site repairs where practical.
+                    MyFixer provides on-site repairs for selected appliances at
+                    homes and businesses in Pretoria, while microwaves, TVs and
+                    coffee machines are repaired at our workshop.
                 </p>
 
                 <a
@@ -499,7 +731,7 @@
         <!-- ==================== MAIN CONTENT ==================== -->
 
         <section
-            class="content-section"
+            class="content-section pretoria-content"
             style="padding: 60px 0;"
         >
 
@@ -509,11 +741,12 @@
                 <!-- Intro -->
 
                 <div
+                    class="location-intro"
                     style="margin-bottom: 40px; line-height: 1.8; font-size: 1.1rem;"
                 >
 
                     <p>
-                        MyFixer provides On-Site appliance repair in Pretoria,
+                        MyFixer provides appliance repair in Pretoria,
                         helping homeowners, offices, landlords and businesses
                         with common appliance breakdowns. Our technicians travel
                         to your location for diagnostics and repairs where
@@ -522,17 +755,17 @@
                     </p>
 
                     <p>
-                        We repair fridges and refrigerators, washing machines,
-                        dishwashers, stoves and ovens, microwaves, TVs, coffee
-                        machines and air-conditioning systems. We first inspect
-                        the appliance to identify the fault, then explain the
+                        Fridges and refrigerators, washing machines, dishwashers,
+                        stoves and ovens, and air-conditioning systems can be repaired
+                        on site where practical. Microwaves, TVs and coffee machines are
+                        assessed and repaired at the MyFixer workshop. We explain the
                         available repair options before repair work is carried out.
                     </p>
 
                     <p>
                         MyFixer is based in Centurion, Die Hoewes, and provides
-                        On-Site appliance repair services in Pretoria and selected
-                        surrounding areas, subject to technician availability.
+                        appliance repair services for customers in Pretoria and selected
+                        surrounding areas, subject to service availability.
                     </p>
 
                 </div>
@@ -557,16 +790,16 @@
                             style="color: #008037;"
                         ></i>
 
-                        On-Site Appliance Repair Areas in Pretoria
+                        Appliance Repair Areas in Pretoria
 
                     </h2>
 
                     <p
+                        align="center"
                         style="margin-bottom: 25px; max-width: 700px; margin-left: auto; margin-right: auto;"
                     >
-                        Our technicians provide On-Site appliance repair across
-                        Pretoria and selected surrounding suburbs, subject to
-                        technician availability.
+                        We provide appliance repair services across Pretoria and selected
+                        surrounding suburbs, subject to service availability.
                     </p>
 
 
@@ -624,10 +857,12 @@
                     </h2>
 
                     <p
-                        style="margin-bottom: 30px; text-align: center; color: #555;"
+                        class="services-intro"
+                        style="color: #555;"
                     >
-                        We repair a range of household appliances from major
-                        brands. If you're not sure what is wrong with your
+                        We repair a range of household appliances from major brands,
+                        either on site or at our workshop depending on the appliance.
+                        If you're not sure what is wrong with your
                         appliance, our technician can diagnose the problem
                         during the visit.
                     </p>
@@ -671,7 +906,7 @@
                                 href="/services/fridge-repair"
                                 style="font-weight: bold; text-decoration: none; color: #008037;"
                             >
-                                Fridge Repair &rarr;
+                                Fridge Repair in Pretoria &rarr;
                             </a>
 
                         </div>
@@ -710,7 +945,7 @@
                                 href="/services/washingmachine-repair"
                                 style="font-weight: bold; text-decoration: none; color: #008037;"
                             >
-                                Washing Machine Repair &rarr;
+                                Washing Machine Repair in Pretoria &rarr;
                             </a>
 
                         </div>
@@ -963,17 +1198,18 @@
                 <!-- ==================== PRETORIA LOCAL SERVICE ==================== -->
 
                 <div
+                    class="location-outro"
                     style="max-width: 850px; margin: 0 auto; line-height: 1.8; font-size: 1.05rem;"
                 >
 
                     <h2
                         style="text-align: center; margin-bottom: 20px;"
                     >
-                        On-Site Appliance Repair Across Pretoria
+                        Appliance Repair Across Pretoria
                     </h2>
 
                     <p>
-                        MyFixer provides On-Site appliance repair throughout
+                        MyFixer provides appliance repair throughout
                         selected Pretoria areas, including Pretoria East,
                         Central Pretoria, Pretoria North and Pretoria West.
                         Our technicians travel to homes, offices, rental
